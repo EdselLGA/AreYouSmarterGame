@@ -1,0 +1,1 @@
+// Copy lifeline implementation
