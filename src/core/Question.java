@@ -1,4 +1,4 @@
-package main.core;
+package core;
 
 // Question model class
 // Question is multiple choice or true/false
