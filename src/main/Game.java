@@ -1,5 +1,6 @@
 // Main entry point
 import javax.swing.*;
+
 public class Game {
     public static void main(String[] args) {
 
@@ -26,14 +27,16 @@ public class Game {
     private void ShowMainmenu() {
         mainFrame = new JFrame("A million bytes");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setSize(1000, 700);
-
+        //mainFrame.setSize(800, 600);
+        mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //mainFrame.setUndecorated(true);
+        
         // MainMenuPanel mainMenuPanel = new MainMenuPanel(this);
-        // mainFrame.setContentPane(mainMenuPanel);
-
+        //mainFrame.setContentPane(mainMenuPanel);
         mainFrame.setVisible(true);
-
     }
+
+
 
     
    
