@@ -1,3 +1,91 @@
 {
-  "questions": []
+  "History": [
+        {
+            "id": 1,
+            "question": "Who introduced the concept of structured programming?",
+            "choices": [
+                "Alan Turing",
+                "John Backus",
+                "Edsger Dijkstra",
+                "Bjarne Stroustrup"
+            ],
+            "answer": "Edsger Dijkstra",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 2,
+            "question": "Which programming paradigm was dominant during the 1950s and 1960s?",
+            "choices": [
+                "Functional",
+                "Procedural",
+                "Object-Oriented",
+                "Logic"
+            ],
+            "answer": "Procedural",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 3,
+            "question": "What was the first high-level programming language?",
+            "choices": [
+                "FORTRAN",
+                "COBOL",
+                "LISP",
+                "Assembly"
+            ],
+            "answer": "FORTRAN",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 4,
+            "question": "Who is known as the father of Object-Oriented Programming?",
+            "choices": [
+                "Alan Kay",
+                "James Gosling",
+                "Guido van Rossum",
+                "Dennis Ritchie"
+            ],
+            "answer": "Alan Kay",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 5,
+            "question": "In which decade did the Agile Manifesto get published?",
+            "choices": [
+                "1980s",
+                "1990s",
+                "2000s",
+                "2010s"
+            ],
+            "answer": "2000s",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 6,
+            "question": "What programming language was created by Guido van Rossum?",
+            "choices": [
+                "Ruby",
+                "Python",
+                "JavaScript",
+                "Perl"
+            ],
+            "answer": "Python",
+            "difficulty": "easy",
+            "type": "multiple"
+        }
+    ],
+
+    "GuessTheParadigm": [
+
+
+    ],
+    "TrueOrFalse": [
+
+
+    ]
 }
