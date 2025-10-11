@@ -77,7 +77,208 @@
             "answer": "Python",
             "difficulty": "easy",
             "type": "multiple"
+        },
+        {
+            "id": 7,
+            "question": "Which company developed the C programming language?",
+            "choices": [
+                "Microsoft",
+                "Bell Labs",
+                "IBM",
+                "Apple"
+            ],
+            "answer": "Bell Labs",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 8,
+            "question": "What year was the first version of Java released?",
+            "choices": [
+                "1991",
+                "1995",
+                "2000",
+                "1989"
+            ],
+            "answer": "1995",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 9,
+            "question": "Which programming language is primarily associated with web development?",
+            "choices": [
+                "C++",
+                "JavaScript",
+                "Fortran",
+                "COBOL"
+            ],
+            "answer": "JavaScript",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 10,
+            "question": "Who created the Linux operating system?",
+            "choices": [
+                "Bill Gates",
+                "Steve Jobs",
+                "Linus Torvalds",
+                "Mark Zuckerberg"
+            ],
+            "answer": "Linus Torvalds",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 11,
+            "question": "What does 'HTML' stand for?",
+            "choices": [
+                "HyperText Markup Language",
+                "HighText Machine Language",
+                "Hyperloop Transfer Markup Language",
+                "None of the above"
+            ],
+            "answer": "HyperText Markup Language",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 12,
+            "question": "Which programming language is known for its use in artificial intelligence and symbolic processing?",
+            "choices": [
+                "LISP",
+                "C#",
+                "Java",
+                "Swift"
+            ],
+            "answer": "LISP",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 13,
+            "question": "What was the main purpose of the creation of the COBOL programming language?",
+            "choices": [
+                "Scientific computing",
+                "Business data processing",
+                "Game development",
+                "Web development"
+            ],
+            "answer": "Business data processing",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 14,
+            "question": "Which programming language introduced the concept of 'write once, run anywhere'?",
+            "choices": [
+                "C++",
+                "Java",
+                "Python",
+                "Ruby"
+            ],
+            "answer": "Java",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 15,
+            "question": "Who is credited with inventing the World Wide Web?",
+            "choices": [
+                "Tim Berners-Lee",
+                "Vint Cerf",
+                "Bill Gates",
+                "Steve Jobs"
+            ],
+            "answer": "Tim Berners-Lee",
+            "difficulty": "medium",
+            "type": "multiple"
+        
+        },
+        {
+            "id": 16,
+            "question": "What was the first programming language to support object-oriented programming?",
+            "choices": [
+                "Simula",
+                "Smalltalk",
+                "C++",
+                "Java"
+            ],
+            "answer": "Simula",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+          "id": 17,
+          "question": "Which programming language was developed at Bell Labs in the early 1970s?",
+          "choices": [
+              "C",
+              "Pascal",
+              "Ada",
+              "B"
+          ],
+          "answer": "C",
+          "difficulty": "medium",
+          "type": "multiple"
+        },
+        {
+          "id": 18,
+          "question": "What programming language is known for its use in statistical computing and graphics?",
+          "choices": [
+              "R",
+              "MATLAB",
+              "SAS",
+              "SPSS"
+          ],
+          "answer": "R",
+          "difficulty": "hard",
+          "type": "multiple"
+        },
+        {
+          "id": 19,
+          "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?",
+          "choices": [
+              "Rust",
+              "Go",
+              "D",
+              "Swift"
+          ],
+          "answer": "Rust",
+          "difficulty": "medium",
+          "type": "multiple"
+        },
+        {
+          "id": 20,
+          "question": "What year was the Python programming language first released?",
+          "choices": [
+              "1989",
+              "1991",
+              "1995",
+              "2000"
+          ],
+          "answer": "1991",
+          "difficulty": "easy",
+          "type": "multiple"
+        },
+        {
+          "id": 21,
+          "question": "Which programming language was primarily designed for system programming and embedded systems?",
+          "choices": [
+              "C",
+              "Java",
+              "Python",
+              "JavaScript"
+          ],
+          "answer": "C",
+          "difficulty": "medium",
+          "type": "multiple"
+        },
+        {
+          "id": 22,
+          "question": ""
         }
+
     ],
 
     "GuessTheParadigm": [
