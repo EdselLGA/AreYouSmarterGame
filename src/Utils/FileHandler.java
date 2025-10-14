@@ -1,4 +1,4 @@
-package main.utils;
+package Utils;
 
 // Save/load high scores
 // Reads csv of questions for QuestionBank

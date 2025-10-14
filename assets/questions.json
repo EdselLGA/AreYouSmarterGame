@@ -210,83 +210,176 @@
             "type": "multiple"
         },
         {
-          "id": 17,
-          "question": "Which programming language was developed at Bell Labs in the early 1970s?",
-          "choices": [
+            "id": 17,
+            "question": "Which programming language was developed at Bell Labs in the early 1970s?",
+            "choices": [
               "C",
               "Pascal",
               "Ada",
               "B"
-          ],
-          "answer": "C",
-          "difficulty": "medium",
-          "type": "multiple"
+            ],
+            "answer": "C",
+            "difficulty": "medium",
+            "type": "multiple"
         },
         {
-          "id": 18,
-          "question": "What programming language is known for its use in statistical computing and graphics?",
-          "choices": [
+            "id": 18,
+            "question": "What programming language is known for its use in statistical computing and graphics?",
+            "choices": [
               "R",
               "MATLAB",
               "SAS",
               "SPSS"
-          ],
-          "answer": "R",
-          "difficulty": "hard",
-          "type": "multiple"
+            ],
+            "answer": "R",
+            "difficulty": "hard",
+            "type": "multiple"
         },
         {
-          "id": 19,
-          "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?",
-          "choices": [
+            "id": 19,
+            "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?",
+            "choices": [
               "Rust",
               "Go",
               "D",
               "Swift"
-          ],
-          "answer": "Rust",
-          "difficulty": "medium",
-          "type": "multiple"
+            ],
+            "answer": "Rust",
+            "difficulty": "medium",
+            "type": "multiple"
         },
         {
-          "id": 20,
-          "question": "What year was the Python programming language first released?",
-          "choices": [
+            "id": 20,
+            "question": "What year was the Python programming language first released?",
+            "choices": [
               "1989",
               "1991",
               "1995",
               "2000"
-          ],
-          "answer": "1991",
-          "difficulty": "easy",
-          "type": "multiple"
+            ],
+            "answer": "1991",
+            "difficulty": "easy",
+            "type": "multiple"
         },
         {
-          "id": 21,
-          "question": "Which programming language was primarily designed for system programming and embedded systems?",
-          "choices": [
-              "C",
-              "Java",
-              "Python",
-              "JavaScript"
-          ],
-          "answer": "C",
-          "difficulty": "medium",
-          "type": "multiple"
+            "id": 21,
+            "question": "Which programming language was primarily designed for system programming and embedded systems?",
+            "choices": [
+                "C",
+                "Java",
+                "Python",
+                "JavaScript"
+            ],
+            "answer": "C",
+            "difficulty": "medium",
+            "type": "multiple"
         },
         {
-          "id": 22,
-          "question": ""
+            "id": 22,
+            "question": " What programming language is known for its use in web development and was created by Brendan Eich?",
+            "choices": [
+                "JavaScript",
+                "TypeScript",
+                "CoffeeScript",
+                "Dart"
+            ],
+            "answer": "JavaScript",
+            "difficulty": "easy",
+            "type": "multiple"
+
         }
 
     ],
 
     "GuessTheParadigm": [
+        {
+            "id": 1,
+            "question": "Which programming paradigm emphasizes the use of functions and avoids changing state and mutable data?",
+            "choices": [
+                "Object-Oriented Programming",
+                "Functional Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 2,
+            "question": "In which programming paradigm are programs structured around objects that combine data and behavior?",
+            "choices": [
+                "Procedural Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Event-Driven Programming"
+            ],
+            "answer": "Object-Oriented Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 3,
+            "question": "Which programming paradigm is based on formal logic and uses facts and rules to derive conclusions?",
+            "choices": [
+                "Logic Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Logic Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 4,
+            "question": "Which programming paradigm focuses on a sequence of commands or instructions to be executed in order?",
+            "choices": [
+                "Procedural Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Event-Driven Programming"
+            ],
+            "answer": "Procedural Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 5,
+            "question": "In which programming paradigm do programs respond to events such as user actions or sensor outputs?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 6,
+            "question": "Which programming paradigm is characterized by the use of higher-order functions and first-class functions?",
+            "choices": [
+                "Object-Oriented Programming",
+                "Functional Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",   
+            "type": "multiple"
+        }
+        
 
 
     ],
     "TrueOrFalse": [
+        
 
+    ],
+
+    " CodeSnippets": [""
 
     ]
 }
