@@ -1,11 +1,14 @@
 // Main entry point
 package main;
-import UI.GameScreen;
+import javax.swing.SwingUtilities;
+import ui.*;
 
 
 public class Game {
     public static void main(String[] args) {
-        new GameScreen();
+        // Initialize the game components
+        SwingUtilities.invokeLater(() -> new SplashScreen().showSplash());
+        
 
     }
 

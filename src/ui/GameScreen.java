@@ -1,5 +1,5 @@
 
-package UI;
+package ui;
 // Gameplay UI class
 
 public class GameScreen {
@@ -13,6 +13,7 @@ public class GameScreen {
     public void displayQuestion(String questionText) {
         // Implementation to display the question on the game screen
     }
+    
 
     //public void updateScore(int newScore) {
         // Implementation to update the player's score on the UI
