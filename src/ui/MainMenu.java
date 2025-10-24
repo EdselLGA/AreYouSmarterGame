@@ -1,6 +1,9 @@
 package ui;
+import javax.swing.*;
 
-public class MainMenu {
+
+
+public class MainMenu extends JPanel {
     // Placeholder for main menu methods
     // This class would include methods to display and manage the main menu, such as:
     // - showMenu(): void
@@ -9,6 +12,9 @@ public class MainMenu {
     // Example method signature
     public void showMenu() {
         // Implementation to display the main menu
+
+        
+
     }
 
     //public void handleMenuSelection(String selection) {
