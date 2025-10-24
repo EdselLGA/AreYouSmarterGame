@@ -525,9 +525,138 @@
             "answer": "Functional Programming",
             "difficulty": "hard",
             "type": "multiple"
+        },
+        {
+            "id": 16,
+            "question": "Which programming paradigm is often used in game development for handling user input and game state changes?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 17,
+            "question": "Which programming paradigm emphasizes the use of immutable data structures and pure functions?",
+            "choices": [
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 18,
+            "question": "Which programming paradigm is commonly used in mobile app development frameworks like Flutter and React Native?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 19,
+            "question": "Which programming paradigm is characterized by the use of classes and objects to model real-world entities?",
+            "choices": [
+                "Object-Oriented Programming",
+                "Functional Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Object-Oriented Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 20,
+            "question": "Which programming paradigm is best suited for tasks that involve complex decision-making and rule-based systems?",
+            "choices": [
+                "Logic Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Logic Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 21,
+            "question": "Which programming paradigm emphasizes the use of events and callbacks to handle asynchronous operations?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 22,
+            "question": "Which programming paradigm is often used in scientific computing and numerical analysis?",
+            "choices": [
+                "Procedural Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Logic Programming"
+            ],
+            "answer": "Procedural Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 23,
+            "question": "Which programming paradigm allows for the creation of reusable code through the use of functions and procedures?",
+            "choices": [
+                "Procedural Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Logic Programming"
+            ],
+            "answer": "Procedural Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 24,
+            "question": "Which programming paradigm is commonly used in front-end web development for building user interfaces?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 25,
+            "question": "Which programming paradigm emphasizes the use of mathematical functions and avoids side effects?",
+            "choices": [
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",
+            "type": "multiple"
         }
         
-
 
     ],
     "TrueOrFalse": [
@@ -550,6 +679,160 @@
             "question": "JavaScript and Java are the same programming language.",
             "answer": "False",
             "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 4,
+            "question": "The first version of the Ruby programming language was released in the 1990s.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 5,
+            "question": "The term 'bug' in programming originated from a real insect found in a computer.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 6,
+            "question": "The Go programming language was developed by Google.",
+            "answer": "True",
+            "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 7,
+            "question": "HTML is a programming language.",
+            "answer": "False",
+            "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 8,
+            "question": "The first computer programmer was Ada Lovelace.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 9,
+            "question": "Java was originally called Oak.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 10,
+            "question": "The Python programming language supports multiple programming paradigms, including procedural, object-oriented, and functional programming.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 11,
+            "question": "The first version of the C++ programming language was released in 1985.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 12,
+            "question": "The JavaScript programming language was created in just 10 days.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 13,
+            "question": "The first version of the PHP programming language was released in 1995.",
+            "answer": "True",
+            "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 14,
+            "question": "The Swift programming language was developed by Microsoft.",
+            "answer": "False",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 15,
+            "question": "The first version of the Perl programming language was released in the 1980s.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 16,
+            "question": "The first version of the Java programming language was released in 1991.",
+            "answer": "False",
+            "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 17,
+            "question": "The first version of the Fortran programming language was released in the 1950s.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 18,
+            "question": "The first version of the COBOL programming language was released in 1960.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 19,
+            "question": "The first version of the LISP programming language was released in the 1970s.",
+            "answer": "False",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 20,
+            "question": "The first version of the Rust programming language was released in 2010.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 21,
+            "question": "The first version of the TypeScript programming language was released in 2012.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 22,
+            "question": "The first version of the Kotlin programming language was released in 2011.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 23,
+            "question": "The first version of the Scala programming language was released in 2004.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 24,
+            "question": "The first version of the Haskell programming language was released in 1990.",
+            "answer": "True",
+            "difficulty": "hard",
+            "type": "true_false"
+        },
+        {
+            "id": 25,
+            "question": "The first version of the MATLAB programming language was released in 1984.",
+            "answer": "True",
+            "difficulty": "medium",
             "type": "true_false"
         }
         
