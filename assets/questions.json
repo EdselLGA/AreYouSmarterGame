@@ -287,6 +287,45 @@
             "difficulty": "easy",
             "type": "multiple"
 
+        },
+        {
+            "id": 23,
+            "question": "Which programming language was developed by Microsoft and is primarily used for Windows application development?",
+            "choices": [
+                "C#",
+                "VB.NET",
+                "F#",
+                "ASP.NET"
+            ],
+            "answer": "C#",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 24,
+            "question": "Which programming language is known for its simplicity and readability, often used as a teaching language?",
+            "choices": [
+                "Python",
+                "Ruby",
+                "Java",
+                "C++"
+            ],
+            "answer": "Python",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 25,
+            "question": "What programming language was created by Yukihiro Matsumoto and is known for its elegant syntax?",
+            "choices": [
+                "Perl",
+                "Ruby",
+                "PHP",
+                "Python"
+            ],
+            "answer": "Ruby",
+            "difficulty": "medium",
+            "type": "multiple"
         }
 
     ],
@@ -369,17 +408,184 @@
             "answer": "Functional Programming",
             "difficulty": "hard",   
             "type": "multiple"
+        },
+        {
+            "id": 7,
+            "question": "Which programming paradigm is often used in artificial intelligence and expert systems?",
+            "choices": [
+                "Logic Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Logic Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 8,
+            "question": "Which programming paradigm emphasizes code reusability through inheritance and polymorphism?",
+            "choices": [
+                "Object-Oriented Programming",
+                "Functional Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Object-Oriented Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 9,
+            "question": "Which programming paradigm is best suited for tasks that involve complex data manipulation and transformations?",
+            "choices": [
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 10,
+            "question": "Which programming paradigm is commonly used in web development frameworks like React and Angular?",
+            "choices": [
+                "Event-Driven Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Event-Driven Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 11,
+            "question": "Which programming paradigm is characterized by the use of procedures or routines to operate on data structures?",
+            "choices": [
+                "Procedural Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Logic Programming"
+            ],
+            "answer": "Procedural Programming",
+            "difficulty": "easy",
+            "type": "multiple"
+        },
+        {
+            "id": 12,
+            "question": "Which programming paradigm allows functions to be treated as first-class citizens, enabling them to be passed as arguments and returned from other functions?",
+            "choices": [
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",
+            "type": "multiple"
+        },
+        {
+            "id": 13,
+            "question": "Which programming paradigm is often used in database query languages like SQL?",
+            "choices": [
+                "Logic Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Logic Programming",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 14,
+            "question": "Which programming paradigm emphasizes the separation of concerns through the use of modules or components?",
+            "choices": [
+                "Modular Programming",
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming"
+            ],
+            "answer": "Modular Programming",
+            "difficulty": "easy",
+            "type": "multiple"  
+        },
+        {
+            "id": 15,
+            "question": "Which programming paradigm is best suited for concurrent and parallel programming?",
+            "choices": [
+                "Functional Programming",
+                "Object-Oriented Programming",
+                "Procedural Programming",
+                "Logic Programming"
+            ],
+            "answer": "Functional Programming",
+            "difficulty": "hard",
+            "type": "multiple"
         }
         
 
 
     ],
     "TrueOrFalse": [
+        {
+            "id": 1,
+            "question": "The C programming language was developed in the 1980s.",
+            "answer": "False",
+            "difficulty": "easy",
+            "type": "true_false"
+        },
+        {
+            "id": 2,
+            "question": "Python is named after the British comedy group Monty Python.",
+            "answer": "True",
+            "difficulty": "medium",
+            "type": "true_false"
+        },
+        {
+            "id": 3,
+            "question": "JavaScript and Java are the same programming language.",
+            "answer": "False",
+            "difficulty": "easy",
+            "type": "true_false"
+        }
         
 
     ],
 
-    " CodeSnippets": [""
+    " CodeSnippets": [
+        {
+            "id": 1,
+            "question": "What is the output of the following Python code?",
+            "choices": [
+                "3",
+                "6",
+                "9",
+                "Error"
+            ],
+            "image" : "assets/images/code_snippet_1.png",
+            "answer": "6",
+            "difficulty": "medium",
+            "type": "multiple"
+        },
+        {
+            "id": 2,
+            "question": "What does the following JavaScript code log to the console?",
+            "choices": [
+                "undefined",
+                "null",
+                "0",
+                "Error"
+            ],
+            "image" : "assets/images/code_snippet_2.png",
+            "answer": "undefined",
+            "difficulty": "hard",
+            "type": "multiple"
+        }
+
 
     ]
 }
