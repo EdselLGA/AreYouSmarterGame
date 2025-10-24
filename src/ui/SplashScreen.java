@@ -114,19 +114,8 @@ public class SplashScreen {
         });
 
         // --- Fallback timeout ---
-        new Timer(5000, e -> {
-            if (!started) {
-                started = true;
-                stopAnimations();
-                HelpersUI.fadeWindow(splash, false, 30, 0.05f, () -> {
-                    splash.dispose();
-                    new MainMenu().showMenu();
-                });
-            }
-        }) {{
-            setRepeats(false);
-            start();
-        }};
+        new Timer(10000, e -> closeSplash.run()).start();
+        
     }
 
     private void stopAnimations() {
