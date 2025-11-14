@@ -6,8 +6,17 @@ import javax.swing.*;
 public class MenuOptionsPanel extends JPanel {
 
     private final GameWindow parent;
+
     private static final String BACKGROUND =
             "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\splash.png";
+    private static final String BTN_HOWTOPLAY =
+            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES =
+            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\HIGHSCORES.png";
+    private static final String BTN_SETTINGS =
+            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\SETTINGS.png";
+    private static final String BTN_BACK =
+            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\BACK.png";
 
     private Image bgImage;
 
@@ -22,58 +31,82 @@ public class MenuOptionsPanel extends JPanel {
         ImageIcon bgIc = new ImageIcon(BACKGROUND);
         if (bgIc.getIconWidth() > 0)
             bgImage = bgIc.getImage().getScaledInstance(
-                    screen.width, screen.height, Image.SCALE_SMOOTH);
+                    screen.width, screen.height, Image.SCALE_SMOOTH
+            );
 
         JPanel box = new JPanel();
         box.setOpaque(false);
         box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
 
-        // Create simple text buttons for now
-        JButton howToPlay = createButton("How to Play");
-        JButton highScores = createButton("High Scores");
-        JButton settings = createButton("Settings");
-        JButton back = createButton("Back");
+        JButton howToPlayBtn = makeImageButton(BTN_HOWTOPLAY);
+        JButton highScoresBtn = makeImageButton(BTN_HIGHSCORES);
+        JButton settingsBtn = makeImageButton(BTN_SETTINGS);
+        JButton backBtn = makeImageButton(BTN_BACK);
 
-        howToPlay.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Show HOW TO PLAY screen here"));
+        howToPlayBtn.addActionListener(e ->
+                JOptionPane.showMessageDialog(this, "HOW TO PLAY screen coming soon!")
+        );
 
-        highScores.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Show HIGH SCORES here"));
+        highScoresBtn.addActionListener(e ->
+                JOptionPane.showMessageDialog(this, "HIGH SCORES feature coming soon!")
+        );
 
-        settings.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Show SETTINGS here"));
+        settingsBtn.addActionListener(e ->
+                JOptionPane.showMessageDialog(this, "SETTINGS menu coming soon!")
+        );
 
-        back.addActionListener(e -> {
+        backBtn.addActionListener(e -> {
             parent.switchTo(GameWindow.CARD_MAINMENU);
-            JComponent menu = parent.getScreen(GameWindow.CARD_MAINMENU);
-            HelpersUI.fadeInComponent(menu, 18, 0.06f, null);
+            JComponent main = parent.getScreen(GameWindow.CARD_MAINMENU);
+            HelpersUI.fadeInComponent(main, 18, 0.06f, null);
         });
 
-        box.add(howToPlay);
-        box.add(Box.createRigidArea(new Dimension(0, 25)));
-        box.add(highScores);
-        box.add(Box.createRigidArea(new Dimension(0, 25)));
-        box.add(settings);
-        box.add(Box.createRigidArea(new Dimension(0, 25)));
-        box.add(back);
+        // spacing
+        box.add(howToPlayBtn);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+
+        box.add(highScoresBtn);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+
+        box.add(settingsBtn);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+
+        box.add(backBtn);
 
         add(box);
     }
 
-    private JButton createButton(String text) {
-        JButton b = new JButton(text);
-        b.setFont(new Font("Arial", Font.BOLD, 36));
-        b.setForeground(Color.WHITE);
-        b.setBackground(new Color(50, 50, 50));
-        b.setFocusPainted(false);
-        b.setAlignmentX(Component.CENTER_ALIGNMENT);
-        b.setPreferredSize(new Dimension(350, 70));
-        return b;
+    private JButton makeImageButton(String imagePath) {
+
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
+        ImageIcon rawIcon = new ImageIcon(imagePath);
+
+        int newWidth = (int) (screen.width * 0.20);
+        int newHeight = (int) ((double) rawIcon.getIconHeight() /
+                rawIcon.getIconWidth() * newWidth);
+
+        Image scaled = rawIcon.getImage().getScaledInstance(
+                newWidth, newHeight, Image.SCALE_SMOOTH
+        );
+
+        ImageIcon scaledIcon = new ImageIcon(scaled);
+
+        JButton btn = new JButton(scaledIcon);
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setFocusPainted(false);
+        btn.setOpaque(false);
+        btn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btn.setPreferredSize(new Dimension(newWidth, newHeight));
+
+        return btn;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         if (bgImage != null)
             g.drawImage(bgImage, 0, 0, getWidth(), getHeight(), this);
     }
