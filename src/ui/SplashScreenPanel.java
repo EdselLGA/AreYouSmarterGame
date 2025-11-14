@@ -76,14 +76,14 @@ public class SplashScreenPanel extends JPanel {
         titleLabel.setIcon(new ImageIcon(titleBaseImage));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        titlePulseTimer = new Timer(60, null);
+        titlePulseTimer = new Timer(60, null); 
         final float[] scale = {1.0f};
         final boolean[] shrinking = {true};
 
         titlePulseTimer.addActionListener(e -> {
             if (shrinking[0]) {
                 scale[0] -= 0.004f;
-                if (scale[0] <= 0.985f) shrinking[0] = false;
+                if (scale[0] <= 0.989f) shrinking[0] = false;
             } else {
                 scale[0] += 0.004f;
                 if (scale[0] >= 1.015f) shrinking[0] = true;

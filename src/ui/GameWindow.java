@@ -17,6 +17,8 @@ public class GameWindow extends JFrame {
     public static final String CARD_SPLASH = "splash";
     public static final String CARD_MAINMENU = "mainMenu";
     public static final String CARD_GAME = "gameScreen";
+    public static final String CARD_MENUOPTIONS = "menuOptions";
+
 
     public GameWindow() {
         super("Are You Smarter Than a 5th Grader?");
@@ -28,11 +30,14 @@ public class GameWindow extends JFrame {
 
         layout = new CardLayout();
         mainPanel = new JPanel(layout);
+        
 
         // create and register screens
         addCard(CARD_SPLASH, new SplashScreenPanel(this));
         addCard(CARD_MAINMENU, new MainMenuPanel(this));
         addCard(CARD_GAME, new GameScreenPanel(this));
+        addCard(CARD_MENUOPTIONS, new MenuOptionsPanel(this));
+
 
         getContentPane().add(mainPanel);
 
