@@ -10,15 +10,30 @@ public class Question {
     private String questionText;
     private String[] options; // For multiple choice questions
     private String correctAnswer;
-    private String category; // e.g., "History", "True or False", etc.
+    private int correctIndex;
+    private Category category; // e.g., "History", "True or False", etc.
     private boolean isMultipleChoice; // True if it's a multiple choice question, false if it's true/false
 
-    public Question(String questionText, String[] options, String correctAnswer, String category, boolean isMultipleChoice) {
+    public Question(String questionText, String[] options, String correctAnswer, Category category, boolean isMultipleChoice) {
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
         this.category = category;
         this.isMultipleChoice = isMultipleChoice;
+        assignCorrectIndex();
+    }
+
+    public void assignCorrectIndex(){
+        for (int i = 0; i < options.length; i++){
+            if (options[i].equals(correctAnswer)){
+                correctIndex = i;
+                return;
+            }
+        }
+    }
+
+    public boolean isCorrect(int index){
+        return index == correctIndex; 
     }
 
     // Getters and setters
@@ -34,11 +49,12 @@ public class Question {
         return correctAnswer;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
     public boolean isMultipleChoice() {
         return isMultipleChoice;
     }
+
 }

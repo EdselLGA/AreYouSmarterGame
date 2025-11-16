@@ -13,16 +13,16 @@ public class SplashScreenPanel extends JPanel {
 
     // paths
     private static final String BACKGROUND =
-            "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\splash.png";
+            "assets/splash.png";
 
     private static final String PRESS_START =
-            "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\press_start.png";
+            "assets/press_start.png";
 
     private static final String TITLE_IMAGE =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\title.png";
+            "assets/title.png";
 
     private static final String CLOUD_IMAGE =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\Cloud.png";
+            "assets/Cloud.png";
 
     private Image bgImage;
 

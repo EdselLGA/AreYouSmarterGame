@@ -8,15 +8,15 @@ public class MenuOptionsPanel extends JPanel {
     private final GameWindow parent;
 
     private static final String BACKGROUND =
-            "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\splash.png";
+            "assets/splash.png";
     private static final String BTN_HOWTOPLAY =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\HOW TO PLAY.png";
+            "assets/HOW TO PLAY.png";
     private static final String BTN_HIGHSCORES =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\HIGHSCORES.png";
+            "assets/HIGHSCORES.png";
     private static final String BTN_SETTINGS =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\SETTINGS.png";
+            "assets/SETTINGS.png";
     private static final String BTN_BACK =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\BACK.png";
+            "/assets/BACK.png";
 
     private Image bgImage;
 
