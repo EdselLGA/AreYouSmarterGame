@@ -8,10 +8,9 @@ public class MainMenuPanel extends JPanel {
     private final GameWindow parent;
 
     private static final String BACKGROUND =
-            "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\splash.png";
-
+            "C:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\Background_2.png";
     private static final String BTN_START =
-            "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\START.png";
+            "C:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\START.png";
     private static final String BTN_MENU =
             "c:\\Users\\edsel\\AreYouSmarterGame-1\\assets\\MENU.png";
     private static final String BTN_EXIT =

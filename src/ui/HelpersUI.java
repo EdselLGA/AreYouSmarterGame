@@ -36,7 +36,6 @@ public class HelpersUI {
         Rectangle bounds =
                 SwingUtilities.convertRectangle(comp.getParent(), comp.getBounds(), owner);
 
-        // Overlay
         JWindow overlay = new JWindow(owner);
         overlay.setBackground(new Color(0, 0, 0, 0));
         overlay.setBounds(bounds);
