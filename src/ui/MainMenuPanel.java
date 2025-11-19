@@ -9,7 +9,6 @@ public class MainMenuPanel extends JPanel {
 
     private static final String BACKGROUND =
             "assets/splash.png";
-
     private static final String BTN_START =
             "assets/START.png";
     private static final String BTN_MENU =

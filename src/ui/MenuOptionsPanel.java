@@ -16,13 +16,12 @@ public class MenuOptionsPanel extends JPanel {
     private static final String BTN_SETTINGS =
             "assets/SETTINGS.png";
     private static final String BTN_BACK =
-            "/assets/BACK.png";
+            "assets\\BACK.png";
 
         private Image bgImage;
 
 
         public MenuOptionsPanel(GameWindow parent) {
-                
                 this.parent = parent;
                 setLayout(new GridBagLayout());
                 setOpaque(false);
@@ -73,6 +72,7 @@ public class MenuOptionsPanel extends JPanel {
         box.add(Box.createRigidArea(new Dimension(0, 20)));
 
         box.add(backBtn);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
 
         add(box);
     }
