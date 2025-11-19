@@ -8,7 +8,7 @@ public class MenuOptionsPanel extends JPanel {
         private final GameWindow parent;
 
     private static final String BACKGROUND =
-            "assets/splash.png";
+            "assets/background_2.png";
     private static final String BTN_HOWTOPLAY =
             "assets/HOW TO PLAY.png";
     private static final String BTN_HIGHSCORES =
@@ -46,14 +46,16 @@ public class MenuOptionsPanel extends JPanel {
         howToPlayBtn.addActionListener(e -> {
                 parent.switchTo(GameWindow.CARD_HOWTOPLAY);
                 JComponent howToPlay = parent.getScreen(GameWindow.CARD_HOWTOPLAY);
+                HelpersUI.fadeInComponent(howToPlay, 18, 0.06f, null);
         });
 
         highScoresBtn.addActionListener(e ->
                 JOptionPane.showMessageDialog(this, "HIGH SCORES feature coming soon!")
+                
         );
 
         settingsBtn.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "SETTINGS menu coming soon!")
+                parent.switchTo(GameWindow.CARD_SETTINGS)
         );
 
         backBtn.addActionListener(e -> {

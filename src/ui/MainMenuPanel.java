@@ -15,8 +15,11 @@ public class MainMenuPanel extends JPanel {
             "assets/MENU.png";
     private static final String BTN_EXIT =
             "assets/EXIT.png";
+    private static final String CLOUD =
+            "assets/Cloud.png";
 
     private Image bgImage;
+    private Image cloudImage;
 
     public MainMenuPanel(GameWindow parent) {
         this.parent = parent;
@@ -31,6 +34,17 @@ public class MainMenuPanel extends JPanel {
             bgImage = bgIc.getImage().getScaledInstance(
                     screen.width, screen.height, Image.SCALE_SMOOTH);
 
+        ImageIcon cloudIc = new ImageIcon(CLOUD);
+        if (cloudIc.getIconWidth() > 0) {
+            int cloudWidth = (int) (screen.width * 0.30);    
+            int cloudHeight = (int)((double) cloudIc.getIconHeight()/ 
+                    cloudIc.getIconWidth() * cloudWidth);
+
+            cloudImage = cloudIc.getImage().getScaledInstance(
+                    cloudWidth, cloudHeight, Image.SCALE_SMOOTH
+            );
+        }
+        
         JPanel menuBox = new JPanel();
         menuBox.setOpaque(false);
         menuBox.setLayout(new BoxLayout(menuBox, BoxLayout.Y_AXIS));
@@ -51,7 +65,6 @@ public class MainMenuPanel extends JPanel {
             HelpersUI.fadeInComponent(menu, 18, 0.06f, null);
         });
 
-
         exitBtn.addActionListener(e -> System.exit(0));
 
         menuBox.add(playBtn);
@@ -70,12 +83,13 @@ public class MainMenuPanel extends JPanel {
         ImageIcon rawIcon = new ImageIcon(imagePath);
 
         int newWidth = (int) (screen.width * 0.20);
-        int newHeight = (int) ((double) rawIcon.getIconHeight() / rawIcon.getIconWidth() * newWidth);
+        int newHeight = (int) ((double) rawIcon.getIconHeight() /
+                rawIcon.getIconWidth() * newWidth);
 
-        Image scaledImg = rawIcon.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(scaledImg);
+        Image scaledImg = rawIcon.getImage().getScaledInstance(
+                newWidth, newHeight, Image.SCALE_SMOOTH);
 
-        JButton btn = new JButton(scaledIcon);
+        JButton btn = new JButton(new ImageIcon(scaledImg));
 
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
@@ -98,6 +112,21 @@ public class MainMenuPanel extends JPanel {
             g.setColor(Color.GRAY);
             g.fillRect(0, 0, getWidth(), getHeight());
         }
-    }
 
+        if (cloudImage != null) {
+            int cloudW = cloudImage.getWidth(this);
+            int cloudH = cloudImage.getHeight(this);
+
+
+            int leftX = (int) (getWidth() * 0.03);   
+            int leftY = (int) (getHeight() * 0.05);  
+
+            int rightX = getWidth() - cloudW - (int)(getWidth() * 0.03);
+            int rightY = (int) (getHeight() * 0.09); 
+
+            g.drawImage(cloudImage, leftX, leftY, this);
+            g.drawImage(cloudImage, rightX, rightY, this);
+        }
+    }
 }
+

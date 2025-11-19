@@ -10,8 +10,6 @@ import javax.swing.*;
  */
 public class GameWindow extends JFrame {
 
-    
-
     private CardLayout layout;
     private JPanel mainPanel;
     private final Map<String, JComponent> screens = new HashMap<>();
@@ -21,6 +19,7 @@ public class GameWindow extends JFrame {
     public static final String CARD_GAME = "gameScreen";
     public static final String CARD_MENUOPTIONS = "menuOptions";
     public static final String CARD_HOWTOPLAY = "howToPlay";
+    public static final String CARD_SETTINGS = "settings";
 
 
     public GameWindow() {
@@ -41,7 +40,7 @@ public class GameWindow extends JFrame {
         addCard(CARD_GAME, new GameScreenPanel(this));
         addCard(CARD_MENUOPTIONS, new MenuOptionsPanel(this));
         addCard(CARD_HOWTOPLAY, new HowToPlayPanel(this));
-
+        addCard(CARD_SETTINGS, new SettingPanel(this));
 
         getContentPane().add(mainPanel);
 
