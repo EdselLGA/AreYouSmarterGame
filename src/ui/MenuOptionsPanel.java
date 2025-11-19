@@ -7,16 +7,16 @@ public class MenuOptionsPanel extends JPanel {
 
         private final GameWindow parent;
 
-        private static final String BACKGROUND =
-                "C:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\Background_3.png";      
-        private static final String BTN_HOWTOPLAY =
-                "c:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\HOW TO PLAY.png";
-        private static final String BTN_HIGHSCORES =
-                "c:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\HIGHSCORES.png";
-        private static final String BTN_SETTINGS =
-                "c:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\SETTINGS.png";
-        private static final String BTN_BACK =
-                "c:\\Users\\edsel\\AreYouSmarterGame-3\\assets\\BACK.png";
+    private static final String BACKGROUND =
+            "assets/splash.png";
+    private static final String BTN_HOWTOPLAY =
+            "assets/HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES =
+            "assets/HIGHSCORES.png";
+    private static final String BTN_SETTINGS =
+            "assets/SETTINGS.png";
+    private static final String BTN_BACK =
+            "/assets/BACK.png";
 
         private Image bgImage;
 

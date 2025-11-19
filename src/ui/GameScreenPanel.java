@@ -6,7 +6,7 @@ import javax.swing.*;
 public class GameScreenPanel extends JPanel {
 
     private final GameWindow parent;
-    private static final String BACKGROUND = "c:\\Users\\edsel\\AreYouSmarterGame-5\\assets\\splash.png";
+    private static final String BACKGROUND = "assets/splash.png";
     private Image bgImage;
 
     public GameScreenPanel(GameWindow parent) {
