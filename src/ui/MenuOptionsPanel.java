@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class MenuOptionsPanel extends JPanel {
 
-    private final GameWindow parent;
+        private final GameWindow parent;
 
     private static final String BACKGROUND =
             "assets/splash.png";
@@ -18,13 +18,14 @@ public class MenuOptionsPanel extends JPanel {
     private static final String BTN_BACK =
             "/assets/BACK.png";
 
-    private Image bgImage;
+        private Image bgImage;
 
-    public MenuOptionsPanel(GameWindow parent) {
-        this.parent = parent;
 
-        setLayout(new GridBagLayout());
-        setOpaque(false);
+        public MenuOptionsPanel(GameWindow parent) {
+                
+                this.parent = parent;
+                setLayout(new GridBagLayout());
+                setOpaque(false);
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -43,9 +44,10 @@ public class MenuOptionsPanel extends JPanel {
         JButton settingsBtn = makeImageButton(BTN_SETTINGS);
         JButton backBtn = makeImageButton(BTN_BACK);
 
-        howToPlayBtn.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "HOW TO PLAY screen coming soon!")
-        );
+        howToPlayBtn.addActionListener(e -> {
+                parent.switchTo(GameWindow.CARD_HOWTOPLAY);
+                JComponent howToPlay = parent.getScreen(GameWindow.CARD_HOWTOPLAY);
+        });
 
         highScoresBtn.addActionListener(e ->
                 JOptionPane.showMessageDialog(this, "HIGH SCORES feature coming soon!")
@@ -61,7 +63,6 @@ public class MenuOptionsPanel extends JPanel {
             HelpersUI.fadeInComponent(main, 18, 0.06f, null);
         });
 
-        // spacing
         box.add(howToPlayBtn);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
 
