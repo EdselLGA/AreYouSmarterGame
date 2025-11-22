@@ -1,30 +1,25 @@
 package ui;
 
+import Utils.Sound;
 import java.awt.*;
 import javax.swing.*;
 
 public class MenuOptionsPanel extends JPanel {
 
-        private final GameWindow parent;
+    private final GameWindow parent;
 
-    private static final String BACKGROUND =
-            "assets/background_2.png";
-    private static final String BTN_HOWTOPLAY =
-            "assets/HOW TO PLAY.png";
-    private static final String BTN_HIGHSCORES =
-            "assets/HIGHSCORES.png";
-    private static final String BTN_SETTINGS =
-            "assets/SETTINGS.png";
-    private static final String BTN_BACK =
-            "assets\\BACK.png";
+    private static final String BACKGROUND = "assets/background_2.png";
+    private static final String BTN_HOWTOPLAY = "assets/HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES = "assets/HIGHSCORES.png";
+    private static final String BTN_SETTINGS = "assets/SETTINGS.png";
+    private static final String BTN_BACK = "assets/BACK.png";
 
-        private Image bgImage;
+    private Image bgImage;
 
-
-        public MenuOptionsPanel(GameWindow parent) {
-                this.parent = parent;
-                setLayout(new GridBagLayout());
-                setOpaque(false);
+    public MenuOptionsPanel(GameWindow parent) {
+        this.parent = parent;
+        setLayout(new GridBagLayout());
+        setOpaque(false);
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -43,36 +38,50 @@ public class MenuOptionsPanel extends JPanel {
         JButton settingsBtn = makeImageButton(BTN_SETTINGS);
         JButton backBtn = makeImageButton(BTN_BACK);
 
+        //lighten hover
+        HelpersUI.addLightenOnHover(howToPlayBtn, 1.25f);
+        HelpersUI.addLightenOnHover(highScoresBtn, 1.25f);
+        HelpersUI.addLightenOnHover(settingsBtn, 1.25f);
+        HelpersUI.addLightenOnHover(backBtn, 1.25f);
+
+        //hover sfx (delayed)
+        HelpersUI.addHoverSFX(howToPlayBtn, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(highScoresBtn, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(settingsBtn, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(backBtn, "assets/Hover.wav");
+
         howToPlayBtn.addActionListener(e -> {
-                parent.switchTo(GameWindow.CARD_HOWTOPLAY);
-                JComponent howToPlay = parent.getScreen(GameWindow.CARD_HOWTOPLAY);
-                HelpersUI.fadeInComponent(howToPlay, 18, 0.06f, null);
+            parent.switchTo(GameWindow.CARD_HOWTOPLAY);
+            JComponent howToPlay = parent.getScreen(GameWindow.CARD_HOWTOPLAY);
+            HelpersUI.fadeInComponent(howToPlay, 18, 0.06f, null);
+            Sound.playSFX("assets/clicked.wav");
         });
 
-        highScoresBtn.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "HIGH SCORES feature coming soon!")
-                
-        );
+        highScoresBtn.addActionListener(e -> {
+            parent.switchTo(GameWindow.CARD_HIGHSCORES);
+            JComponent highScores = parent.getScreen(GameWindow.CARD_HIGHSCORES);
+            HelpersUI.fadeInComponent(highScores, 18, 0.06f, null);
+            Sound.playSFX("assets/clicked.wav");
+        });
 
-        settingsBtn.addActionListener(e ->
-                parent.switchTo(GameWindow.CARD_SETTINGS)
-        );
+        settingsBtn.addActionListener(e -> {
+            parent.switchTo(GameWindow.CARD_SETTINGS);
+            Sound.playSFX("assets/clicked.wav");
+        });
 
         backBtn.addActionListener(e -> {
             parent.switchTo(GameWindow.CARD_MAINMENU);
             JComponent main = parent.getScreen(GameWindow.CARD_MAINMENU);
             HelpersUI.fadeInComponent(main, 18, 0.06f, null);
+            Sound.playSFX("assets/clicked.wav");
         });
 
         box.add(howToPlayBtn);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
-
         box.add(highScoresBtn);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
-
         box.add(settingsBtn);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
-
         box.add(backBtn);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
 

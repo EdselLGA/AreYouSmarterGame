@@ -20,6 +20,7 @@ public class GameWindow extends JFrame {
     public static final String CARD_MENUOPTIONS = "menuOptions";
     public static final String CARD_HOWTOPLAY = "howToPlay";
     public static final String CARD_SETTINGS = "settings";
+    public static final String CARD_HIGHSCORES = "highScores";
 
 
     public GameWindow() {
@@ -41,6 +42,7 @@ public class GameWindow extends JFrame {
         addCard(CARD_MENUOPTIONS, new MenuOptionsPanel(this));
         addCard(CARD_HOWTOPLAY, new HowToPlayPanel(this));
         addCard(CARD_SETTINGS, new SettingPanel(this));
+        addCard(CARD_HIGHSCORES, new HighScorePanel(this));
 
         getContentPane().add(mainPanel);
 

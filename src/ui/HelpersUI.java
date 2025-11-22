@@ -3,13 +3,12 @@ package ui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
+import java.awt.image.RescaleOp;
 import javax.swing.*;
 
-/**
- * Helpers: fade-in overlay + simple throb animation.
- */
 public class HelpersUI {
 
+    //function: fade whole component
     public static void fadeInComponent(JComponent comp, int delayMs, float step, Runnable onDone) {
 
         if (comp == null || comp.getWidth() <= 0 || comp.getHeight() <= 0) {
@@ -20,9 +19,11 @@ public class HelpersUI {
         comp.revalidate();
         comp.repaint();
 
-        // Snapshot
-        BufferedImage snapshot = new BufferedImage(comp.getWidth(), comp.getHeight(),
-                BufferedImage.TYPE_INT_ARGB);
+        BufferedImage snapshot = new BufferedImage(
+                comp.getWidth(), comp.getHeight(),
+                BufferedImage.TYPE_INT_ARGB
+        );
+
         Graphics2D g2 = snapshot.createGraphics();
         comp.paint(g2);
         g2.dispose();
@@ -57,6 +58,7 @@ public class HelpersUI {
 
         Timer timer = new Timer(delayMs, null);
         timer.addActionListener((ActionEvent e) -> {
+
             alpha[0] += step;
             if (alpha[0] > 1f) alpha[0] = 1f;
 
@@ -73,6 +75,7 @@ public class HelpersUI {
         timer.start();
     }
 
+    //function: throb effect
     public static Timer createSimpleTextThrob(JLabel label, int delayMs, float minScale, float maxScale) {
         if (label == null) return null;
 
@@ -82,6 +85,7 @@ public class HelpersUI {
         Icon baseIcon = label.getIcon();
 
         Timer timer = new Timer(delayMs, ev -> {
+
             if (shrinking[0]) {
                 scale[0] -= 0.01f;
                 if (scale[0] <= minScale) shrinking[0] = false;
@@ -107,6 +111,141 @@ public class HelpersUI {
 
         timer.start();
         return timer;
+    }
+
+    //function: fade in/out
+    public static Timer createFadeInOut(JLabel label, int delayMs, float step) {
+        if (label == null) return null;
+
+        final float[] alpha = {0f};
+        final boolean[] fadingIn = {true};
+
+        JLabel fadingLabel = new JLabel(label.getIcon()) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setComposite(
+                        AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha[0])
+                );
+                super.paintComponent(g2);
+                g2.dispose();
+            }
+        };
+
+        fadingLabel.setBounds(label.getBounds());
+        fadingLabel.setAlignmentX(label.getAlignmentX());
+        fadingLabel.setOpaque(false);
+
+        Container parent = label.getParent();
+        if (parent != null) {
+
+            int index = -1;
+            Component[] comps = parent.getComponents();
+            for (int i = 0; i < comps.length; i++) {
+                if (comps[i] == label) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index != -1) {
+                parent.remove(label);
+                parent.add(fadingLabel, index);
+                parent.revalidate();
+                parent.repaint();
+            }
+        }
+
+        Timer timer = new Timer(delayMs, e -> {
+
+            if (fadingIn[0]) {
+                alpha[0] += step;
+                if (alpha[0] >= 1f) {
+                    alpha[0] = 1f;
+                    fadingIn[0] = false;
+                }
+            } else {
+                alpha[0] -= step;
+                if (alpha[0] <= 0f) {
+                    alpha[0] = 0f;
+                    fadingIn[0] = true;
+                }
+            }
+
+            fadingLabel.repaint();
+        });
+
+        timer.start();
+        return timer;
+    }
+
+    //function: lighten icon
+    public static ImageIcon lightenIcon(ImageIcon icon, float brightness) {
+
+        int w = icon.getIconWidth();
+        int h = icon.getIconHeight();
+
+        BufferedImage buff = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buff.createGraphics();
+        g.drawImage(icon.getImage(), 0, 0, null);
+        g.dispose();
+
+        float[] brightArr = {brightness, brightness, brightness, 1f};
+        float[] offsetArr = {0, 0, 0, 0};
+
+        RescaleOp op = new RescaleOp(brightArr, offsetArr, null);
+        BufferedImage bright = op.filter(buff, null);
+
+        return new ImageIcon(bright);
+    }
+
+    //function: lighten on hover
+    public static void addLightenOnHover(JButton btn, float brightness) {
+
+        ImageIcon normal = (ImageIcon) btn.getIcon();
+        ImageIcon bright = lightenIcon(normal, brightness);
+
+        btn.addMouseListener(new java.awt.event.MouseAdapter() {
+
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                btn.setIcon(bright);
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                btn.setIcon(normal);
+            }
+        });
+    }
+
+    //function: hover sfx (delayed)
+    public static void addHoverSFX(JButton button, String soundPath) {
+
+        button.addMouseListener(new java.awt.event.MouseAdapter() {
+
+            private Timer hoverTimer;
+
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+
+                hoverTimer = new Timer(200, ev -> {
+                    Utils.Sound.playSFX(soundPath);
+                    hoverTimer.stop();
+                });
+
+                hoverTimer.setRepeats(false);
+                hoverTimer.start();
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+
+                if (hoverTimer != null && hoverTimer.isRunning()) {
+                    hoverTimer.stop();
+                }
+            }
+        });
     }
 }
 

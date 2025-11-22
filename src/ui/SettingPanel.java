@@ -1,5 +1,6 @@
 package ui;
 
+import Utils.Sound;
 import java.awt.*;
 import javax.swing.*;
 
@@ -50,12 +51,18 @@ public class SettingPanel extends JPanel {
         add(centerWrapper, BorderLayout.CENTER);
 
         JButton backBtn = makeImageButton(BTN_BACK);
+        //lighten hover
+        HelpersUI.addLightenOnHover(backBtn, 1.25f);
+        //sfx hover
+        HelpersUI.addHoverSFX(backBtn, "assets/Hover.wav");
+
         backBtn.addActionListener(e -> {
             parent.switchTo(GameWindow.CARD_MENUOPTIONS);
             HelpersUI.fadeInComponent(
                     parent.getScreen(GameWindow.CARD_MENUOPTIONS),
                     18, 0.06f, null
             );
+            Sound.playSFX("assets/clicked.wav");
         });
 
         JPanel bottomLeftWrapper = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 20));

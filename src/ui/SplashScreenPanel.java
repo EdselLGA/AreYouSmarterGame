@@ -1,8 +1,9 @@
 package ui;
 
+import Utils.Sound;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
+import javax.swing.*;  
 
 public class SplashScreenPanel extends JPanel {
 
@@ -28,9 +29,11 @@ public class SplashScreenPanel extends JPanel {
 
     public SplashScreenPanel(GameWindow parent) {
         this.parent = parent;
-        setLayout(new BorderLayout());   
+        setLayout(new BorderLayout());
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
+        Sound.playBGM("assets/BgMusic.wav");  
 
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(screen);
@@ -76,7 +79,7 @@ public class SplashScreenPanel extends JPanel {
         titleLabel.setIcon(new ImageIcon(titleBaseImage));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        titlePulseTimer = new Timer(60, null); 
+        titlePulseTimer = new Timer(60, null);
         final float[] scale = {1.0f};
         final boolean[] shrinking = {true};
 
@@ -111,7 +114,7 @@ public class SplashScreenPanel extends JPanel {
         }
         pressLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        throbTimer = HelpersUI.createSimpleTextThrob(pressLabel, 60, 0.98f, 1.02f);
+        throbTimer = HelpersUI.createFadeInOut(pressLabel, 35, 0.03f);
 
         content.add(Box.createVerticalGlue());
         content.add(titleLabel);
@@ -124,6 +127,7 @@ public class SplashScreenPanel extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+                Sound.playSFX("assets/Clicked.wav"); 
                 proceed();
             }
         });
@@ -132,6 +136,7 @@ public class SplashScreenPanel extends JPanel {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
+                Sound.playSFX("assets/Clicked.wav"); 
                 proceed();
             }
         });
@@ -143,7 +148,7 @@ public class SplashScreenPanel extends JPanel {
             }
         });
 
-        new Timer(8000, e -> proceed()).start();
+        new Timer(80000, e -> proceed()).start();
     }
 
     private void proceed() {

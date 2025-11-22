@@ -1,4 +1,6 @@
 package ui;
+
+import Utils.Sound;
 import java.awt.*;
 import javax.swing.*;
 
@@ -6,12 +8,10 @@ public class HowToPlayPanel extends JPanel {
 
     private final GameWindow parent;
 
-    private static final String BACKGROUND =
-            "assets/Background_3.png";
-    private static final String HOWTOPLAY =
-            "assets/HowToPlay.png";
-    private static final String BTN_BACK =
-            "assets/BACK.png";
+    private static final String BACKGROUND = "assets/Background_3.png";
+    private static final String HOWTOPLAY = "assets/HowToPlay.png";
+    private static final String BTN_BACK = "assets/BACK.png";
+
     private Image bgImage;
 
     public HowToPlayPanel(GameWindow parent) {
@@ -43,10 +43,16 @@ public class HowToPlayPanel extends JPanel {
 
         JButton backBtn = makeImageButton(BTN_BACK);
 
+        //lighten hover
+        HelpersUI.addLightenOnHover(backBtn, 1.25f);
+        //sfx hover
+        HelpersUI.addHoverSFX(backBtn, "assets/Hover.wav");
+
         backBtn.addActionListener(e -> {
             parent.switchTo(GameWindow.CARD_MENUOPTIONS);
             JComponent menu = parent.getScreen(GameWindow.CARD_MENUOPTIONS);
             HelpersUI.fadeInComponent(menu, 18, 0.06f, null);
+            Sound.playSFX("assets/clicked.wav");
         });
 
         JPanel bottomLeft = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 20));
@@ -61,7 +67,7 @@ public class HowToPlayPanel extends JPanel {
 
         ImageIcon rawIcon = new ImageIcon(imagePath);
         int newWidth = (int) (screen.width * 0.15);
-        int newHeight = (int)((double) rawIcon.getIconHeight() /
+        int newHeight = (int) ((double) rawIcon.getIconHeight() /
                 rawIcon.getIconWidth() * newWidth);
 
         Image scaled = rawIcon.getImage().getScaledInstance(
@@ -84,15 +90,14 @@ public class HowToPlayPanel extends JPanel {
 
         int newWidth = (int) (screen.width * widthPercent);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /
-            rawIcon.getIconWidth() * newWidth);
+                rawIcon.getIconWidth() * newWidth);
 
         Image scaled = rawIcon.getImage().getScaledInstance(
-            newWidth, newHeight, Image.SCALE_SMOOTH
+                newWidth, newHeight, Image.SCALE_SMOOTH
         );
 
         return new JLabel(new ImageIcon(scaled));
     }
-
 
     @Override
     protected void paintComponent(Graphics g) {
