@@ -65,7 +65,8 @@ public class MainMenuPanel extends JPanel {
             Sound.stopBGM();
             Sound.isMenuMusicPlaying = false;
 
-            Sound.playBGM("assets/GameMusic.wav");
+            Sound.playBGM("assets/GameBg.wav");
+            Sound.setBGMVolume(80);
 
             parent.switchTo(GameWindow.CARD_GAME);
             HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_GAME),
@@ -77,6 +78,7 @@ public class MainMenuPanel extends JPanel {
             HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_MENUOPTIONS),
                     18, 0.06f, null);
             Sound.playSFX("assets/Clicked.wav");
+            
         });
 
         exitBtn.addActionListener(e -> {

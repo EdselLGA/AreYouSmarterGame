@@ -10,28 +10,43 @@ public class Sound {
     public static boolean isMenuMusicPlaying = false;
     public static boolean comingFromGame = false;
 
-    // Save point for menu music
+    public static float MenusVolume = -25.0f;  // default menu BGM volume (dB)
+    public static float SFXVolume   = -5.0f;   // default SFX volume (dB)
+
+    // Save menu music position
     public static long menuMusicPosition = 0;
 
+    // Getter so SettingPanel can access the clip safely
+    public static Clip getBGMClip() {
+        return bgmClip;
+    }
+
+
+    /** ---------------------------
+     *  PLAY SOUND EFFECT
+     *  --------------------------- */
     public static void playSFX(String path) {
         try {
             AudioInputStream audio = AudioSystem.getAudioInputStream(new File(path));
             Clip clip = AudioSystem.getClip();
             clip.open(audio);
 
-        // soften volume
-        try {
-            FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            gain.setValue(-7.0f);   // change this value to control softness
-        } catch (Exception ignore) {}
+            try {
+                FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gain.setValue(SFXVolume);
+            } catch (Exception ignore) {}
 
-        clip.start();
+            clip.start();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 
+    /** ---------------------------
+     *  PLAY BGM (MENU OR GAME)
+     *  --------------------------- */
     public static void playBGM(String path) {
 
         if (isMenuMusicPlaying) {
@@ -39,23 +54,22 @@ public class Sound {
         }
 
         try {
-            stopOnly();  
+            stopOnly();
 
             AudioInputStream audio = AudioSystem.getAudioInputStream(new File(path));
             bgmClip = AudioSystem.getClip();
             bgmClip.open(audio);
 
-            // Default volume
             try {
                 FloatControl gain = (FloatControl) bgmClip.getControl(FloatControl.Type.MASTER_GAIN);
-                gain.setValue(-25.0f);
+                gain.setValue(MenusVolume);
             } catch (Exception ignore) {}
 
-            // Resume ONLY if this is menu music
+            // Resume menu music
             if (path.contains("BgMusic") && menuMusicPosition > 0) {
                 bgmClip.setMicrosecondPosition(menuMusicPosition);
             } else {
-                menuMusicPosition = 0; // fresh start for new songs
+                menuMusicPosition = 0;
             }
 
             bgmClip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -68,10 +82,8 @@ public class Sound {
         }
     }
 
-    /**
-     * Stop BGM but DO NOT reset position.
-     * This is used when switching temporarily (ex: going to GameScreen, gamescreen -> mainmenu).
-     */
+
+    /** Stop BGM but keep saved menu position */
     public static void stopOnly() {
         if (bgmClip != null) {
             try {
@@ -81,19 +93,22 @@ public class Sound {
             if (bgmClip.isRunning())
                 bgmClip.stop();
         }
+
         isMenuMusicPlaying = false;
     }
 
+
+    /** Completely stop BGM and reset */
     public static void stopBGM() {
-        if (bgmClip != null) {
-            if (bgmClip.isRunning())
-                bgmClip.stop();
-        }
-        menuMusicPosition = 0;
+        if (bgmClip != null && bgmClip.isRunning())
+            bgmClip.stop();
 
+        menuMusicPosition = 0;
         isMenuMusicPlaying = false;
     }
 
+
+    /** Adjust BGM volume by percent (unused but safe to keep) */
     public static void setBGMVolume(int volumePercent) {
         if (bgmClip == null) return;
 
@@ -104,7 +119,6 @@ public class Sound {
             float max = gain.getMaximum();
 
             float value = min + (max - min) * (volumePercent / 100f);
-
             gain.setValue(value);
 
         } catch (Exception e) {
@@ -112,4 +126,5 @@ public class Sound {
         }
     }
 }
+
 

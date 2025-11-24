@@ -229,7 +229,7 @@ public class HelpersUI {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
 
-                hoverTimer = new Timer(200, ev -> {
+                hoverTimer = new Timer(400, ev -> {
                     Utils.Sound.playSFX(soundPath);
                     hoverTimer.stop();
                 });

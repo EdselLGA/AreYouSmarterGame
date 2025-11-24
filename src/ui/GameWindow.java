@@ -5,9 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.*;
 
-/**
- * Fullscreen borderless Game Window with CardLayout.
- */
+//Fullscreen borderless Game Window with CardLayout.
 public class GameWindow extends JFrame {
 
     private CardLayout layout;
