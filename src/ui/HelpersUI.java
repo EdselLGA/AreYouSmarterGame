@@ -1,5 +1,6 @@
 package ui;
 
+import Utils.Sound;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
@@ -8,7 +9,7 @@ import javax.swing.*;
 
 public class HelpersUI {
 
-    //function: fade whole component
+    // function: fade whole component
     public static void fadeInComponent(JComponent comp, int delayMs, float step, Runnable onDone) {
 
         if (comp == null || comp.getWidth() <= 0 || comp.getHeight() <= 0) {
@@ -75,7 +76,7 @@ public class HelpersUI {
         timer.start();
     }
 
-    //function: throb effect
+    // function: throb effect
     public static Timer createSimpleTextThrob(JLabel label, int delayMs, float minScale, float maxScale) {
         if (label == null) return null;
 
@@ -113,7 +114,7 @@ public class HelpersUI {
         return timer;
     }
 
-    //function: fade in/out
+    // function: fade in/out
     public static Timer createFadeInOut(JLabel label, int delayMs, float step) {
         if (label == null) return null;
 
@@ -179,7 +180,7 @@ public class HelpersUI {
         return timer;
     }
 
-    //function: lighten icon
+    // function: lighten icon
     public static ImageIcon lightenIcon(ImageIcon icon, float brightness) {
 
         int w = icon.getIconWidth();
@@ -199,7 +200,7 @@ public class HelpersUI {
         return new ImageIcon(bright);
     }
 
-    //function: lighten on hover
+    // function: hover lighten
     public static void addLightenOnHover(JButton btn, float brightness) {
 
         ImageIcon normal = (ImageIcon) btn.getIcon();
@@ -219,7 +220,7 @@ public class HelpersUI {
         });
     }
 
-    //function: hover sfx (delayed)
+    // function: hover SFX
     public static void addHoverSFX(JButton button, String soundPath) {
 
         button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -230,7 +231,7 @@ public class HelpersUI {
             public void mouseEntered(java.awt.event.MouseEvent e) {
 
                 hoverTimer = new Timer(400, ev -> {
-                    Utils.Sound.playSFX(soundPath);
+                    Sound.playSFX(soundPath);
                     hoverTimer.stop();
                 });
 
@@ -247,5 +248,33 @@ public class HelpersUI {
             }
         });
     }
-}
 
+    // function: auto-close error popup (image only)
+    public static void showErrorAutoClose(Component parent) {
+
+        Sound.playSFX("assets/Error.wav");
+
+        JDialog dialog = new JDialog((Frame) null, "Error", true);
+        dialog.setUndecorated(true);
+
+        ImageIcon icon = new ImageIcon("assets/Error.png");
+
+        JLabel label = new JLabel(icon, JLabel.CENTER);
+        label.setOpaque(true);
+        label.setBackground(new Color(255, 255, 255));
+        label.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+        dialog.add(label);
+        dialog.pack();
+        dialog.setLocationRelativeTo(parent);
+
+        dialog.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+            dialog.dispose();
+        }
+        });
+
+        dialog.setVisible(true);
+    }
+}

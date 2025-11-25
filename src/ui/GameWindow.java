@@ -1,5 +1,6 @@
 package ui;
 
+import core.GameLogic;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,9 @@ public class GameWindow extends JFrame {
 
     private CardLayout layout;
     private JPanel mainPanel;
+    private GameLogic gameLogic;
+
+
     private final Map<String, JComponent> screens = new HashMap<>();
 
     public static final String CARD_SPLASH = "splash";
@@ -19,7 +23,9 @@ public class GameWindow extends JFrame {
     public static final String CARD_HOWTOPLAY = "howToPlay";
     public static final String CARD_SETTINGS = "settings";
     public static final String CARD_HIGHSCORES = "highScores";
-
+    public static final String CARD_INPUTNAME = "inputName";
+    public static final String CARD_CURRENTWINNINGS = "currentWinnings";
+    public static final String CARD_QUESTION = "questionPanel";
 
     public GameWindow() {
         super("Are You Smarter Than a 5th Grader?");
@@ -30,6 +36,7 @@ public class GameWindow extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH); // fullscreen on display
 
         layout = new CardLayout();
+        gameLogic = new GameLogic();
         mainPanel = new JPanel(layout);
         
 
@@ -41,6 +48,11 @@ public class GameWindow extends JFrame {
         addCard(CARD_HOWTOPLAY, new HowToPlayPanel(this));
         addCard(CARD_SETTINGS, new SettingPanel(this));
         addCard(CARD_HIGHSCORES, new HighScorePanel(this));
+        addCard(CARD_INPUTNAME, new InputNamePanel(this));
+        addCard(CARD_CURRENTWINNINGS, new Current_Winnings(this));
+        addCard(CARD_QUESTION, new GameQuestionPanel(this));
+
+        
 
         getContentPane().add(mainPanel);
 
@@ -71,5 +83,9 @@ public class GameWindow extends JFrame {
 
     public JComponent getScreen(String name) {
         return screens.get(name);
+    }
+
+    public GameLogic getGameLogic() {
+        return gameLogic;
     }
 }

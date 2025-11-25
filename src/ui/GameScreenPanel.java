@@ -14,7 +14,6 @@ public class GameScreenPanel extends JPanel {
     private static final String BTN_GUESS = "assets/GuessthePara.png";
     private static final String BTN_TRUEFALSE = "assets/TrueFalse.png";
     private static final String BTN_SNIPPETS = "assets/CodeSnip.png";
-
     private static final String BTN_BACK = "assets/BACK.png";
     private static final String CHARLIE = "assets/charlie.png";
 
@@ -52,7 +51,7 @@ public class GameScreenPanel extends JPanel {
         // This panel contains the buttons (2×2)
         JPanel centerPanel = new JPanel(new GridLayout(2, 2, 10, 10));
         centerPanel.setOpaque(false);
-        centerPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); 
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         centerPanel.add(makeLargeButton(BTN_HISTORY, "HISTORY"));
         centerPanel.add(makeLargeButton(BTN_GUESS, "GUESS"));
@@ -65,7 +64,6 @@ public class GameScreenPanel extends JPanel {
         // Add middleContainer to the screen CENTER
         add(middleContainer, BorderLayout.CENTER);
 
-        
         // BOTTOM — BACK BUTTON
         JPanel bottom = new JPanel(new BorderLayout());
         bottom.setOpaque(false);
@@ -73,14 +71,13 @@ public class GameScreenPanel extends JPanel {
         JButton backBtn = makeSmallButton(BTN_BACK, "BACK");
         HelpersUI.addLightenOnHover(backBtn, 1.25f);
         HelpersUI.addHoverSFX(backBtn, "assets/Hover.wav");
-        
+
         backBtn.addActionListener(e -> {
             Sound.comingFromGame = true;
-            parent.switchTo(GameWindow.CARD_MAINMENU);
-            HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_MAINMENU),
+            parent.switchTo(GameWindow.CARD_INPUTNAME);
+            HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_INPUTNAME),
                     18, 0.06f, null);
             Sound.playSFX("assets/Clicked.wav");
-            
         });
 
         bottom.add(backBtn, BorderLayout.WEST);
@@ -125,9 +122,7 @@ public class GameScreenPanel extends JPanel {
 
         HelpersUI.addLightenOnHover(btn, 1.25f);
 
-        btn.addActionListener(e ->
-                Sound.playSFX("assets/Clicked.wav")
-        );
+        btn.addActionListener(e -> Sound.playSFX("assets/Clicked.wav"));
 
         return btn;
     }
