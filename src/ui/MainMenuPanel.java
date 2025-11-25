@@ -2,7 +2,6 @@ package ui;
 
 import Utils.Sound;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class MainMenuPanel extends JPanel {
@@ -49,16 +48,17 @@ public class MainMenuPanel extends JPanel {
 
         JButton playBtn = makeImageButton(BTN_START);
         HelpersUI.addHoverSFX(playBtn, "assets/Hover.wav");
-        HelpersUI.addLightenOnHover(playBtn, 1.25f); //lighten hover
+        HelpersUI.addLightenOnHover(playBtn, 1.25f);
 
         JButton menuBtn = makeImageButton(BTN_MENU);
         HelpersUI.addHoverSFX(menuBtn, "assets/Hover.wav");
-        HelpersUI.addLightenOnHover(menuBtn, 1.25f); //lighten hover
+        HelpersUI.addLightenOnHover(menuBtn, 1.25f);
 
         JButton exitBtn = makeImageButton(BTN_EXIT);
         HelpersUI.addHoverSFX(exitBtn, "assets/Hover.wav");
-        HelpersUI.addLightenOnHover(exitBtn, 1.25f); //lighten hover
+        HelpersUI.addLightenOnHover(exitBtn, 1.25f);
 
+        // ===== FIXED: Now goes to NAME INPUT SCREEN =====
         playBtn.addActionListener(e -> {
             Sound.playSFX("assets/Clicked.wav");
 
@@ -68,9 +68,9 @@ public class MainMenuPanel extends JPanel {
             Sound.playBGM("assets/GameBg.wav");
             Sound.setBGMVolume(80);
 
-            parent.switchTo(GameWindow.CARD_GAME);
-            HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_GAME),
-                    18, 0.06f, null);
+            parent.switchTo(GameWindow.CARD_NAMEINPUT);   // <--- CORRECT
+            HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_NAMEINPUT),
+                                      18, 0.06f, null);
         });
 
         menuBtn.addActionListener(e -> {
@@ -78,7 +78,6 @@ public class MainMenuPanel extends JPanel {
             HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_MENUOPTIONS),
                     18, 0.06f, null);
             Sound.playSFX("assets/Clicked.wav");
-            
         });
 
         exitBtn.addActionListener(e -> {
@@ -93,21 +92,6 @@ public class MainMenuPanel extends JPanel {
         menuBox.add(exitBtn);
 
         add(menuBox);
-
-        addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentShown(ComponentEvent e) {
-
-                if (!Sound.comingFromGame)
-                    return;
-
-                Sound.comingFromGame = false;
-
-                Sound.stopBGM();
-                Sound.isMenuMusicPlaying = false;
-                Sound.playBGM("assets/BgMusic.wav");
-            }
-        });
     }
 
     private JButton makeImageButton(String imagePath) {
@@ -145,7 +129,6 @@ public class MainMenuPanel extends JPanel {
 
         if (cloudImage != null) {
             int cloudW = cloudImage.getWidth(this);
-            int cloudH = cloudImage.getHeight(this);
 
             g.drawImage(cloudImage, (int) (getWidth() * 0.03),
                     (int) (getHeight() * 0.05), this);

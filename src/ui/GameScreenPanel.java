@@ -14,7 +14,6 @@ public class GameScreenPanel extends JPanel {
     private static final String BTN_GUESS = "assets/GuessthePara.png";
     private static final String BTN_TRUEFALSE = "assets/TrueFalse.png";
     private static final String BTN_SNIPPETS = "assets/CodeSnip.png";
-
     private static final String BTN_BACK = "assets/BACK.png";
     private static final String CHARLIE = "assets/charlie.png";
 
