@@ -1,14 +1,19 @@
 // Stores questions by category
 package core;
 
-import java.io.FileReader;
-import java.lang.classfile.instruction.DiscontinuedInstruction.JsrInstruction;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 
 public class QuestionBank{
@@ -26,7 +31,7 @@ public class QuestionBank{
         List<Question> availableQuestions = questions.stream()
             .filter(q -> !askedQuestions.contains(q))
             .toList();
-        if(!availableQuestions.isEmpty()){
+        if(availableQuestions.isEmpty()){
             throw new IllegalStateException("No more questions available in this category");
         }
 
@@ -53,13 +58,68 @@ public class QuestionBank{
         askedQuestions.clear();
     }
 
-    private void loadQuestions(){ //Load Questions from JSON file
-        // Implementation to load questions from a JSON file into questionsByCategory map
-        // This is a placeholder for actual loading logic
+        private void loadQuestions() {
+        String fileName = "assets/questions.json";
 
-        String fileName = "questions.json";
-//        try ( JsonReader reader = Json.createReader(new FileReader(fileName)) ){
-//            
-//       }
+        try {
+            // Read JSON file
+            String json = new String(Files.readAllBytes(Paths.get(fileName)));
+
+            // Parse with GSON
+            Gson gson = new Gson();
+            Map<String, List<QuestionItem>> categoriesJson = gson.fromJson(
+                    json,
+                    new TypeToken<Map<String, List<QuestionItem>>>(){}.getType()
+            );
+
+            // Transform to Question objects and organize by category
+            for (Map.Entry<String, List<QuestionItem>> entry : categoriesJson.entrySet()) {
+                String categoryName = entry.getKey();
+                Category category = mapToCategory(categoryName);
+
+                List<Question> questions = new ArrayList<>();
+
+                for (QuestionItem item : entry.getValue()) {
+                    boolean isMultipleChoice = "multiple".equals(item.getType());
+
+                    String[] options;
+                    if (isMultipleChoice) {
+                        options = item.getChoices().toArray(new String[0]);
+                    } else {
+                        // True/False questions
+                        options = new String[]{"True", "False"};
+                    }
+
+                    questions.add(new Question(
+                            item.getQuestion(),
+                            options,
+                            item.getAnswer(),
+                            category,
+                            isMultipleChoice
+                    ));
+                }
+
+                questionsByCategory.put(category, questions);
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error loading questions: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+    private Category mapToCategory(String categoryName) {
+        switch (categoryName) {
+            case "History":
+                return Category.HISTORY;
+            case "GuessTheParadigm":
+                return Category.GUESS_THE_PARADIGM;
+            case "TrueOrFalse":
+                return Category.TRUE_OR_FALSE;
+            case "CodeSnippets":
+                return Category.CODE_SNIPPETS;
+            default:
+                throw new IllegalArgumentException("Unknown category: " + categoryName);
+        }
+    }
+
 }

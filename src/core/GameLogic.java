@@ -1,138 +1,88 @@
 // Handles scoring, winnings, progression
 package core;
 
-import java.util.List;
-import java.util.Map;
-import player.Player;
 
 public class GameLogic {
-    // Implementation of game logic goes here
-    private Player player;
-    private Question currentQuestion;
-    private int questionNumber;
-    private int totalWinnings;
+    private GameModel model;
+    private boolean isOver;
 
-    private Map<Category, Integer> categoryUseCount;
-    private QuestionBank questionBank;
+    public GameLogic(GameModel model){
+        this.model = model;
+        this.isOver = false;
 
-    private Helper currentHelper;
-    private List<Helper> helpers;
-    private int questionsWithCurrentHelper; //0-2 counter
-    private int helperSuggestionIndex;
-
-    public GameLogic(){
-        this.questionBank = new QuestionBank();
     }
 
-    public void reset(){
-        questionNumber = 1;
-        totalWinnings = 0;
-        questionsWithCurrentHelper = 0;
-        player.resetLifelines(); 
-        helpers = initializeHelpers();
-        currentHelper = null;
-        helperSuggestionIndex = -1;
-        currentQuestion = null;
-        questionBank.reset();
+    
+    public void startGame(){
+        System.out.println("HELLO WORLD");
+        model.reset();
     }
 
-    private List<Helper> initializeHelpers(){
-        // Initialize helpers with different accuracy percentages
-        return List.of(
-            new Helper("A", 20),
-            new Helper("B", 40),
-            new Helper("C", 60),
-            new Helper("D", 80),
-            new Helper("E", 100)
-        );
+    public void selectHelper(int index){
+        // Selecting a helper
+        model.setHelper(index);
     }
 
-    public boolean needsNewHelper(){
-        return questionsWithCurrentHelper >= 2 &&
-                questionNumber <= 10 &&
-                !helpers.isEmpty();
-    }
-    public void assignNewHelper(Helper helper){
-        currentHelper = helper;
-        helpers.remove(helper);
-        questionsWithCurrentHelper = 0;
-    }
-    public void incremenetQuestionCounters(){
-        questionNumber++;
-        questionsWithCurrentHelper++;
-    }
-    public boolean canUseLifeline(){
-        return questionNumber <= 10;
-    }
-    public void incrementCategoryUse(Category category){
-        categoryUseCount.put(category, categoryUseCount.get(category) + 1);
-    }
-    public boolean canUseCategory(Category category){
-        return categoryUseCount.get(category) < 2;
-    }
-    public void incrementScore(int amount){
-        totalWinnings += amount;
-        player.addWinnings(amount);
+    public void selectCategory(int index){
+        model.setCurrentCategory(index);
     }
 
-    public String getPlayerName(){
-        return player.getName();
-    }
-    public void setPlayer(Player player){
-        this.player = player;
-    }
-
-    public Helper getCurrentHelper(){
-        return currentHelper;
-    }
-    public void setCurrentHelper(Helper helper){
-        this.currentHelper = helper;
+    public void nextQuestion(){
+        // if helper == 2
+        // if category == 2
+        // getQuestion
     }
 
-    public List<Helper> getHelpers(){
-        return helpers;
-    }
-    public int getHelperSuggestionIndex(){
-        return helperSuggestionIndex;
-    }
-    public void setHelperSuggestionIndex(int index){
-        this.helperSuggestionIndex = index;
+    public void getQuestion(){
+        if (model.canUseCategory(model.getCurrentCategory())){
+            model.setCurrentQuestion(model.getQuestionBank().getQuestion(model.getCurrentCategory()));
+        }
     }
 
-    public Question getCurrentQuestion(){
-        return currentQuestion;
-    }
-    public void setCurrentQuestion(Question question){
-        this.currentQuestion = question;
-    }
-
-    public int getQuestionNumber(){
-        return questionNumber;
-    }
-    public int setQuestionNumber(int number){
-        return questionNumber = number;
+    public void getQuestionTest(){
+        model.setCurrentCategory(0);
+        model.setHelper(0);
+        if (model.canUseCategory(model.getCurrentCategory())){
+            model.setCurrentQuestion(model.getQuestionBank().getQuestion(model.getCurrentCategory()));
+        }
+        System.out.println(model.getCurrentQuestion());
+        System.out.println(model.getCurrentQuestion().getCorrectAnswer());
+        System.out.println(model.getCurrentQuestion().getQuestionText());
     }
 
-    public int getTotalWinnings(){
-        return totalWinnings;
+    public Question showQuestion(){
+        //model.getQuestionBank().getQuestion(model.currentCategory);
+        return model.getCurrentQuestion();
+    }
+    public boolean validateQuestion(int index){
+        boolean answer = model.getCurrentQuestion().isCorrect(index);
+        if(answer){
+            System.out.println("correct Answer");
+            model.incrementScore(100);
+            
+            // proceed to next question
+            // show category if not yet
+            // show helper if need new helper
+        }
+        else{
+            System.out.println("Wrong Answer");
+            // show wrong game screen
+            // use save lifeline if not used
+            if(!model.isSaveUsed()){
+                //use save
+            }
+            else{
+                //end game
+            }
+        }
+        model.updateHelperUsage();
+        model.incrementCategoryUse(model.getCurrentCategory());
+        return answer;
     }
 
-    public Map<Category, Integer> getCategoryUseCount(){
-        return categoryUseCount;
+    public void showResults(){
+
     }
 
-    public boolean isPeekUsed(){
-        return player.getPeekLifeline().isUsed();
-    }
-    public boolean isCopyUsed(){
-        return player.getCopyLifeline().isUsed();
-    }
-    public boolean isSaveUsed(){
-        return player.getSaveLifeline().isUsed();
-    }
-
-    public QuestionBank getQuestionBank(){
-        return questionBank;
-    }
 
 }
