@@ -66,7 +66,7 @@ public class MainMenuPanel extends JPanel {
             Sound.isMenuMusicPlaying = false;
 
             Sound.playBGM("assets/GameBg.wav");
-            Sound.setBGMVolume(70);
+            Sound.setBGMVolume(100);
 
             parent.switchTo(GameWindow.CARD_INPUTNAME);
             HelpersUI.fadeInComponent(parent.getScreen(GameWindow.CARD_INPUTNAME),

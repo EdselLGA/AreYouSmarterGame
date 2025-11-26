@@ -143,9 +143,9 @@ public class SettingPanel extends JPanel {
 
         if (v <= -60f) return 0;
         if (v <= -20f) return 1;
-        if (v <= -10f) return 2;
-        if (v <= -6f)  return 3;
-        if (v <= -3f)  return 4;
+        if (v <= 0f) return 2;
+        if (v <= 3f)  return 3;
+        if (v <= 6f)  return 4;
         return 5;
     }
 
@@ -159,7 +159,7 @@ public class SettingPanel extends JPanel {
             case 4: return -2f;
             case 5: return 0f;
         }
-        return -10f;
+        return -10f; 
     }
 
     private float mapSFXdB(int tick) {
@@ -167,9 +167,9 @@ public class SettingPanel extends JPanel {
             case 0: return -80f;
             case 1: return -20f;
             case 2: return -10f;
-            case 3: return -6f;
-            case 4: return -3f;
-            case 5: return 0f;
+            case 3: return 0f;
+            case 4: return 3f;
+            case 5: return 6f;
         }
         return -10f;
     }

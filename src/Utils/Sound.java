@@ -10,8 +10,8 @@ public class Sound {
     public static boolean isMenuMusicPlaying = false;
     public static boolean comingFromGame = false;
 
-    public static float MenusVolume = -25.0f;  // default menu BGM volume (dB)
-    public static float SFXVolume   = -5.0f;   // default SFX volume (dB)
+    public static float MenusVolume = -6.0f;  // default menu BGM volume (dB)
+    public static float SFXVolume   = 6f;   // default SFX volume (dB)
 
     // Save menu music position
     public static long menuMusicPosition = 0;
@@ -33,7 +33,8 @@ public class Sound {
 
             try {
                 FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                gain.setValue(SFXVolume);
+                gain.setValue(SFXVolume); 
+
             } catch (Exception ignore) {}
 
             clip.start();

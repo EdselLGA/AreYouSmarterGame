@@ -230,7 +230,7 @@ public class HelpersUI {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
 
-                hoverTimer = new Timer(400, ev -> {
+                hoverTimer = new Timer(300, ev -> {
                     Sound.playSFX(soundPath);
                     hoverTimer.stop();
                 });
@@ -258,6 +258,8 @@ public class HelpersUI {
         dialog.setUndecorated(true);
 
         ImageIcon icon = new ImageIcon("assets/Error.png");
+        //make volume bigger
+        Sound.setBGMVolume(100);
 
         JLabel label = new JLabel(icon, JLabel.CENTER);
         label.setOpaque(true);
