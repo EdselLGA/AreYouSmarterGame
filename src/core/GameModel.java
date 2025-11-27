@@ -9,18 +9,25 @@ import player.Player;
 public class GameModel {
     // Implementation of game logic goes here
     private Player player;
-    private Question currentQuestion;
-    private int questionNumber;
     private int totalWinnings;
 
+    //Question
+    private Question currentQuestion;
+    private int questionNumber;
+    private int questionChoiceIndex;
+
+    // Category
     private Map<Category, Integer> categoryUseCount;
-    private QuestionBank questionBank;
     private Category currentCategory;
 
+    //Helper
     private Helper[] helpers;
     private int[] helperUsage;
     private Helper currentHelper;
     private int currentHelperIndex;
+
+    //Misc
+    private QuestionBank questionBank;
 
     public GameModel(){
         this.questionBank = new QuestionBank();
@@ -39,15 +46,16 @@ public class GameModel {
         currentHelper = null;
         currentQuestion = null;
         currentCategory = null;
+        questionChoiceIndex = -1;
         questionBank.reset();
     }
 
     public void initializeCategories(){
         categoryUseCount = new HashMap<>();
-        categoryUseCount.put(Category.HISTORY,0);
-        categoryUseCount.put(Category.GUESS_THE_PARADIGM,0);
-        categoryUseCount.put(Category.TRUE_OR_FALSE,0);
-        categoryUseCount.put(Category.CODE_SNIPPETS,0);
+        categoryUseCount.put(Category.HISTORY,1);
+        categoryUseCount.put(Category.GUESS_THE_PARADIGM,1);
+        categoryUseCount.put(Category.TRUE_OR_FALSE,1);
+        categoryUseCount.put(Category.CODE_SNIPPETS,1);
     }
     // HELPERS
     public void initializeHelpers(){
@@ -55,7 +63,7 @@ public class GameModel {
         this.helperUsage = new int[5];
         for(int i=0; i< 5; i++){
             helpers[i] = new Helper(String.valueOf(i+1), (i+1)*20);
-            helperUsage[i] = 2;
+            helperUsage[i] = 0;
         }
     }
     public int[] getHelperUsage(){
@@ -72,7 +80,7 @@ public class GameModel {
         currentHelper = helpers[index];
     }
     public void updateHelperUsage(){
-        helperUsage[currentHelperIndex] = helperUsage[currentHelperIndex] - 1;
+        helperUsage[currentHelperIndex] = helperUsage[currentHelperIndex] + 1;
     }
     // HELPERS
 
@@ -80,14 +88,12 @@ public class GameModel {
         questionNumber++;
         //questionsWithCurrentHelper++;
     }
-    public boolean canUseLifeline(){
-        return questionNumber <= 10;
-    }
+    
     public void incrementCategoryUse(Category category){
         categoryUseCount.put(category, categoryUseCount.get(category) + 1);
     }
     public boolean canUseCategory(Category category){
-        return categoryUseCount.get(category) < 2;
+        return categoryUseCount.get(category) <= 2;
     }
     public boolean canUseCurrentHelper(int index){
         return helperUsage[currentHelperIndex] < 2;
@@ -125,19 +131,26 @@ public class GameModel {
         this.player = player;
     }
 
+    // Questions
     public Question getCurrentQuestion(){
         return currentQuestion;
     }
     public void setCurrentQuestion(Question question){
         this.currentQuestion = question;
     }
-
     public int getQuestionNumber(){
         return questionNumber;
     }
     public int setQuestionNumber(int number){
         return questionNumber = number;
     }
+    public int getQuestionChoiceIndex(){
+        return questionChoiceIndex;
+    }
+    public void setQuestionChoiceIndex(int index){
+        this.questionChoiceIndex = index;
+    }
+    // Questions
 
     public int getTotalWinnings(){
         return totalWinnings;
@@ -147,6 +160,7 @@ public class GameModel {
         return categoryUseCount;
     }
 
+    // Lifelines
     public boolean isPeekUsed(){
         return player.getPeekLifeline().isUsed();
     }
@@ -156,6 +170,19 @@ public class GameModel {
     public boolean isSaveUsed(){
         return player.getSaveLifeline().isUsed();
     }
+    public boolean canUseLifeline(){
+        return questionNumber <= 10;
+    }
+    public void useSaveLifeline(){
+        player.getSaveLifeline().useLifeline();
+    }
+    public void useCopyLifeline(){
+        player.getCopyLifeline().useLifeline();
+    }
+    public void usePeekLifeline(){
+        player.getPeekLifeline().useLifeline();
+    }
+    //Lifelines
 
     public QuestionBank getQuestionBank(){
         return questionBank;

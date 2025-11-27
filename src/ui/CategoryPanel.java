@@ -128,9 +128,8 @@ public class CategoryPanel extends JPanel {
             default:
                 throw new IllegalArgumentException("Unknown category: " + actionName);
             }
-            parent.getGameLogic().getQuestion();
-            parent.showCard("question");
             refresh();
+            parent.onCategorySelected();
         });
 
         return btn;

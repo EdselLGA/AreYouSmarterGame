@@ -73,11 +73,11 @@ public class HelperPanel extends JPanel{
 
     public void refresh(){
         int usageCounters[] = parent.getModel().getHelperUsage();
-        helper1Button.setEnabled(usageCounters[0]!=0);
-        helper2Button.setEnabled(usageCounters[1]!=0);
-        helper3Button.setEnabled(usageCounters[2]!=0);
-        helper4Button.setEnabled(usageCounters[3]!=0);
-        helper5Button.setEnabled(usageCounters[4]!=0);
+        helper1Button.setEnabled(usageCounters[0]<2);
+        helper2Button.setEnabled(usageCounters[1]<2);
+        helper3Button.setEnabled(usageCounters[2]<2);
+        helper4Button.setEnabled(usageCounters[3]<2);
+        helper5Button.setEnabled(usageCounters[4]<2);
     }
 
     private void initializeButtonListeners(){

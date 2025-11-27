@@ -103,7 +103,7 @@ public class QuestionPanel extends JPanel{
             }
         });
     }
-    private void initializeQuestion(){
+    public void initializeQuestion(){
         choiceButtons[0].setVisible(true);
         choiceButtons[1].setVisible(true);
         choiceButtons[2].setVisible(true);
@@ -207,7 +207,9 @@ public class QuestionPanel extends JPanel{
         });
         selectionButtons[3].addActionListener(e ->{
             if (selectedIndex!=-1){
-                //boolean = parent.getGameLogic().validateQuestion(selectedIndex);
+                parent.getModel().setQuestionChoiceIndex(selectedIndex);
+                parent.onLockAnswer();
+                selectedIndex = -1;
             }
         });
         selectionButtons[4].addActionListener(e ->{
@@ -234,9 +236,9 @@ public class QuestionPanel extends JPanel{
         btn.setContentAreaFilled(false);
         btn.setFocusPainted(false);
         btn.setOpaque(false);
+        btn.setFont((GameWindow.customFont).deriveFont(15f));
         btn.setHorizontalTextPosition(JButton.CENTER);
         btn.setVerticalTextPosition(JButton.CENTER);
-
 
         btn.setAlignmentX(Component.CENTER_ALIGNMENT);
         btn.setPreferredSize(new Dimension(newWidth, newHeight));

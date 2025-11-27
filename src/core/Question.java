@@ -35,7 +35,9 @@ public class Question {
     public boolean isCorrect(int index){
         return index == correctIndex; 
     }
-
+    public int getCorrectIndex(){
+        return correctIndex;
+    }
     // Getters and setters
     public String getQuestionText() {
         return questionText;

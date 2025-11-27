@@ -1,6 +1,8 @@
 package ui;
 
+import core.HighScoreRepository;
 import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.*;
@@ -11,6 +13,8 @@ public class GameWindow extends JFrame {
     private CardLayout layout;
     private JPanel mainPanel;
     private final Map<String, JComponent> screens = new HashMap<>();
+    public static Font customFont;
+    private HighScoreRepository highScoreRepository;
 
     public static final String CARD_SPLASH = "splash";
     public static final String CARD_MAINMENU = "mainMenu";
@@ -28,10 +32,11 @@ public class GameWindow extends JFrame {
         setUndecorated(true);           // remove title bar
         setResizable(false);            // keep fixed
         setExtendedState(JFrame.MAXIMIZED_BOTH); // fullscreen on display
-
+        loadCustomFont();
         layout = new CardLayout();
         mainPanel = new JPanel(layout);
         
+        highScoreRepository = new HighScoreRepository();
 
         // create and register screens
         addCard(CARD_SPLASH, new SplashScreenPanel(this));
@@ -72,4 +77,15 @@ public class GameWindow extends JFrame {
     public JComponent getScreen(String name) {
         return screens.get(name);
     }
+    private void loadCustomFont() {
+        try {
+            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/Pixelette Regular.ttf"))
+                                  .deriveFont(12f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(customFont);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

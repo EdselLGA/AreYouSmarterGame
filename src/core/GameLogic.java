@@ -1,6 +1,8 @@
 // Handles scoring, winnings, progression
 package core;
 
+import java.util.Arrays;
+
 
 public class GameLogic {
     private GameModel model;
@@ -12,10 +14,68 @@ public class GameLogic {
 
     }
 
+    public NextStep lockAnswer(){
+        boolean answer = model.getCurrentQuestion().isCorrect(model.getQuestionChoiceIndex());
+        if(answer){
+            model.incrementScore(100);
+            model.incrementQuestionCounters();
+            model.incrementCategoryUse(model.getCurrentCategory());
+            model.updateHelperUsage();
+            System.out.println(Arrays.toString(model.getHelperUsage()));
+            if(model.getQuestionNumber()==11){
+                return NextStep.LAST_QUESTION;
+            }
+            if (!model.canUseCurrentHelper(model.getCurrentHelperIndex())){
+                return NextStep.PICK_HELPER;
+            }
+            if (!model.canUseCategory(model.getCurrentCategory())){
+                return NextStep.PICK_CATEGORY;
+            }
+        }
+        else{
+            // use save lifeline
+            if (!model.isSaveUsed()){
+                // use save
+                if(model.canUseLifeline()){
+                    model.useSaveLifeline();
+                    int helperSuggestion = model.getCurrentHelper().suggestAnswerIndex(model.getCurrentQuestion().getOptions(), model.getCurrentQuestion().getCorrectIndex());
+                    model.incrementScore(100);
+                    model.incrementQuestionCounters();
+                    model.incrementCategoryUse(model.getCurrentCategory());
+                    model.updateHelperUsage();
+                    if (model.getCurrentQuestion().isCorrect(helperSuggestion)){
+                        if(model.getQuestionNumber()==11){
+                            return NextStep.LAST_QUESTION;
+                        }
+                        if (!model.canUseCurrentHelper(model.getCurrentHelperIndex())){
+                            return NextStep.PICK_HELPER;
+                        }
+                        if (!model.canUseCategory(model.getCurrentCategory())){
+                            return NextStep.PICK_CATEGORY;
+                        }
+                    }
+                    else{
+                        return NextStep.GAME_OVER;
+                    }
+                }
+            }
+            else{
+                return NextStep.GAME_OVER;
+            }
+
+        }
+        return NextStep.NEXT_QUESTION;
+    }
     
     public void startGame(){
         System.out.println("HELLO WORLD");
         model.reset();
+    }
+
+
+
+    public void onDropOut(){
+        
     }
 
     public void selectHelper(int index){
@@ -33,9 +93,11 @@ public class GameLogic {
         // getQuestion
     }
 
-    public void getQuestion(){
-        if (model.canUseCategory(model.getCurrentCategory())){
+    public void loadQuestion(){
+        if (model.getCurrentCategory()!=null){
+            if (model.canUseCategory(model.getCurrentCategory())){
             model.setCurrentQuestion(model.getQuestionBank().getQuestion(model.getCurrentCategory()));
+            }
         }
     }
 
@@ -54,31 +116,7 @@ public class GameLogic {
         //model.getQuestionBank().getQuestion(model.currentCategory);
         return model.getCurrentQuestion();
     }
-    public boolean validateQuestion(int index){
-        boolean answer = model.getCurrentQuestion().isCorrect(index);
-        if(answer){
-            System.out.println("correct Answer");
-            model.incrementScore(100);
-            
-            // proceed to next question
-            // show category if not yet
-            // show helper if need new helper
-        }
-        else{
-            System.out.println("Wrong Answer");
-            // show wrong game screen
-            // use save lifeline if not used
-            if(!model.isSaveUsed()){
-                //use save
-            }
-            else{
-                //end game
-            }
-        }
-        model.updateHelperUsage();
-        model.incrementCategoryUse(model.getCurrentCategory());
-        return answer;
-    }
+    
 
     public void showResults(){
 
