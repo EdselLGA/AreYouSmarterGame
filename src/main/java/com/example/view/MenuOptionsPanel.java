@@ -1,11 +1,15 @@
 package com.example.view;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.Image;
+import java.awt.Toolkit;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -21,6 +25,14 @@ public class MenuOptionsPanel extends JPanel {
     private JButton highScoresButton;
     private JButton backButton;
 
+    private static final String BACKGROUND = "assets/background_2.png";
+    private static final String BTN_HOWTOPLAY = "assets/HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES = "assets/HIGHSCORES.png";
+    private static final String BTN_SETTINGS = "assets/SETTINGS.png";
+    private static final String BTN_BACK = "assets/BACK.png";
+
+    private Image bgImage;
+
     public MenuOptionsPanel() {
         initializePanel();
     }
@@ -30,58 +42,136 @@ public class MenuOptionsPanel extends JPanel {
     }
 
     private void initializePanel() {
-        setBackground(Color.DARK_GRAY);
         setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
-        gbc.gridx = 0;
-        gbc.gridy = 0;
+        setOpaque(false);
 
-        // Settings Button - Fire navigation event
-        settingsButton = new JButton("Settings");
-        settingsButton.setFont(new Font("Arial", Font.BOLD, 20));
-        settingsButton.setPreferredSize(new java.awt.Dimension(200, 50));
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
+        ImageIcon bgIc = new ImageIcon(BACKGROUND);
+        if (bgIc.getIconWidth() > 0)
+            bgImage = bgIc.getImage().getScaledInstance(
+                    screen.width, screen.height, Image.SCALE_SMOOTH
+            );
+
+        JPanel box = new JPanel();
+        box.setOpaque(false);
+        box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
+
+        JButton settingsButton = makeImageButton(BTN_HOWTOPLAY);
+        JButton highScoresButton = makeImageButton(BTN_HIGHSCORES);
+        JButton howToPlayButton = makeImageButton(BTN_SETTINGS);
+        JButton backButton = makeImageButton(BTN_BACK);
+
+        //lighten hover
+        HelpersUI.addLightenOnHover(settingsButton, 1.25f);
+        HelpersUI.addLightenOnHover(highScoresButton, 1.25f);
+        HelpersUI.addLightenOnHover(settingsButton, 1.25f);
+        HelpersUI.addLightenOnHover(backButton, 1.25f);
+
+        //hover sfx (delayed)
+        HelpersUI.addHoverSFX(settingsButton, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(highScoresButton, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(settingsButton, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(backButton, "assets/Hover.wav");
+
+        settingsButton.addActionListener(e -> {
+            Sound.playSFX("assets/clicked.wav");
+            if (navigationListener != null) {
+                navigationListener.onNavigateToSettings();
+            }
+            // HelpersUI.fadeInComponent(howToPlay, 18, 0.06f, null);
+        });
+
+        highScoresButton.addActionListener(e -> {
+            Sound.playSFX("assets/clicked.wav");
+            if (navigationListener != null) {
+                navigationListener.onNavigateToHighScores();
+            }
+            // HelpersUI.fadeInComponent(highScores, 18, 0.06f, null);
+        });
+
+        settingsButton.addActionListener(e -> {
+            Sound.playSFX("assets/clicked.wav");
+            if (navigationListener != null) {
+                navigationListener.onNavigateToSettings();
+            }
+        });
+
+        backButton.addActionListener(e -> {
+            //HelpersUI.fadeInComponent(main, 18, 0.06f, null);
+            Sound.playSFX("assets/clicked.wav");
+            if (navigationListener != null) {
+                navigationListener.onNavigateToMainMenu();
+            }
+        });
+
+        box.add(settingsButton);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+        box.add(highScoresButton);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+        box.add(settingsButton);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+        box.add(backButton);
+        box.add(Box.createRigidArea(new Dimension(0, 20)));
+
+        add(box);
+    }
+    
+    private JButton makeImageButton(String imagePath) {
+
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
+        ImageIcon rawIcon = new ImageIcon(imagePath);
+
+        int newWidth = (int) (screen.width * 0.20);
+        int newHeight = (int) ((double) rawIcon.getIconHeight() /
+                rawIcon.getIconWidth() * newWidth);
+
+        Image scaled = rawIcon.getImage().getScaledInstance(
+                newWidth, newHeight, Image.SCALE_SMOOTH
+        );
+
+        ImageIcon scaledIcon = new ImageIcon(scaled);
+
+        JButton btn = new JButton(scaledIcon);
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setFocusPainted(false);
+        btn.setOpaque(false);
+        btn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btn.setPreferredSize(new Dimension(newWidth, newHeight));
+
+        return btn;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        if (bgImage != null)
+            g.drawImage(bgImage, 0, 0, getWidth(), getHeight(), this);
+    }
+}
+
+/*
         settingsButton.addActionListener(e -> {
             if (navigationListener != null) {
                 navigationListener.onNavigateToSettings();
             }
         });
-        add(settingsButton, gbc);
-
-        // How To Play Button - Fire navigation event
-        gbc.gridy = 1;
-        howToPlayButton = new JButton("How To Play");
-        howToPlayButton.setFont(new Font("Arial", Font.BOLD, 20));
-        howToPlayButton.setPreferredSize(new java.awt.Dimension(200, 50));
         howToPlayButton.addActionListener(e -> {
             if (navigationListener != null) {
                 navigationListener.onNavigateToHowToPlay();
             }
         });
-        add(howToPlayButton, gbc);
-
-        // High Scores Button - Fire navigation event
-        gbc.gridy = 2;
-        highScoresButton = new JButton("High Scores");
-        highScoresButton.setFont(new Font("Arial", Font.BOLD, 20));
-        highScoresButton.setPreferredSize(new java.awt.Dimension(200, 50));
         highScoresButton.addActionListener(e -> {
             if (navigationListener != null) {
                 navigationListener.onNavigateToHighScores();
             }
         });
-        add(highScoresButton, gbc);
-
-        // Back Button - Fire navigation event
-        gbc.gridy = 3;
-        backButton = new JButton("Back to Main Menu");
-        backButton.setFont(new Font("Arial", Font.BOLD, 20));
-        backButton.setPreferredSize(new java.awt.Dimension(200, 50));
         backButton.addActionListener(e -> {
             if (navigationListener != null) {
                 navigationListener.onNavigateToMainMenu();
             }
         });
-        add(backButton, gbc);
-    }
-}
+*/
