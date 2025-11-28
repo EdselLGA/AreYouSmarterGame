@@ -33,10 +33,10 @@ public class SettingsPanel extends JPanel {
     private NavigationListener navigationListener;
     private JButton backButton;
 
-    private static final String BACKGROUND = "SettingBG.png";
-    private static final String ICON_MUSIC = "Music.png";
-    private static final String ICON_SFX   = "SDFX.png";
-    private static final String BTN_BACK   = "BACK.png";
+    private static final String BACKGROUND = "/SettingBG.png";
+    private static final String ICON_MUSIC = "/Music.png";
+    private static final String ICON_SFX   = "/SDFX.png";
+    private static final String BTN_BACK   = "/BACK.png";
 
     private Image bgImage;
 
@@ -54,7 +54,7 @@ public class SettingsPanel extends JPanel {
         setOpaque(false);
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon bgIc = new ImageIcon(BACKGROUND);
+        ImageIcon bgIc = new ImageIcon(getClass().getResource(BACKGROUND));
 
         if (bgIc.getIconWidth() > 0)
             bgImage = bgIc.getImage().getScaledInstance(
@@ -97,7 +97,7 @@ public class SettingsPanel extends JPanel {
             int tick = sfxSlider.getValue();
             Sound.SFXVolume = mapSFXdB(tick);
 
-            Sound.playSFX("Hover.wav"); // preview
+            Sound.playSFX("/Hover.wav"); // preview
         });
 
         // Layout rows
@@ -115,10 +115,10 @@ public class SettingsPanel extends JPanel {
         // BACK BUTTON
         JButton backBtn = makeImageButton(BTN_BACK);
         HelpersUI.addLightenOnHover(backBtn, 1.25f);
-        HelpersUI.addHoverSFX(backBtn, "Hover.wav");
+        HelpersUI.addHoverSFX(backBtn, "/Hover.wav");
 
         backBtn.addActionListener(e -> {
-            Sound.playSFX("clicked.wav");
+            Sound.playSFX("/clicked.wav");
 
             if (navigationListener != null) {
                 navigationListener.onNavigateToMenuOptions();
@@ -220,7 +220,7 @@ public class SettingsPanel extends JPanel {
 
     private JButton makeImageButton(String imagePath) {
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon rawIcon = new ImageIcon(imagePath);
+        ImageIcon rawIcon = new ImageIcon(SettingsPanel.class.getResource(imagePath));
 
         int newWidth = (int) (screen.width * 0.16);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /

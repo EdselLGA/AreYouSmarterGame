@@ -28,11 +28,11 @@ public class MainMenuPanel extends JPanel {
     private JButton exitButton;
 
 
-    private static final String BACKGROUND = "splash.png";
-    private static final String BTN_START = "START.png";
-    private static final String BTN_MENU = "MENU.png";
-    private static final String BTN_EXIT = "EXIT.png";
-    private static final String CLOUD = "Cloud.png";
+    private static final String BACKGROUND = "/splash.png";
+    private static final String BTN_START = "/START.png";
+    private static final String BTN_MENU = "/MENU.png";
+    private static final String BTN_EXIT = "/EXIT.png";
+    private static final String CLOUD = "/Cloud.png";
 
     private Image bgImage;
     private Image cloudImage;
@@ -52,13 +52,13 @@ public class MainMenuPanel extends JPanel {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon bgIc = new ImageIcon(BACKGROUND);
+        ImageIcon bgIc = new ImageIcon(getClass().getResource(BACKGROUND));
         if (bgIc.getIconWidth() > 0)
             bgImage = bgIc.getImage().getScaledInstance(
                     screen.width, screen.height, Image.SCALE_SMOOTH
             );
 
-        ImageIcon cloudIc = new ImageIcon(CLOUD);
+        ImageIcon cloudIc = new ImageIcon(getClass().getResource(CLOUD));
         if (cloudIc.getIconWidth() > 0) {
             int cloudWidth = (int) (screen.width * 0.30);
             int cloudHeight = (int) ((double) cloudIc.getIconHeight() /
@@ -74,24 +74,24 @@ public class MainMenuPanel extends JPanel {
         menuBox.setLayout(new BoxLayout(menuBox, BoxLayout.Y_AXIS));
 
         JButton gameButton = makeImageButton(BTN_START);
-        HelpersUI.addHoverSFX(gameButton, "Hover.wav");
+        HelpersUI.addHoverSFX(gameButton, "/Hover.wav");
         HelpersUI.addLightenOnHover(gameButton, 1.25f); //lighten hover
 
         JButton menuOptionsButton = makeImageButton(BTN_MENU);
-        HelpersUI.addHoverSFX(menuOptionsButton, "Hover.wav");
+        HelpersUI.addHoverSFX(menuOptionsButton, "/Hover.wav");
         HelpersUI.addLightenOnHover(menuOptionsButton, 1.25f); //lighten hover
 
         JButton exitButton = makeImageButton(BTN_EXIT);
-        HelpersUI.addHoverSFX(exitButton, "Hover.wav");
+        HelpersUI.addHoverSFX(exitButton, "/Hover.wav");
         HelpersUI.addLightenOnHover(exitButton, 1.25f); //lighten hover
 
         gameButton.addActionListener(e -> {
-            Sound.playSFX("Clicked.wav");
+            Sound.playSFX("/Clicked.wav");
 
             Sound.stopBGM();
             Sound.isMenuMusicPlaying = false;
 
-            Sound.playBGM("GameBg.wav");
+            Sound.playBGM("/GameBg.wav");
             Sound.setBGMVolume(80);
 
             //parent.switchTo(GameWindow.CARD_GAME);
@@ -106,7 +106,7 @@ public class MainMenuPanel extends JPanel {
 
         menuOptionsButton.addActionListener(e -> {
             
-            Sound.playSFX("Clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToMenuOptions();
             }
@@ -118,7 +118,7 @@ public class MainMenuPanel extends JPanel {
         });
 
         exitButton.addActionListener(e -> {
-            Sound.playSFX("Clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onExitApplication();
             }
@@ -153,7 +153,7 @@ public class MainMenuPanel extends JPanel {
     private JButton makeImageButton(String imagePath) {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon rawIcon = new ImageIcon(imagePath);
+        ImageIcon rawIcon = new ImageIcon(MainMenuPanel.class.getResource(imagePath));
 
         int newWidth = (int) (screen.width * 0.20);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /
@@ -162,7 +162,7 @@ public class MainMenuPanel extends JPanel {
         Image scaledImg = rawIcon.getImage().getScaledInstance(
                 newWidth, newHeight, Image.SCALE_SMOOTH
         );
-
+        
         JButton btn = new JButton(new ImageIcon(scaledImg));
 
         btn.setBorderPainted(false);

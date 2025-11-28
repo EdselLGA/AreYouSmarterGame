@@ -145,6 +145,7 @@ public class SplashPanel extends JPanel {
         content.setBounds(0, 0, screen.width, screen.height);
         layeredPane.add(content, Integer.valueOf(2));
 
+        
         // INPUT HANDLING
         addMouseListener(new MouseAdapter() {
             @Override public void mousePressed(MouseEvent e) {
@@ -156,7 +157,8 @@ public class SplashPanel extends JPanel {
 
         setFocusable(true);
         addKeyListener(new KeyAdapter() {
-            @Override public void keyPressed(KeyEvent e) {
+            @Override 
+            public void keyPressed(KeyEvent e) {
                 Sound.playSFX("/Clicked.wav");
                 proceed();
                 navigationListener.onNavigateToMainMenu();

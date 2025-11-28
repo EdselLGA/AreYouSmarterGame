@@ -27,9 +27,9 @@ public class HowToPlayPanel extends JPanel {
     private NavigationListener navigationListener;
     private JButton backButton;
 
-    private static final String BACKGROUND = "Background_3.png";
-    private static final String HOWTOPLAY = "HowToPlay.png";
-    private static final String BTN_BACK = "BACK.png";
+    private static final String BACKGROUND = "/Background_3.png";
+    private static final String HOWTOPLAY = "/HowToPlay.png";
+    private static final String BTN_BACK = "/BACK.png";
 
     private Image bgImage;
 
@@ -47,7 +47,7 @@ public class HowToPlayPanel extends JPanel {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon bgIc = new ImageIcon(BACKGROUND);
+        ImageIcon bgIc = new ImageIcon(getClass().getResource(BACKGROUND));
         if (bgIc.getIconWidth() > 0) {
             bgImage = bgIc.getImage().getScaledInstance(
                     screen.width, screen.height, Image.SCALE_SMOOTH
@@ -71,13 +71,13 @@ public class HowToPlayPanel extends JPanel {
         //lighten hover
         HelpersUI.addLightenOnHover(backBtn, 1.25f);
         //sfx hover
-        HelpersUI.addHoverSFX(backBtn, "Hover.wav");
+        HelpersUI.addHoverSFX(backBtn, "/Hover.wav");
 
         backBtn.addActionListener(e -> {
             // parent.switchTo(GameWindow.CARD_MENUOPTIONS);
             // JComponent menu = parent.getScreen(GameWindow.CARD_MENUOPTIONS);
             // HelpersUI.fadeInComponent(menu, 18, 0.06f, null);
-            Sound.playSFX("clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToMenuOptions();
             }
@@ -92,7 +92,7 @@ public class HowToPlayPanel extends JPanel {
     private JButton makeImageButton(String imagePath) {
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon rawIcon = new ImageIcon(imagePath);
+        ImageIcon rawIcon = new ImageIcon(HowToPlayPanel.class.getResource(imagePath));
         int newWidth = (int) (screen.width * 0.15);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /
                 rawIcon.getIconWidth() * newWidth);
@@ -113,7 +113,7 @@ public class HowToPlayPanel extends JPanel {
     private JLabel makeScaledImage(String path, double widthPercent) {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon rawIcon = new ImageIcon(path);
+        ImageIcon rawIcon = new ImageIcon(getClass().getResource(path));
 
         int newWidth = (int) (screen.width * widthPercent);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /

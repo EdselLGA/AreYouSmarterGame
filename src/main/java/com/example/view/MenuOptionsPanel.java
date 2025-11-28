@@ -25,11 +25,11 @@ public class MenuOptionsPanel extends JPanel {
     private JButton highScoresButton;
     private JButton backButton;
 
-    private static final String BACKGROUND = "background_2.png";
-    private static final String BTN_HOWTOPLAY = "HOW TO PLAY.png";
-    private static final String BTN_HIGHSCORES = "HIGHSCORES.png";
-    private static final String BTN_SETTINGS = "SETTINGS.png";
-    private static final String BTN_BACK = "BACK.png";
+    private static final String BACKGROUND = "/Background_2.png";
+    private static final String BTN_HOWTOPLAY = "/HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES = "/HIGHSCORES.png";
+    private static final String BTN_SETTINGS = "/SETTINGS.png";
+    private static final String BTN_BACK = "/BACK.png";
 
     private Image bgImage;
 
@@ -47,7 +47,7 @@ public class MenuOptionsPanel extends JPanel {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon bgIc = new ImageIcon(BACKGROUND);
+        ImageIcon bgIc = new ImageIcon(getClass().getResource(BACKGROUND));
         if (bgIc.getIconWidth() > 0)
             bgImage = bgIc.getImage().getScaledInstance(
                     screen.width, screen.height, Image.SCALE_SMOOTH
@@ -57,9 +57,9 @@ public class MenuOptionsPanel extends JPanel {
         box.setOpaque(false);
         box.setLayout(new BoxLayout(box, BoxLayout.Y_AXIS));
 
-        JButton settingsButton = makeImageButton(BTN_HOWTOPLAY);
+        JButton howToPlayButton = makeImageButton(BTN_HOWTOPLAY);
         JButton highScoresButton = makeImageButton(BTN_HIGHSCORES);
-        JButton howToPlayButton = makeImageButton(BTN_SETTINGS);
+        JButton settingsButton = makeImageButton(BTN_SETTINGS);
         JButton backButton = makeImageButton(BTN_BACK);
 
         //lighten hover
@@ -69,21 +69,21 @@ public class MenuOptionsPanel extends JPanel {
         HelpersUI.addLightenOnHover(backButton, 1.25f);
 
         //hover sfx (delayed)
-        HelpersUI.addHoverSFX(settingsButton, "Hover.wav");
-        HelpersUI.addHoverSFX(highScoresButton, "Hover.wav");
-        HelpersUI.addHoverSFX(settingsButton, "Hover.wav");
-        HelpersUI.addHoverSFX(backButton, "Hover.wav");
+        HelpersUI.addHoverSFX(settingsButton, "/Hover.wav");
+        HelpersUI.addHoverSFX(highScoresButton, "/Hover.wav");
+        HelpersUI.addHoverSFX(settingsButton, "/Hover.wav");
+        HelpersUI.addHoverSFX(backButton, "/Hover.wav");
 
-        settingsButton.addActionListener(e -> {
-            Sound.playSFX("clicked.wav");
+        howToPlayButton.addActionListener(e -> {
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
-                navigationListener.onNavigateToSettings();
+                navigationListener.onNavigateToHowToPlay();
             }
             // HelpersUI.fadeInComponent(howToPlay, 18, 0.06f, null);
         });
 
         highScoresButton.addActionListener(e -> {
-            Sound.playSFX("clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToHighScores();
             }
@@ -91,7 +91,7 @@ public class MenuOptionsPanel extends JPanel {
         });
 
         settingsButton.addActionListener(e -> {
-            Sound.playSFX("clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToSettings();
             }
@@ -99,13 +99,13 @@ public class MenuOptionsPanel extends JPanel {
 
         backButton.addActionListener(e -> {
             //HelpersUI.fadeInComponent(main, 18, 0.06f, null);
-            Sound.playSFX("clicked.wav");
+            Sound.playSFX("/Clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToMainMenu();
             }
         });
 
-        box.add(settingsButton);
+        box.add(howToPlayButton);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
         box.add(highScoresButton);
         box.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -121,7 +121,7 @@ public class MenuOptionsPanel extends JPanel {
 
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon rawIcon = new ImageIcon(imagePath);
+        ImageIcon rawIcon = new ImageIcon(MenuOptionsPanel.class.getResource(imagePath));
 
         int newWidth = (int) (screen.width * 0.20);
         int newHeight = (int) ((double) rawIcon.getIconHeight() /

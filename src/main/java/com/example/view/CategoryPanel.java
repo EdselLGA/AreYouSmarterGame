@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
 import java.util.List;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -65,10 +67,12 @@ public class CategoryPanel extends JPanel {
         // Create buttons for available categories
         for (int i = 0; i < availableCategories.size(); i++) {
             Category category = availableCategories.get(i);
-            JButton button = new JButton(category.getDisplayName());
-            button.setFont(new Font("Arial", Font.BOLD, 20));
-            button.setPreferredSize(new java.awt.Dimension(300, 60));
-            button.setBackground(Color.LIGHT_GRAY);
+            
+            StringBuilder sb = new StringBuilder();
+            sb.append("/category").append(i+1).append(".png");
+            String result = sb.toString();
+            JButton button = makeLargeButton(result);            
+
             
             final int categoryIndex = i;
             button.addActionListener(e -> {
@@ -84,5 +88,20 @@ public class CategoryPanel extends JPanel {
 
         revalidate();
         repaint();
+    }
+    private JButton makeLargeButton(String path) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(path));
+        Image scaled = icon.getImage().getScaledInstance(
+                (int)(icon.getIconWidth() * 1.4),
+                (int)(icon.getIconHeight() * 1.4),
+                Image.SCALE_SMOOTH);
+
+        JButton btn = new JButton(new ImageIcon(scaled));
+        btn.setBorderPainted(false);
+        btn.setContentAreaFilled(false);
+        btn.setFocusPainted(false);
+
+        HelpersUI.addLightenOnHover(btn, 1.25f);
+        return btn;
     }
 }
