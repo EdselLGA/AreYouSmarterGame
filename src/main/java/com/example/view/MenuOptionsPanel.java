@@ -25,11 +25,11 @@ public class MenuOptionsPanel extends JPanel {
     private JButton highScoresButton;
     private JButton backButton;
 
-    private static final String BACKGROUND = "assets/background_2.png";
-    private static final String BTN_HOWTOPLAY = "assets/HOW TO PLAY.png";
-    private static final String BTN_HIGHSCORES = "assets/HIGHSCORES.png";
-    private static final String BTN_SETTINGS = "assets/SETTINGS.png";
-    private static final String BTN_BACK = "assets/BACK.png";
+    private static final String BACKGROUND = "background_2.png";
+    private static final String BTN_HOWTOPLAY = "HOW TO PLAY.png";
+    private static final String BTN_HIGHSCORES = "HIGHSCORES.png";
+    private static final String BTN_SETTINGS = "SETTINGS.png";
+    private static final String BTN_BACK = "BACK.png";
 
     private Image bgImage;
 
@@ -69,13 +69,13 @@ public class MenuOptionsPanel extends JPanel {
         HelpersUI.addLightenOnHover(backButton, 1.25f);
 
         //hover sfx (delayed)
-        HelpersUI.addHoverSFX(settingsButton, "assets/Hover.wav");
-        HelpersUI.addHoverSFX(highScoresButton, "assets/Hover.wav");
-        HelpersUI.addHoverSFX(settingsButton, "assets/Hover.wav");
-        HelpersUI.addHoverSFX(backButton, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(settingsButton, "Hover.wav");
+        HelpersUI.addHoverSFX(highScoresButton, "Hover.wav");
+        HelpersUI.addHoverSFX(settingsButton, "Hover.wav");
+        HelpersUI.addHoverSFX(backButton, "Hover.wav");
 
         settingsButton.addActionListener(e -> {
-            Sound.playSFX("assets/clicked.wav");
+            Sound.playSFX("clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToSettings();
             }
@@ -83,7 +83,7 @@ public class MenuOptionsPanel extends JPanel {
         });
 
         highScoresButton.addActionListener(e -> {
-            Sound.playSFX("assets/clicked.wav");
+            Sound.playSFX("clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToHighScores();
             }
@@ -91,7 +91,7 @@ public class MenuOptionsPanel extends JPanel {
         });
 
         settingsButton.addActionListener(e -> {
-            Sound.playSFX("assets/clicked.wav");
+            Sound.playSFX("clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToSettings();
             }
@@ -99,7 +99,7 @@ public class MenuOptionsPanel extends JPanel {
 
         backButton.addActionListener(e -> {
             //HelpersUI.fadeInComponent(main, 18, 0.06f, null);
-            Sound.playSFX("assets/clicked.wav");
+            Sound.playSFX("clicked.wav");
             if (navigationListener != null) {
                 navigationListener.onNavigateToMainMenu();
             }
