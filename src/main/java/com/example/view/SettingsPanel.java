@@ -33,10 +33,10 @@ public class SettingsPanel extends JPanel {
     private NavigationListener navigationListener;
     private JButton backButton;
 
-    private static final String BACKGROUND = "assets/SettingBG.png";
-    private static final String ICON_MUSIC = "assets/Music.png";
-    private static final String ICON_SFX   = "assets/SDFX.png";
-    private static final String BTN_BACK   = "assets/BACK.png";
+    private static final String BACKGROUND = "SettingBG.png";
+    private static final String ICON_MUSIC = "Music.png";
+    private static final String ICON_SFX   = "SDFX.png";
+    private static final String BTN_BACK   = "BACK.png";
 
     private Image bgImage;
 
@@ -97,7 +97,7 @@ public class SettingsPanel extends JPanel {
             int tick = sfxSlider.getValue();
             Sound.SFXVolume = mapSFXdB(tick);
 
-            Sound.playSFX("assets/Hover.wav"); // preview
+            Sound.playSFX("Hover.wav"); // preview
         });
 
         // Layout rows
@@ -115,10 +115,10 @@ public class SettingsPanel extends JPanel {
         // BACK BUTTON
         JButton backBtn = makeImageButton(BTN_BACK);
         HelpersUI.addLightenOnHover(backBtn, 1.25f);
-        HelpersUI.addHoverSFX(backBtn, "assets/Hover.wav");
+        HelpersUI.addHoverSFX(backBtn, "Hover.wav");
 
         backBtn.addActionListener(e -> {
-            Sound.playSFX("assets/clicked.wav");
+            Sound.playSFX("clicked.wav");
 
             if (navigationListener != null) {
                 navigationListener.onNavigateToMenuOptions();
