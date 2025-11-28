@@ -69,11 +69,13 @@ public class QuestionBank{
         private void loadQuestions() {
         try {
             // Read JSON file from resources
-            java.io.InputStream inputStream = getClass().getClassLoader().getResourceAsStream("questions.json");
+            java.io.InputStream inputStream = getClass().getClassLoader().getResource("questions.json").openStream();
             if (inputStream == null) {
+                System.out.println("ARE YOU HERE?");
                 // Fallback: try assets folder
-                String fileName = "assets/questions.json";
+                String fileName = "/questions.json";
                 String json = new String(Files.readAllBytes(Paths.get(fileName)));
+                //Files.readAllBytes(Paths.get(fileName))
                 parseQuestions(json);
                 return;
             }

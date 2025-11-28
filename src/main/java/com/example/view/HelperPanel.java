@@ -83,7 +83,10 @@ public class HelperPanel extends JPanel {
 
     public void updateHelpers(List<Helper> availableHelpers) {
         // Remove existing buttons
-        
+        remove(buttonPanel);
+        buttonPanel = new JPanel();
+        buttonPanel.setOpaque(false);
+        add(buttonPanel);
         if (helperButtons != null) {
             for (JButton button : helperButtons) {
                 if (button != null) {

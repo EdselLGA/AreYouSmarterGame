@@ -92,7 +92,7 @@ public class MainMenuPanel extends JPanel {
             Sound.isMenuMusicPlaying = false;
 
             Sound.playBGM("/GameBg.wav");
-            Sound.setBGMVolume(80);
+            Sound.setBGMVolume(300);
 
             //parent.switchTo(GameWindow.CARD_GAME);
             // GAME ENTRY
@@ -145,7 +145,7 @@ public class MainMenuPanel extends JPanel {
 
                 Sound.stopBGM();
                 Sound.isMenuMusicPlaying = false;
-                Sound.playBGM("BgMusic.wav");
+                Sound.playBGM("/BgMusic.wav");
             }
         });
     }

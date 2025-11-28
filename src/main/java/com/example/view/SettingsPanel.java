@@ -209,7 +209,7 @@ public class SettingsPanel extends JPanel {
     private JLabel makeScaledIcon(String path, double widthPercent) {
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        ImageIcon raw = new ImageIcon(path);
+        ImageIcon raw = new ImageIcon(getClass().getResource(path));
         int newWidth = (int) (screen.width * widthPercent);
         int newHeight = (int) ((double) raw.getIconHeight() /
                 raw.getIconWidth() * newWidth);

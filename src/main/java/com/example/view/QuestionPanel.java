@@ -2,12 +2,17 @@ package com.example.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Toolkit;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,9 +42,17 @@ public class QuestionPanel extends JPanel {
     private JButton dropOutButton;
     private JButton lockAnswerButton;
     private JLabel resultLabel;
+
+    private Image bgImage;
+    private Image containerImg;
     
+    private static final String BG = "/QuestionsBG.png";
+    private static final String CONTAINER = "/QuestionsbuttonContainer.png";
+
     private int selectedAnswerIndex = -1;
     private static final int NUM_OPTIONS = 4;
+
+    private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
     public QuestionPanel() {
         initializePanel();
@@ -51,6 +64,10 @@ public class QuestionPanel extends JPanel {
 
     private void initializePanel() {
         setBackground(Color.DARK_GRAY);
+        setOpaque(false);
+        loadImages();
+        revalidate();
+        repaint();
         setLayout(new BorderLayout());
         
         // Top panel - Question info
@@ -69,37 +86,51 @@ public class QuestionPanel extends JPanel {
     private JPanel createTopPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(Color.DARK_GRAY);
+        panel.setOpaque(false);
+        panel.setBorder(BorderFactory.createEmptyBorder(30, 0, 20, 0)); // More top padding to push into white box
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 10, 5, 10);
+        gbc.insets = new Insets(8, 10, 8, 10); // More spacing
         
         // Question number
         gbc.gridx = 0;
         gbc.gridy = 0;
         questionNumberLabel = new JLabel("Question 1 of 11");
-        questionNumberLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        questionNumberLabel.setForeground(Color.WHITE);
+        questionNumberLabel.setFont(new Font("Arial", Font.BOLD, 26));
+        questionNumberLabel.setForeground(Color.YELLOW);
+        questionNumberLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
+        questionNumberLabel.setOpaque(true);
+        questionNumberLabel.setBackground(new Color(0, 0, 0, 100)); // Semi-transparent black background
         panel.add(questionNumberLabel, gbc);
         
         // Score
         gbc.gridx = 1;
         scoreLabel = new JLabel("Score: $0");
-        scoreLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        scoreLabel.setFont(new Font("Arial", Font.BOLD, 26));
         scoreLabel.setForeground(Color.YELLOW);
+        scoreLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
+        scoreLabel.setOpaque(true);
+        scoreLabel.setBackground(new Color(0, 0, 0, 100)); // Semi-transparent black background
         panel.add(scoreLabel, gbc);
         
         // Category
         gbc.gridx = 0;
         gbc.gridy = 1;
         categoryLabel = new JLabel("Category: -");
-        categoryLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-        categoryLabel.setForeground(Color.WHITE);
+        categoryLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        categoryLabel.setForeground(Color.YELLOW);
+        categoryLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
+        categoryLabel.setOpaque(true);
+        categoryLabel.setBackground(new Color(0, 0, 0, 100)); // Semi-transparent black background
         panel.add(categoryLabel, gbc);
         
         // Helper
         gbc.gridx = 1;
         helperLabel = new JLabel("Helper: None");
-        helperLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-        helperLabel.setForeground(Color.WHITE);
+        helperLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        helperLabel.setForeground(Color.YELLOW);
+        helperLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
+        helperLabel.setOpaque(true);
+        helperLabel.setBackground(new Color(0, 0, 0, 100)); // Semi-transparent black background
         panel.add(helperLabel, gbc);
         
         return panel;
@@ -108,55 +139,73 @@ public class QuestionPanel extends JPanel {
     private JPanel createCenterPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(Color.DARK_GRAY);
+        panel.setOpaque(false);
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 20, 10, 20);
+        gbc.insets = new Insets(0, 20, 0, 20); // No vertical spacing
         gbc.gridx = 0;
         gbc.gridy = 0;
+        gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
-        // Question text
-        questionTextLabel = new JLabel("<html><div style='text-align: center; width: 600px;'>Question text will appear here</div></html>");
-        questionTextLabel.setFont(new Font("Arial", Font.PLAIN, 20));
-        questionTextLabel.setForeground(Color.WHITE);
-        questionTextLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        // Question text - LARGER, BLACK, and CENTERED - VERY HIGH
+        questionTextLabel = new JLabel("<html><div style='text-align: center; width: 900px;'>Question text will appear here</div></html>");
+        questionTextLabel.setFont(new Font("Arial", Font.BOLD, 28));
+        questionTextLabel.setForeground(Color.BLACK);
+        questionTextLabel.setHorizontalAlignment(JLabel.CENTER);
+        questionTextLabel.setBorder(BorderFactory.createEmptyBorder(5, 20, 25, 20)); // Minimal top padding
         panel.add(questionTextLabel, gbc);
         
-        // Option buttons
+        // Option buttons in 2x2 grid - PROPERLY SIZED and CENTERED
         optionButtons = new JButton[NUM_OPTIONS];
-        gbc.gridy = 1;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.weightx = 1.0;
-        gbc.weighty = 0.5;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.weightx = 0;
+        gbc.weighty = 0;
+        gbc.insets = new Insets(8, 25, 8, 25); // Tight spacing
         
         for (int i = 0; i < NUM_OPTIONS; i++) {
             JButton button = new JButton("Option " + (i + 1));
             button.setFont(new Font("Arial", Font.BOLD, 16));
-            button.setPreferredSize(new java.awt.Dimension(400, 60));
-            button.setBackground(Color.LIGHT_GRAY);
+            button.setPreferredSize(new java.awt.Dimension(350, 55)); // Better size for text
+            button.setMinimumSize(new java.awt.Dimension(350, 55));
+            button.setOpaque(true); // Make opaque so background shows
+            button.setContentAreaFilled(true);
+            button.setBorderPainted(true);
+            button.setBackground(new Color(240, 240, 240)); // Light gray background
+            button.setForeground(Color.BLACK);
             button.setFocusPainted(false);
+            button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Clear border
             
             final int optionIndex = i;
             button.addActionListener(e -> {
                 // Deselect previous
                 if (selectedAnswerIndex >= 0 && selectedAnswerIndex < optionButtons.length) {
-                    optionButtons[selectedAnswerIndex].setBackground(Color.LIGHT_GRAY);
+                    optionButtons[selectedAnswerIndex].setBackground(new Color(240, 240, 240));
                 }
                 // Select new
                 selectedAnswerIndex = optionIndex;
-                button.setBackground(Color.CYAN);
+                button.setBackground(new Color(100, 200, 255)); // Nice blue selection
                 if (gameActionListener != null) {
                     gameActionListener.onAnswerSelected(optionIndex);
                 }
             });
             
             optionButtons[i] = button;
+            
+            // Arrange in 2x2 grid
+            gbc.gridx = i % 2; // Column 0 or 1
+            gbc.gridy = 1 + (i / 2); // Row 1 or 2
+            
             panel.add(button, gbc);
-            gbc.gridy++;
         }
         
         // Result label (hidden initially)
-        gbc.gridy = 5;
+        gbc.gridx = 0;
+        gbc.gridy = 3; // After the 2x2 button grid
+        gbc.gridwidth = 2; // Span across both columns
         gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weighty = 0;
         resultLabel = new JLabel("");
         resultLabel.setFont(new Font("Arial", Font.BOLD, 24));
         resultLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -169,15 +218,20 @@ public class QuestionPanel extends JPanel {
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(Color.DARK_GRAY);
+        panel.setOpaque(false);
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.insets = new Insets(15, 15, 15, 15);
         
-        // Lifeline buttons
+        // Lifeline buttons - BIGGER and PRETTIER
         gbc.gridx = 0;
         gbc.gridy = 0;
         peekButton = new JButton("Peek");
-        peekButton.setFont(new Font("Arial", Font.BOLD, 14));
-        peekButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        peekButton.setFont(new Font("Arial", Font.BOLD, 18));
+        peekButton.setPreferredSize(new java.awt.Dimension(140, 60));
+        peekButton.setBackground(new Color(173, 216, 230)); // Light blue
+        peekButton.setForeground(Color.BLACK);
+        peekButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        peekButton.setFocusPainted(false);
         peekButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onPeekRequested();
@@ -187,8 +241,12 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 1;
         copyButton = new JButton("Copy");
-        copyButton.setFont(new Font("Arial", Font.BOLD, 14));
-        copyButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        copyButton.setFont(new Font("Arial", Font.BOLD, 18));
+        copyButton.setPreferredSize(new java.awt.Dimension(140, 60));
+        copyButton.setBackground(new Color(173, 216, 230)); // Light blue
+        copyButton.setForeground(Color.BLACK);
+        copyButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        copyButton.setFocusPainted(false);
         copyButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onCopyRequested();
@@ -198,8 +256,12 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 2;
         saveButton = new JButton("Save");
-        saveButton.setFont(new Font("Arial", Font.BOLD, 14));
-        saveButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        saveButton.setFont(new Font("Arial", Font.BOLD, 18));
+        saveButton.setPreferredSize(new java.awt.Dimension(140, 60));
+        saveButton.setBackground(new Color(173, 216, 230)); // Light blue
+        saveButton.setForeground(Color.BLACK);
+        saveButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        saveButton.setFocusPainted(false);
         saveButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onSaveRequested();
@@ -207,12 +269,15 @@ public class QuestionPanel extends JPanel {
         });
         panel.add(saveButton, gbc);
         
-        // Action buttons
+        // Action buttons - BIGGER and PRETTIER
         gbc.gridx = 3;
         dropOutButton = new JButton("Drop Out");
-        dropOutButton.setFont(new Font("Arial", Font.BOLD, 14));
-        dropOutButton.setPreferredSize(new java.awt.Dimension(120, 40));
-        dropOutButton.setBackground(Color.ORANGE);
+        dropOutButton.setFont(new Font("Arial", Font.BOLD, 18));
+        dropOutButton.setPreferredSize(new java.awt.Dimension(160, 60));
+        dropOutButton.setBackground(new Color(255, 165, 0)); // Orange
+        dropOutButton.setForeground(Color.BLACK);
+        dropOutButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        dropOutButton.setFocusPainted(false);
         dropOutButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onDropOut();
@@ -222,9 +287,12 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 4;
         lockAnswerButton = new JButton("Lock Answer");
-        lockAnswerButton.setFont(new Font("Arial", Font.BOLD, 16));
-        lockAnswerButton.setPreferredSize(new java.awt.Dimension(150, 50));
-        lockAnswerButton.setBackground(Color.GREEN);
+        lockAnswerButton.setFont(new Font("Arial", Font.BOLD, 20));
+        lockAnswerButton.setPreferredSize(new java.awt.Dimension(200, 65));
+        lockAnswerButton.setBackground(new Color(0, 255, 0)); // Bright green
+        lockAnswerButton.setForeground(Color.BLACK);
+        lockAnswerButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        lockAnswerButton.setFocusPainted(false);
         lockAnswerButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onLockAnswer();
@@ -257,18 +325,19 @@ public class QuestionPanel extends JPanel {
         }
         
         // Update question text
-        questionTextLabel.setText("<html><div style='text-align: center; width: 600px;'>" + 
+        questionTextLabel.setText("<html><div style='text-align: center; width: 900px;'>" + 
                                  question.getQuestionText() + "</div></html>");
         
         // Update option buttons
         String[] options = question.getOptions();
         for (int i = 0; i < Math.min(options.length, optionButtons.length); i++) {
             optionButtons[i].setText(options[i]);
+            optionButtons[i].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
             optionButtons[i].setEnabled(!answerLocked);
             if (answerLocked && i == selectedAnswerIndex) {
-                optionButtons[i].setBackground(Color.CYAN);
+                optionButtons[i].setBackground(new Color(100, 200, 255));
             } else if (!answerLocked) {
-                optionButtons[i].setBackground(Color.LIGHT_GRAY);
+                optionButtons[i].setBackground(new Color(240, 240, 240));
             }
         }
         
@@ -292,12 +361,12 @@ public class QuestionPanel extends JPanel {
     public void updateAnswerSelection(int index) {
         // Deselect previous
         if (selectedAnswerIndex >= 0 && selectedAnswerIndex < optionButtons.length) {
-            optionButtons[selectedAnswerIndex].setBackground(Color.LIGHT_GRAY);
+            optionButtons[selectedAnswerIndex].setBackground(new Color(240, 240, 240));
         }
         // Select new
         selectedAnswerIndex = index;
         if (index >= 0 && index < optionButtons.length) {
-            optionButtons[index].setBackground(Color.CYAN);
+            optionButtons[index].setBackground(new Color(100, 200, 255));
             lockAnswerButton.setEnabled(true);
         }
     }
@@ -359,5 +428,19 @@ public class QuestionPanel extends JPanel {
 
     private int getHelperAccuracy(Helper helper) {
         return helper.getAccuracyPercentage();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        if (this.bgImage != null)
+            g.drawImage(this.bgImage, 0, 0, getWidth(), getHeight(), this);
+
+        g.drawImage(this.containerImg, 40, 20, 1350, 700, this);
+    }
+    private void loadImages() {
+        this.bgImage = new ImageIcon(getClass().getResource(BG)).getImage();
+        this.containerImg = new ImageIcon(getClass().getResource(CONTAINER)).getImage();
     }
 }
