@@ -340,6 +340,10 @@ public class QuestionPanel extends JPanel {
                 optionButtons[i].setBackground(new Color(240, 240, 240));
             }
         }
+        if(options[0]=="True" && options[1]=="False"){
+            optionButtons[2].setText("");
+            optionButtons[3].setText("");
+        }
         
         // Update lifeline buttons
         boolean lifelinesEnabled = canUseLifelines && !answerLocked;

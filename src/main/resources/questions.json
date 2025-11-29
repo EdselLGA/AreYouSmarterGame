@@ -1,874 +1,131 @@
 {
   "History": [
-        {
-            "id": 1,
-            "question": "Who introduced the concept of structured programming?",
-            "choices": [
-                "Alan Turing",
-                "John Backus",
-                "Edsger Dijkstra",
-                "Bjarne Stroustrup"
-            ],
-            "answer": "Edsger Dijkstra",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 2,
-            "question": "Which programming paradigm was dominant during the 1950s and 1960s?",
-            "choices": [
-                "Functional",
-                "Procedural",
-                "Object-Oriented",
-                "Logic"
-            ],
-            "answer": "Procedural",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 3,
-            "question": "What was the first high-level programming language?",
-            "choices": [
-                "FORTRAN",
-                "COBOL",
-                "LISP",
-                "Assembly"
-            ],
-            "answer": "FORTRAN",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 4,
-            "question": "Who is known as the father of Object-Oriented Programming?",
-            "choices": [
-                "Alan Kay",
-                "James Gosling",
-                "Guido van Rossum",
-                "Dennis Ritchie"
-            ],
-            "answer": "Alan Kay",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 5,
-            "question": "In which decade did the Agile Manifesto get published?",
-            "choices": [
-                "1980s",
-                "1990s",
-                "2000s",
-                "2010s"
-            ],
-            "answer": "2000s",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 6,
-            "question": "What programming language was created by Guido van Rossum?",
-            "choices": [
-                "Ruby",
-                "Python",
-                "JavaScript",
-                "Perl"
-            ],
-            "answer": "Python",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 7,
-            "question": "Which company developed the C programming language?",
-            "choices": [
-                "Microsoft",
-                "Bell Labs",
-                "IBM",
-                "Apple"
-            ],
-            "answer": "Bell Labs",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 8,
-            "question": "What year was the first version of Java released?",
-            "choices": [
-                "1991",
-                "1995",
-                "2000",
-                "1989"
-            ],
-            "answer": "1995",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 9,
-            "question": "Which programming language is primarily associated with web development?",
-            "choices": [
-                "C++",
-                "JavaScript",
-                "Fortran",
-                "COBOL"
-            ],
-            "answer": "JavaScript",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 10,
-            "question": "Who created the Linux operating system?",
-            "choices": [
-                "Bill Gates",
-                "Steve Jobs",
-                "Linus Torvalds",
-                "Mark Zuckerberg"
-            ],
-            "answer": "Linus Torvalds",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 11,
-            "question": "What does 'HTML' stand for?",
-            "choices": [
-                "HyperText Markup Language",
-                "HighText Machine Language",
-                "Hyperloop Transfer Markup Language",
-                "None of the above"
-            ],
-            "answer": "HyperText Markup Language",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 12,
-            "question": "Which programming language is known for its use in artificial intelligence and symbolic processing?",
-            "choices": [
-                "LISP",
-                "C#",
-                "Java",
-                "Swift"
-            ],
-            "answer": "LISP",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 13,
-            "question": "What was the main purpose of the creation of the COBOL programming language?",
-            "choices": [
-                "Scientific computing",
-                "Business data processing",
-                "Game development",
-                "Web development"
-            ],
-            "answer": "Business data processing",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 14,
-            "question": "Which programming language introduced the concept of 'write once, run anywhere'?",
-            "choices": [
-                "C++",
-                "Java",
-                "Python",
-                "Ruby"
-            ],
-            "answer": "Java",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 15,
-            "question": "Who is credited with inventing the World Wide Web?",
-            "choices": [
-                "Tim Berners-Lee",
-                "Vint Cerf",
-                "Bill Gates",
-                "Steve Jobs"
-            ],
-            "answer": "Tim Berners-Lee",
-            "difficulty": "medium",
-            "type": "multiple"
-        
-        },
-        {
-            "id": 16,
-            "question": "What was the first programming language to support object-oriented programming?",
-            "choices": [
-                "Simula",
-                "Smalltalk",
-                "C++",
-                "Java"
-            ],
-            "answer": "Simula",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 17,
-            "question": "Which programming language was developed at Bell Labs in the early 1970s?",
-            "choices": [
-              "C",
-              "Pascal",
-              "Ada",
-              "B"
-            ],
-            "answer": "C",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 18,
-            "question": "What programming language is known for its use in statistical computing and graphics?",
-            "choices": [
-              "R",
-              "MATLAB",
-              "SAS",
-              "SPSS"
-            ],
-            "answer": "R",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 19,
-            "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?",
-            "choices": [
-              "Rust",
-              "Go",
-              "D",
-              "Swift"
-            ],
-            "answer": "Rust",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 20,
-            "question": "What year was the Python programming language first released?",
-            "choices": [
-              "1989",
-              "1991",
-              "1995",
-              "2000"
-            ],
-            "answer": "1991",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 21,
-            "question": "Which programming language was primarily designed for system programming and embedded systems?",
-            "choices": [
-                "C",
-                "Java",
-                "Python",
-                "JavaScript"
-            ],
-            "answer": "C",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 22,
-            "question": " What programming language is known for its use in web development and was created by Brendan Eich?",
-            "choices": [
-                "JavaScript",
-                "TypeScript",
-                "CoffeeScript",
-                "Dart"
-            ],
-            "answer": "JavaScript",
-            "difficulty": "easy",
-            "type": "multiple"
+    { "id": 1, "question": "Who introduced the concept of structured programming?", "choices": ["Alan Turing", "John Backus", "Edsger Dijkstra", "Bjarne Stroustrup"], "answer": "Edsger Dijkstra", "difficulty": "medium", "type": "multiple" },
+    { "id": 2, "question": "Which programming paradigm was dominant during the 1950s and 1960s?", "choices": ["Functional", "Procedural", "Object-Oriented", "Logic"], "answer": "Procedural", "difficulty": "easy", "type": "multiple" },
+    { "id": 3, "question": "What was the first high-level programming language?", "choices": ["FORTRAN", "COBOL", "LISP", "Assembly"], "answer": "FORTRAN", "difficulty": "hard", "type": "multiple" },
+    { "id": 4, "question": "Who is known as the father of Object-Oriented Programming?", "choices": ["Alan Kay", "James Gosling", "Guido van Rossum", "Dennis Ritchie"], "answer": "Alan Kay", "difficulty": "medium", "type": "multiple" },
+    { "id": 5, "question": "In which decade did the Agile Manifesto get published?", "choices": ["1980s", "1990s", "2000s", "2010s"], "answer": "2000s", "difficulty": "easy", "type": "multiple" },
+    { "id": 6, "question": "What programming language was created by Guido van Rossum?", "choices": ["Ruby", "Python", "JavaScript", "Perl"], "answer": "Python", "difficulty": "easy", "type": "multiple" },
+    { "id": 7, "question": "Which company developed the C programming language?", "choices": ["Microsoft", "Bell Labs", "IBM", "Apple"], "answer": "Bell Labs", "difficulty": "medium", "type": "multiple" },
+    { "id": 8, "question": "What year was the first version of Java released?", "choices": ["1991", "1995", "2000", "1989"], "answer": "1995", "difficulty": "medium", "type": "multiple" },
+    { "id": 9, "question": "Which programming language is primarily associated with web development?", "choices": ["C++", "JavaScript", "Fortran", "COBOL"], "answer": "JavaScript", "difficulty": "easy", "type": "multiple" },
+    { "id": 10, "question": "Who created the Linux operating system?", "choices": ["Bill Gates", "Steve Jobs", "Linus Torvalds", "Mark Zuckerberg"], "answer": "Linus Torvalds", "difficulty": "medium", "type": "multiple" },
+    { "id": 11, "question": "What does 'HTML' stand for?", "choices": ["HyperText Markup Language", "HighText Machine Language", "Hyperloop Transfer Markup Language", "None of the above"], "answer": "HyperText Markup Language", "difficulty": "easy", "type": "multiple" },
+    { "id": 12, "question": "Which programming language is known for its use in artificial intelligence and symbolic processing?", "choices": ["LISP", "C#", "Java", "Swift"], "answer": "LISP", "difficulty": "hard", "type": "multiple" },
+    { "id": 13, "question": "What was the main purpose of the creation of the COBOL programming language?", "choices": ["Scientific computing", "Business data processing", "Game development", "Web development"], "answer": "Business data processing", "difficulty": "medium", "type": "multiple" },
+    { "id": 14, "question": "Which programming language introduced the concept of 'write once, run anywhere'?", "choices": ["C++", "Java", "Python", "Ruby"], "answer": "Java", "difficulty": "easy", "type": "multiple" },
+    { "id": 15, "question": "Who is credited with inventing the World Wide Web?", "choices": ["Tim Berners-Lee", "Vint Cerf", "Bill Gates", "Steve Jobs"], "answer": "Tim Berners-Lee", "difficulty": "medium", "type": "multiple" },
+    { "id": 16, "question": "What was the first programming language to support object-oriented programming?", "choices": ["Simula", "Smalltalk", "C++", "Java"], "answer": "Simula", "difficulty": "hard", "type": "multiple" },
+    { "id": 17, "question": "Which programming language was developed at Bell Labs in the early 1970s?", "choices": ["C", "Pascal", "Ada", "B"], "answer": "C", "difficulty": "medium", "type": "multiple" },
+    { "id": 18, "question": "What programming language is known for its use in statistical computing and graphics?", "choices": ["R", "MATLAB", "SAS", "SPSS"], "answer": "R", "difficulty": "hard", "type": "multiple" },
+    { "id": 19, "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?", "choices": ["Rust", "Go", "D", "Swift"], "answer": "Rust", "difficulty": "medium", "type": "multiple" },
+    { "id": 20, "question": "What year was the Python programming language first released?", "choices": ["1989", "1991", "1995", "2000"], "answer": "1991", "difficulty": "easy", "type": "multiple" },
+    { "id": 21, "question": "Which programming language was primarily designed for system programming and embedded systems?", "choices": ["C", "Java", "Python", "JavaScript"], "answer": "C", "difficulty": "medium", "type": "multiple" },
+    { "id": 22, "question": "What programming language is known for its use in web development and was created by Brendan Eich?", "choices": ["JavaScript", "TypeScript", "CoffeeScript", "Dart"], "answer": "JavaScript", "difficulty": "easy", "type": "multiple" },
+    { "id": 23, "question": "Which programming language was developed by Microsoft and is primarily used for Windows application development?", "choices": ["C#", "VB.NET", "F#", "ASP.NET"], "answer": "C#", "difficulty": "medium", "type": "multiple" },
+    { "id": 24, "question": "Which programming language is known for its simplicity and readability, often used as a teaching language?", "choices": ["Python", "Ruby", "Java", "C++"], "answer": "Python", "difficulty": "easy", "type": "multiple" },
+    { "id": 25, "question": "What programming language was created by Yukihiro Matsumoto and is known for its elegant syntax?", "choices": ["Perl", "Ruby", "PHP", "Python"], "answer": "Ruby", "difficulty": "medium", "type": "multiple" }
+  ],
 
-        },
-        {
-            "id": 23,
-            "question": "Which programming language was developed by Microsoft and is primarily used for Windows application development?",
-            "choices": [
-                "C#",
-                "VB.NET",
-                "F#",
-                "ASP.NET"
-            ],
-            "answer": "C#",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 24,
-            "question": "Which programming language is known for its simplicity and readability, often used as a teaching language?",
-            "choices": [
-                "Python",
-                "Ruby",
-                "Java",
-                "C++"
-            ],
-            "answer": "Python",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 25,
-            "question": "What programming language was created by Yukihiro Matsumoto and is known for its elegant syntax?",
-            "choices": [
-                "Perl",
-                "Ruby",
-                "PHP",
-                "Python"
-            ],
-            "answer": "Ruby",
-            "difficulty": "medium",
-            "type": "multiple"
-        }
+  "GuessTheParadigm": [
+    { "id": 1, "question": "Which programming paradigm emphasizes the use of functions and avoids changing state and mutable data?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 2, "question": "In which programming paradigm are programs structured around objects that combine data and behavior?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 3, "question": "Which programming paradigm is based on formal logic and uses facts and rules to derive conclusions?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 4, "question": "Which programming paradigm focuses on a sequence of commands or instructions to be executed in order?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 5, "question": "In which programming paradigm do programs respond to events such as user actions or sensor outputs?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 6, "question": "Which programming paradigm is characterized by the use of higher-order functions and first-class functions?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 7, "question": "Which programming paradigm is often used in artificial intelligence and expert systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 8, "question": "Which programming paradigm emphasizes code reusability through inheritance and polymorphism?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 9, "question": "Which programming paradigm is best suited for tasks that involve complex data manipulation and transformations?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 10, "question": "Which programming paradigm is commonly used in web development frameworks like React and Angular?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 11, "question": "Which programming paradigm is characterized by the use of procedures or routines to operate on data structures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 12, "question": "Which programming paradigm allows functions to be treated as first-class citizens, enabling them to be passed as arguments and returned from other functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 13, "question": "Which programming paradigm is often used in database query languages like SQL?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 14, "question": "Which programming paradigm emphasizes the separation of concerns through the use of modules or components?", "choices": ["Modular Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Modular Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 15, "question": "Which programming paradigm is best suited for concurrent and parallel programming?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 16, "question": "Which programming paradigm is often used in game development for handling user input and game state changes?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 17, "question": "Which programming paradigm emphasizes the use of immutable data structures and pure functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 18, "question": "Which programming paradigm is commonly used in mobile app development frameworks like Flutter and React Native?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 19, "question": "Which programming paradigm is characterized by the use of classes and objects to model real-world entities?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 20, "question": "Which programming paradigm is best suited for tasks that involve complex decision-making and rule-based systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 21, "question": "Which programming paradigm emphasizes the use of events and callbacks to handle asynchronous operations?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 22, "question": "Which programming paradigm is often used in scientific computing and numerical analysis?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "hard", "type": "multiple" },
+    { "id": 23, "question": "Which programming paradigm allows for the creation of reusable code through the use of functions and procedures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
+    { "id": 24, "question": "Which programming paradigm is commonly used in front-end web development for building user interfaces?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
+    { "id": 25, "question": "Which programming paradigm emphasizes the use of mathematical functions and avoids side effects?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" }
+  ],
 
-    ],
+  "TrueOrFalse": [
+    { "id": 1, "question": "The C programming language was developed in the 1980s.", "answer": "False", "difficulty": "easy", "type": "true_false" },
+    { "id": 2, "question": "Python is named after the British comedy group Monty Python.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 3, "question": "JavaScript and Java are the same programming language.", "answer": "False", "difficulty": "easy", "type": "true_false" },
+    { "id": 4, "question": "The first version of the Ruby programming language was released in the 1990s.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 5, "question": "The term 'bug' in programming originated from a real insect found in a computer.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 6, "question": "The Go programming language was developed by Google.", "answer": "True", "difficulty": "easy", "type": "true_false" },
+    { "id": 7, "question": "HTML is a programming language.", "answer": "False", "difficulty": "easy", "type": "true_false" },
+    { "id": 8, "question": "The first computer programmer was Ada Lovelace.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 9, "question": "Java was originally called Oak.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 10, "question": "The Python programming language supports multiple programming paradigms, including procedural, object-oriented, and functional programming.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 11, "question": "The first version of the C++ programming language was released in 1985.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 12, "question": "The JavaScript programming language was created in just 10 days.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 13, "question": "The first version of the PHP programming language was released in 1995.", "answer": "True", "difficulty": "easy", "type": "true_false" },
+    { "id": 14, "question": "The Swift programming language was developed by Microsoft.", "answer": "False", "difficulty": "medium", "type": "true_false" },
+    { "id": 15, "question": "The first version of the Perl programming language was released in the 1980s.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 16, "question": "The first version of the Java programming language was released in 1991.", "answer": "False", "difficulty": "easy", "type": "true_false" },
+    { "id": 17, "question": "The first version of the Fortran programming language was released in the 1950s.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 18, "question": "The first version of the COBOL programming language was released in 1960.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 19, "question": "The first version of the LISP programming language was released in the 1970s.", "answer": "False", "difficulty": "medium", "type": "true_false" },
+    { "id": 20, "question": "The first version of the Rust programming language was released in 2010.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 21, "question": "The first version of the TypeScript programming language was released in 2012.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 22, "question": "The first version of the Kotlin programming language was released in 2011.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 23, "question": "The first version of the Scala programming language was released in 2004.", "answer": "True", "difficulty": "medium", "type": "true_false" },
+    { "id": 24, "question": "The first version of the Haskell programming language was released in 1990.", "answer": "True", "difficulty": "hard", "type": "true_false" },
+    { "id": 25, "question": "The first version of the MATLAB programming language was released in 1984.", "answer": "True", "difficulty": "medium", "type": "true_false" }
+  ],
 
-    "GuessTheParadigm": [
-        {
-            "id": 1,
-            "question": "Which programming paradigm emphasizes the use of functions and avoids changing state and mutable data?",
-            "choices": [
-                "Object-Oriented Programming",
-                "Functional Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 2,
-            "question": "In which programming paradigm are programs structured around objects that combine data and behavior?",
-            "choices": [
-                "Procedural Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Event-Driven Programming"
-            ],
-            "answer": "Object-Oriented Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 3,
-            "question": "Which programming paradigm is based on formal logic and uses facts and rules to derive conclusions?",
-            "choices": [
-                "Logic Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Logic Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 4,
-            "question": "Which programming paradigm focuses on a sequence of commands or instructions to be executed in order?",
-            "choices": [
-                "Procedural Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Event-Driven Programming"
-            ],
-            "answer": "Procedural Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 5,
-            "question": "In which programming paradigm do programs respond to events such as user actions or sensor outputs?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 6,
-            "question": "Which programming paradigm is characterized by the use of higher-order functions and first-class functions?",
-            "choices": [
-                "Object-Oriented Programming",
-                "Functional Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",   
-            "type": "multiple"
-        },
-        {
-            "id": 7,
-            "question": "Which programming paradigm is often used in artificial intelligence and expert systems?",
-            "choices": [
-                "Logic Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Logic Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 8,
-            "question": "Which programming paradigm emphasizes code reusability through inheritance and polymorphism?",
-            "choices": [
-                "Object-Oriented Programming",
-                "Functional Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Object-Oriented Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 9,
-            "question": "Which programming paradigm is best suited for tasks that involve complex data manipulation and transformations?",
-            "choices": [
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 10,
-            "question": "Which programming paradigm is commonly used in web development frameworks like React and Angular?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 11,
-            "question": "Which programming paradigm is characterized by the use of procedures or routines to operate on data structures?",
-            "choices": [
-                "Procedural Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Logic Programming"
-            ],
-            "answer": "Procedural Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 12,
-            "question": "Which programming paradigm allows functions to be treated as first-class citizens, enabling them to be passed as arguments and returned from other functions?",
-            "choices": [
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 13,
-            "question": "Which programming paradigm is often used in database query languages like SQL?",
-            "choices": [
-                "Logic Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Logic Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 14,
-            "question": "Which programming paradigm emphasizes the separation of concerns through the use of modules or components?",
-            "choices": [
-                "Modular Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Modular Programming",
-            "difficulty": "easy",
-            "type": "multiple"  
-        },
-        {
-            "id": 15,
-            "question": "Which programming paradigm is best suited for concurrent and parallel programming?",
-            "choices": [
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 16,
-            "question": "Which programming paradigm is often used in game development for handling user input and game state changes?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 17,
-            "question": "Which programming paradigm emphasizes the use of immutable data structures and pure functions?",
-            "choices": [
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 18,
-            "question": "Which programming paradigm is commonly used in mobile app development frameworks like Flutter and React Native?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 19,
-            "question": "Which programming paradigm is characterized by the use of classes and objects to model real-world entities?",
-            "choices": [
-                "Object-Oriented Programming",
-                "Functional Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Object-Oriented Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 20,
-            "question": "Which programming paradigm is best suited for tasks that involve complex decision-making and rule-based systems?",
-            "choices": [
-                "Logic Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Logic Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 21,
-            "question": "Which programming paradigm emphasizes the use of events and callbacks to handle asynchronous operations?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 22,
-            "question": "Which programming paradigm is often used in scientific computing and numerical analysis?",
-            "choices": [
-                "Procedural Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Logic Programming"
-            ],
-            "answer": "Procedural Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        },
-        {
-            "id": 23,
-            "question": "Which programming paradigm allows for the creation of reusable code through the use of functions and procedures?",
-            "choices": [
-                "Procedural Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Logic Programming"
-            ],
-            "answer": "Procedural Programming",
-            "difficulty": "easy",
-            "type": "multiple"
-        },
-        {
-            "id": 24,
-            "question": "Which programming paradigm is commonly used in front-end web development for building user interfaces?",
-            "choices": [
-                "Event-Driven Programming",
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming"
-            ],
-            "answer": "Event-Driven Programming",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 25,
-            "question": "Which programming paradigm emphasizes the use of mathematical functions and avoids side effects?",
-            "choices": [
-                "Functional Programming",
-                "Object-Oriented Programming",
-                "Procedural Programming",
-                "Logic Programming"
-            ],
-            "answer": "Functional Programming",
-            "difficulty": "hard",
-            "type": "multiple"
-        }
-        
-
-    ],
-    "TrueOrFalse": [
-        {
-            "id": 1,
-            "question": "The C programming language was developed in the 1980s.",
-            "answer": "False",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 2,
-            "question": "Python is named after the British comedy group Monty Python.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 3,
-            "question": "JavaScript and Java are the same programming language.",
-            "answer": "False",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 4,
-            "question": "The first version of the Ruby programming language was released in the 1990s.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 5,
-            "question": "The term 'bug' in programming originated from a real insect found in a computer.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 6,
-            "question": "The Go programming language was developed by Google.",
-            "answer": "True",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 7,
-            "question": "HTML is a programming language.",
-            "answer": "False",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 8,
-            "question": "The first computer programmer was Ada Lovelace.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 9,
-            "question": "Java was originally called Oak.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 10,
-            "question": "The Python programming language supports multiple programming paradigms, including procedural, object-oriented, and functional programming.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 11,
-            "question": "The first version of the C++ programming language was released in 1985.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 12,
-            "question": "The JavaScript programming language was created in just 10 days.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 13,
-            "question": "The first version of the PHP programming language was released in 1995.",
-            "answer": "True",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 14,
-            "question": "The Swift programming language was developed by Microsoft.",
-            "answer": "False",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 15,
-            "question": "The first version of the Perl programming language was released in the 1980s.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 16,
-            "question": "The first version of the Java programming language was released in 1991.",
-            "answer": "False",
-            "difficulty": "easy",
-            "type": "true_false"
-        },
-        {
-            "id": 17,
-            "question": "The first version of the Fortran programming language was released in the 1950s.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 18,
-            "question": "The first version of the COBOL programming language was released in 1960.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 19,
-            "question": "The first version of the LISP programming language was released in the 1970s.",
-            "answer": "False",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 20,
-            "question": "The first version of the Rust programming language was released in 2010.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 21,
-            "question": "The first version of the TypeScript programming language was released in 2012.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 22,
-            "question": "The first version of the Kotlin programming language was released in 2011.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 23,
-            "question": "The first version of the Scala programming language was released in 2004.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        },
-        {
-            "id": 24,
-            "question": "The first version of the Haskell programming language was released in 1990.",
-            "answer": "True",
-            "difficulty": "hard",
-            "type": "true_false"
-        },
-        {
-            "id": 25,
-            "question": "The first version of the MATLAB programming language was released in 1984.",
-            "answer": "True",
-            "difficulty": "medium",
-            "type": "true_false"
-        }
-        
-
-    ],
-
-    "CodeSnippets": [
-        {
-            "id": 1,
-            "question": "What is the output of the following Python code?",
-            "choices": [
-                "3",
-                "6",
-                "9",
-                "Error"
-            ],
-            "image" : "assets/images/code_snippet_1.png",
-            "answer": "6",
-            "difficulty": "medium",
-            "type": "multiple"
-        },
-        {
-            "id": 2,
-            "question": "What does the following JavaScript code log to the console?",
-            "choices": [
-                "undefined",
-                "null",
-                "0",
-                "Error"
-            ],
-            "image" : "assets/images/code_snippet_2.png",
-            "answer": "undefined",
-            "difficulty": "hard",
-            "type": "multiple"
-        }
-
-
-    ]
+  "CodeSnippets": [
+  { "id": 1, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main(){\n\tint a = 5, b = 2;\n\tprintf(\"%d\", a/b);\n\treturn 0;\n}", "choices": ["2.5", "2", "3", "Compilation error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 2, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    printf(\"%c\", 'A' + 5);\n    return 0;\n}", "choices": ["A", "F", "E", "Compilation error"], "answer": "F", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 3, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int x = 5;\n    printf(\"%d\", x++ + ++x);\n    return 0;\n}", "choices": ["10", "11", "Undefined behavior", "12"], "answer": "Undefined behavior", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 4, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int arr[] = {1, 2, 3, 4};\n    printf(\"%d\", *(arr + 2));\n    return 0;\n}", "choices": ["1", "2", "3", "4"], "answer": "3", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 5, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int a = 10, b = 20;\n    int *p1 = &a, *p2 = &b;\n    printf(\"%d\", *p1 + *p2);\n    return 0;\n}", "choices": ["10", "20", "30", "200"], "answer": "30", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 6, "question": "What is the output of the following C program?\n#include <stdio.h>\nint func(int x) {\n    if (x <= 1) return 1;\n    else return x * func(x - 1);\n}\nint main() {\n    printf(\"%d\", func(4));\n    return 0;\n}", "choices": ["10", "16", "24", "4"], "answer": "24", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 7, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int x = 0;\n    for (int i = 1; i <= 3; i++) x += i;\n    printf(\"%d\", x);\n    return 0;\n}", "choices": ["3", "6", "9", "12"], "answer": "6", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 8, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    char *ptr = \"Hello\";\n    printf(\"%c\", *++ptr);\n    return 0;\n}", "choices": ["H", "e", "l", "Compilation error"], "answer": "e", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 9, "question": "Expected Output: 10 20\nWhich of the following C codes produces this output?", "choices": ["int x=10, y=20; printf(\"%d %d\", x, y);", "printf(\"10 20\");", "printf(\"%d %d\", 10, 20);", "All of the above"], "answer": "All of the above", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 10, "question": "Expected Output: 5\nWhich C code produces this output?", "choices": ["printf(\"%f\", 5.0);", "printf(\"%d\", 5);", "printf(\"%s\", \"5\");", "scanf(\"%d\", 5);"], "answer": "printf(\"%d\", 5);", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 11, "question": "Expected Output: HelloWorld\nWhich C code produces this?", "choices": ["printf(\"Hello World\");", "printf(\"HelloWorld\");", "printf(\"%s%s\", \"Hello\", \"World\");", "Both B and C"], "answer": "Both B and C", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 12, "question": "Expected Output: 1 4 9\nWhich loop produces this in C?", "choices": ["for(int i=1;i<=3;i++) printf(\"%d \", i*i);", "for(int i=1;i<=3;i++) printf(\"%d \", i);", "for(int i=1;i<=3;i++) printf(\"%d \", i+i);", "int i=1; printf(\"%d \", i*i);"], "answer": "for(int i=1;i<=3;i++) printf(\"%d \", i*i);", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 13, "question": "Expected Output: 15\nWhich C code produces this?", "choices": ["int sum=0; for(int i=1;i<=5;i++) sum+=i; printf(\"%d\", sum);", "printf(\"%d\", 5/3);", "printf(\"%d\", 5-5+5);", "printf(\"%d\", (5*5)/5);"], "answer": "int sum=0; for(int i=1;i<=5;i++) sum+=i; printf(\"%d\", sum);", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 14, "question": "Expected Output: 120\nWhich C code produces this?", "choices": ["printf(\"%d\", factorial(5));", "int fact=1; for(int i=1;i<=5;i++) fact*=i; printf(\"%d\", fact);", "int fact=5; printf(\"%d\", fact*fact*fact);", "printf(\"%d\", 5*4*3*2*1*0);"], "answer": "int fact=1; for(int i=1;i<=5;i++) fact*=i; printf(\"%d\", fact);", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 15, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        int x = 5, y = 2;\n        System.out.println(x / y);\n    }\n}", "choices": ["2.5", "2", "3", "Compilation error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 16, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println('A' + 1);\n    }\n}", "choices": ["66", "B", "A1", "Compilation error"], "answer": "66", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 17, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        System.out.println(++a * a++);\n    }\n}", "choices": ["30", "35", "36", "Undefined behavior"], "answer": "36", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 18, "question": "What is the output of the following Python code?\nx = 5\ny = 2\nprint(x // y)", "choices": ["2.5", "2", "3", "Error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
+  
+  { "id": 19, "question": "What is the output of the following Python code?\ndef func(x):\n    return x * x\nprint(func(4))", "choices": ["8", "12", "16", "Error"], "answer": "16", "difficulty": "medium", "type": "multiple" },
+  
+  { "id": 20, "question": "What is the output of the following Python code?\ndef rec(n):\n    if n <= 1:\n        return 1\n    return n * rec(n - 1)\nprint(rec(4))", "choices": ["4", "10", "24", "16"], "answer": "24", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 21, "question": "What is the output of the following Haskell-style code?\nsquare x = x * x\nmain = print (square 5)", "choices": ["25", "10", "Error", "55"], "answer": "25", "difficulty": "hard", "type": "multiple" },
+  
+  { "id": 22, "question": "What is the output of the following Haskell-style code?\nfact 0 = 1\nfact n = n * fact (n-1)\nmain = print (fact 4)", "choices": ["24", "10", "16", "12"], "answer": "24", "difficulty": "easy", "type": "multiple" }
+]
 }
