@@ -95,7 +95,7 @@ public class QuestionPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         questionNumberLabel = new JLabel("Question 1 of 11");
-        questionNumberLabel.setFont(new Font("Arial", Font.BOLD, 26));
+        questionNumberLabel.setFont(questionNumberLabel.getFont().deriveFont(26f));
         questionNumberLabel.setForeground(Color.YELLOW);
         questionNumberLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
         questionNumberLabel.setOpaque(true);
@@ -105,7 +105,7 @@ public class QuestionPanel extends JPanel {
         // Score
         gbc.gridx = 1;
         scoreLabel = new JLabel("Score: $0");
-        scoreLabel.setFont(new Font("Arial", Font.BOLD, 26));
+        scoreLabel.setFont(scoreLabel.getFont().deriveFont(26f));
         scoreLabel.setForeground(Color.YELLOW);
         scoreLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
         scoreLabel.setOpaque(true);
@@ -116,7 +116,7 @@ public class QuestionPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 1;
         categoryLabel = new JLabel("Category: -");
-        categoryLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        categoryLabel.setFont(categoryLabel.getFont().deriveFont(22f));
         categoryLabel.setForeground(Color.YELLOW);
         categoryLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
         categoryLabel.setOpaque(true);
@@ -126,7 +126,7 @@ public class QuestionPanel extends JPanel {
         // Helper
         gbc.gridx = 1;
         helperLabel = new JLabel("Helper: None");
-        helperLabel.setFont(new Font("Arial", Font.BOLD, 22));
+        helperLabel.setFont(helperLabel.getFont().deriveFont(22f));
         helperLabel.setForeground(Color.YELLOW);
         helperLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Black outline
         helperLabel.setOpaque(true);
@@ -149,7 +149,7 @@ public class QuestionPanel extends JPanel {
         
         // Question text - LARGER, BLACK, and CENTERED - VERY HIGH
         questionTextLabel = new JLabel("<html><div style='text-align: center; width: 900px;'>Question text will appear here</div></html>");
-        questionTextLabel.setFont(new Font("Arial", Font.BOLD, 28));
+        questionTextLabel.setFont(questionTextLabel.getFont().deriveFont(28f));
         questionTextLabel.setForeground(Color.BLACK);
         questionTextLabel.setHorizontalAlignment(JLabel.CENTER);
         questionTextLabel.setBorder(BorderFactory.createEmptyBorder(5, 20, 25, 20)); // Minimal top padding
@@ -166,7 +166,7 @@ public class QuestionPanel extends JPanel {
         
         for (int i = 0; i < NUM_OPTIONS; i++) {
             JButton button = new JButton("Option " + (i + 1));
-            button.setFont(new Font("Arial", Font.BOLD, 16));
+            button.setFont(button.getFont().deriveFont(16f));
             button.setPreferredSize(new java.awt.Dimension(350, 55)); // Better size for text
             button.setMinimumSize(new java.awt.Dimension(350, 55));
             button.setOpaque(true); // Make opaque so background shows
@@ -207,7 +207,7 @@ public class QuestionPanel extends JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weighty = 0;
         resultLabel = new JLabel("");
-        resultLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        resultLabel.setFont(resultLabel.getFont().deriveFont(24f));
         resultLabel.setHorizontalAlignment(JLabel.CENTER);
         resultLabel.setVisible(false);
         panel.add(resultLabel, gbc);
@@ -226,7 +226,7 @@ public class QuestionPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         peekButton = new JButton("Peek");
-        peekButton.setFont(new Font("Arial", Font.BOLD, 18));
+        peekButton.setFont(peekButton.getFont().deriveFont(18f));
         peekButton.setPreferredSize(new java.awt.Dimension(140, 60));
         peekButton.setBackground(new Color(173, 216, 230)); // Light blue
         peekButton.setForeground(Color.BLACK);
@@ -241,7 +241,7 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 1;
         copyButton = new JButton("Copy");
-        copyButton.setFont(new Font("Arial", Font.BOLD, 18));
+        copyButton.setFont(copyButton.getFont().deriveFont(18f));
         copyButton.setPreferredSize(new java.awt.Dimension(140, 60));
         copyButton.setBackground(new Color(173, 216, 230)); // Light blue
         copyButton.setForeground(Color.BLACK);
@@ -256,7 +256,7 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 2;
         saveButton = new JButton("Save");
-        saveButton.setFont(new Font("Arial", Font.BOLD, 18));
+        saveButton.setFont(saveButton.getFont().deriveFont(18f));
         saveButton.setPreferredSize(new java.awt.Dimension(140, 60));
         saveButton.setBackground(new Color(173, 216, 230)); // Light blue
         saveButton.setForeground(Color.BLACK);
@@ -272,7 +272,7 @@ public class QuestionPanel extends JPanel {
         // Action buttons - BIGGER and PRETTIER
         gbc.gridx = 3;
         dropOutButton = new JButton("Drop Out");
-        dropOutButton.setFont(new Font("Arial", Font.BOLD, 18));
+        dropOutButton.setFont(dropOutButton.getFont().deriveFont(18f));
         dropOutButton.setPreferredSize(new java.awt.Dimension(160, 60));
         dropOutButton.setBackground(new Color(255, 165, 0)); // Orange
         dropOutButton.setForeground(Color.BLACK);
@@ -287,7 +287,7 @@ public class QuestionPanel extends JPanel {
         
         gbc.gridx = 4;
         lockAnswerButton = new JButton("Lock Answer");
-        lockAnswerButton.setFont(new Font("Arial", Font.BOLD, 20));
+        lockAnswerButton.setFont(lockAnswerButton.getFont().deriveFont(20f));
         lockAnswerButton.setPreferredSize(new java.awt.Dimension(200, 65));
         lockAnswerButton.setBackground(new Color(0, 255, 0)); // Bright green
         lockAnswerButton.setForeground(Color.BLACK);

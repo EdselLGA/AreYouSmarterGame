@@ -1,0 +1,16 @@
+public class FontUtil {
+    public static Font loadFont() {
+        try {
+            InputStream is = FontUtil.class.getResourceAsStream("/pixel.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(font);
+
+            return font;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Font("SansSerif", Font.PLAIN, 12);
+        }
+    }
+}

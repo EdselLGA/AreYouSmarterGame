@@ -70,7 +70,7 @@ public class HelperPanel extends JPanel {
 
         // Title Label
         titleLabel = new JLabel("SELECT A HELPER");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 30));
+        titleLabel.setFont(titleLabel.getFont().deriveFont(30f));
         titleLabel.setForeground(Color.WHITE);
         add(titleLabel, gbc);
 

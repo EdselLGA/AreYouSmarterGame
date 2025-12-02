@@ -57,21 +57,21 @@ public class ResultsPanel extends JPanel {
         gbc.weighty = 0;
         gbc.fill = GridBagConstraints.NONE;
         titleLabel = new JLabel("GAME OVER", JLabel.CENTER);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        titleLabel.setFont(titleLabel.getFont().deriveFont(40f));
         titleLabel.setForeground(Color.WHITE);
         add(titleLabel, gbc);
 
         // Score Label
         gbc.gridy = 2;
         scoreLabel = new JLabel("Final Score: $0", JLabel.CENTER);
-        scoreLabel.setFont(new Font("Arial", Font.BOLD, 30));
+        scoreLabel.setFont(scoreLabel.getFont().deriveFont(30f));
         scoreLabel.setForeground(Color.YELLOW);
         add(scoreLabel, gbc);
 
         // Message Label
         gbc.gridy = 3;
         messageLabel = new JLabel("", JLabel.CENTER);
-        messageLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        messageLabel.setFont(messageLabel.getFont().deriveFont(20f));
         messageLabel.setForeground(Color.WHITE);
         add(messageLabel, gbc);
 
@@ -93,7 +93,7 @@ public class ResultsPanel extends JPanel {
         gbc.gridx = 0;
         gbc.weightx = 0.5;
         mainMenuButton = new JButton("Main Menu");
-        mainMenuButton.setFont(new Font("Arial", Font.BOLD, 18));
+        mainMenuButton.setFont(mainMenuButton.getFont().deriveFont(18f));
         mainMenuButton.setPreferredSize(new java.awt.Dimension(200, 50));
         mainMenuButton.setBackground(new Color(41, 128, 185)); // Modern blue
         mainMenuButton.setForeground(Color.WHITE);
@@ -112,7 +112,7 @@ public class ResultsPanel extends JPanel {
         gbc.anchor = GridBagConstraints.SOUTHEAST;
         gbc.insets = new Insets(10, 10, 20, 20);
         restartButton = new JButton("Play Again");
-        restartButton.setFont(new Font("Arial", Font.BOLD, 18));
+        restartButton.setFont(restartButton.getFont().deriveFont(18f));
         restartButton.setPreferredSize(new java.awt.Dimension(200, 50));
         restartButton.setBackground(new Color(46, 204, 113)); // Modern green
         restartButton.setForeground(Color.WHITE);
