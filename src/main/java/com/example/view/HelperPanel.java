@@ -81,7 +81,7 @@ public class HelperPanel extends JPanel {
         add(buttonPanel);
     }
 
-    public void updateHelpers(List<Helper> availableHelpers) {
+    public void updateHelpers(Helper[] availableHelpers, int[] helperIndices) {
         // Remove existing buttons
         remove(buttonPanel);
         buttonPanel = new JPanel();
@@ -96,8 +96,8 @@ public class HelperPanel extends JPanel {
         }
 
         // Reinitialize array if needed
-        if (helperButtons == null || helperButtons.length < availableHelpers.size()) {
-            helperButtons = new JButton[availableHelpers.size()];
+        if (helperButtons == null || helperButtons.length < availableHelpers.length) {
+            helperButtons = new JButton[availableHelpers.length];
         }
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -106,10 +106,12 @@ public class HelperPanel extends JPanel {
         gbc.gridy = 1;
 
         // Create buttons for available helpers
-        for (int i = 0; i < availableHelpers.size(); i++) {
-            Helper helper = availableHelpers.get(i);
+        for (int i = 0; i < availableHelpers.length; i++) {
+            Helper helper = availableHelpers[i];
+            int actualIndex = helperIndices[i]; // The real index in ALL_HELPERS
+            
             StringBuilder sb = new StringBuilder();
-            sb.append("/helper").append(i+1).append(".png");
+            sb.append("/helper").append(actualIndex + 1).append(".png");
             String result = sb.toString();
             JButton button = makeImageButton(result);
             button.setFont(new Font("Arial", Font.BOLD, 18));
@@ -118,10 +120,9 @@ public class HelperPanel extends JPanel {
             HelpersUI.addHoverSFX(button, "/Hover.wav");
             HelpersUI.addLightenOnHover(button, 1.25f);
 
-            final int helperIndex = i;
             button.addActionListener(e -> {
                 if (gameActionListener != null) {
-                    gameActionListener.onHelperSelected(helperIndex);
+                    gameActionListener.onHelperSelected(actualIndex); // Use actual index
                 }
             });
             
@@ -132,6 +133,7 @@ public class HelperPanel extends JPanel {
         revalidate();
         repaint();
     }
+
 
     private JButton makeImageButton(String imagePath) {
 

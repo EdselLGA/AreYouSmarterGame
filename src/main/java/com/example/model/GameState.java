@@ -35,8 +35,12 @@ public class GameState {
     private Question currentQuestion;
     private Helper currentHelper;
     private Category currentCategory;
-    private List<Helper> availableHelpers;
-    private List<Category> availableCategories;
+    //private List<Helper> availableHelpers;
+    //private List<Category> availableCategories;
+    private boolean[] categoriesUsed;
+    private boolean[] helpersUsed;
+
+    //
     private int questionsWithCurrentHelper;
     private int questionsWithCurrentCategory;
     private QuestionBank questionBank;
@@ -65,8 +69,11 @@ public class GameState {
         currentQuestion = null;
         currentHelper = null;
         currentCategory = null;
-        availableHelpers = new ArrayList<>(Arrays.asList(ALL_HELPERS));
-        availableCategories = new ArrayList<>(Arrays.asList(ALL_CATEGORIES));
+        //availableHelpers = new ArrayList<>(Arrays.asList(ALL_HELPERS));
+        //availableCategories = new ArrayList<>(Arrays.asList(ALL_CATEGORIES));
+        categoriesUsed = new boolean[ALL_CATEGORIES.length];
+        helpersUsed = new boolean[ALL_HELPERS.length];
+        //
         questionsWithCurrentHelper = 0;
         questionsWithCurrentCategory = 0;
         questionBank = new QuestionBank();
@@ -84,22 +91,39 @@ public class GameState {
     
     // Helper selection
     public void selectHelper(int helperIndex) {
-        if (helperIndex < 0 || helperIndex >= availableHelpers.size()) {
+        if (helperIndex < 0 || helperIndex >= ALL_HELPERS.length) {
             throw new IllegalArgumentException("Invalid helper index");
         }
-        currentHelper = availableHelpers.remove(helperIndex);
+        if (helpersUsed[helperIndex]) {
+            throw new IllegalStateException("Helper already used");
+        }
+        currentHelper = ALL_HELPERS[helperIndex];
+        helpersUsed[helperIndex] = true;
         questionsWithCurrentHelper = 0;
         resetLifelines();
     }
+
     
     // Category selection
+    // public void selectCategory(int categoryIndex) {
+    //     if (categoryIndex < 0 || categoryIndex >= availableCategories.size()) {
+    //         throw new IllegalArgumentException("Invalid category index");
+    //     }
+    //     currentCategory = availableCategories.remove(categoryIndex);
+    //     questionsWithCurrentCategory = 0;
+    // }
     public void selectCategory(int categoryIndex) {
-        if (categoryIndex < 0 || categoryIndex >= availableCategories.size()) {
+        if (categoryIndex < 0 || categoryIndex >= ALL_CATEGORIES.length) {
             throw new IllegalArgumentException("Invalid category index");
         }
-        currentCategory = availableCategories.remove(categoryIndex);
+        if (categoriesUsed[categoryIndex]) {
+            throw new IllegalStateException("Category already used");
+        }
+        currentCategory = ALL_CATEGORIES[categoryIndex];
+        categoriesUsed[categoryIndex] = true;
         questionsWithCurrentCategory = 0;
     }
+
     
     // Get next question - called to get the current question to display
     // Question number is incremented in checkAnswer() after correct answer
@@ -352,13 +376,55 @@ public class GameState {
         return currentCategory;
     }
     
-    public List<Helper> getAvailableHelpers() {
-        return new ArrayList<>(availableHelpers);
+    public Helper[] getAvailableHelpers() {
+        List<Helper> available = new ArrayList<>();
+        for (int i = 0; i < ALL_HELPERS.length; i++) {
+            if (!helpersUsed[i]) {
+                available.add(ALL_HELPERS[i]);
+            }
+        }
+        return available.toArray(new Helper[0]);
     }
+
     
-    public List<Category> getAvailableCategories() {
-        return new ArrayList<>(availableCategories);
+    public Category[] getAvailableCategories() {
+        List<Category> available = new ArrayList<>();
+        for (int i = 0; i < ALL_CATEGORIES.length; i++) {
+            if (!categoriesUsed[i]) {
+                available.add(ALL_CATEGORIES[i]);
+            }
+        }
+        return available.toArray(new Category[0]);
     }
+    public int[] getAvailableHelperIndices() {
+        List<Integer> indices = new ArrayList<>();
+        for (int i = 0; i < ALL_HELPERS.length; i++) {
+            if (!helpersUsed[i]) {
+                indices.add(i);
+            }
+        }
+        int[] result = new int[indices.size()];
+        for (int i = 0; i < indices.size(); i++) {
+            result[i] = indices.get(i);
+        }
+        return result;
+        }
+
+    public int[] getAvailableCategoryIndices() {
+        List<Integer> indices = new ArrayList<>();
+        for (int i = 0; i < ALL_CATEGORIES.length; i++) {
+            if (!categoriesUsed[i]) {
+                indices.add(i);
+            }
+        }
+        int[] result = new int[indices.size()];
+        for (int i = 0; i < indices.size(); i++) {
+            result[i] = indices.get(i);
+        }
+        return result;
+    }
+
+
     
     public boolean needsHelperSelection() {
         return currentHelper == null && currentQuestionNumber < TOTAL_QUESTIONS;

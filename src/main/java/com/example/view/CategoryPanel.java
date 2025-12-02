@@ -100,7 +100,7 @@ public class CategoryPanel extends JPanel {
         add(bottom, BorderLayout.SOUTH);
     }
 
-    public void updateCategories(List<Category> availableCategories) {
+    public void updateCategories(Category[] availableCategories, int[] categoryIndices) {
         // Remove existing buttons
         middleContainer.remove(centerPanel);
         centerPanel = new JPanel(new GridLayout(2, 2, 10, 10));
@@ -115,32 +115,32 @@ public class CategoryPanel extends JPanel {
             }
         }
 
-        categoryButtons = new JButton[availableCategories.size()];
+        categoryButtons = new JButton[availableCategories.length];
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.gridx = 0;
         gbc.gridy = 1;
 
         // Create buttons for available categories
-        for (int i = 0; i < availableCategories.size(); i++) {
-            Category category = availableCategories.get(i);
+        for (int i = 0; i < availableCategories.length; i++) {
+            Category category = availableCategories[i];
+            int actualIndex = categoryIndices[i]; // The real index in ALL_CATEGORIES
             
             StringBuilder sb = new StringBuilder();
-            sb.append("/category").append(i+1).append(".png");
+            sb.append("/category").append(actualIndex + 1).append(".png");
             String result = sb.toString();
-            JButton button = makeLargeButton(result);            
-
+            JButton button = makeLargeButton(result);
             
-            final int categoryIndex = i;
             button.addActionListener(e -> {
                 if (gameActionListener != null) {
-                    gameActionListener.onCategorySelected(categoryIndex);
+                    gameActionListener.onCategorySelected(actualIndex); // Use actual index
                 }
             });
             
             categoryButtons[i] = button;
             centerPanel.add(button);
         }
+
 
         revalidate();
         repaint();

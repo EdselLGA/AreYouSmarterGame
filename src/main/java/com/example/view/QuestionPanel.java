@@ -296,12 +296,24 @@ public class QuestionPanel extends JPanel {
         lockAnswerButton.addActionListener(e -> {
             if (gameActionListener != null) {
                 gameActionListener.onLockAnswer();
+                // optionButtons[0].setEnabled(false);
+                // optionButtons[1].setEnabled(false);
+                // optionButtons[2].setEnabled(false);
+                // optionButtons[3].setEnabled(false);
+                // lockAnswerButton.setEnabled(false);
             }
         });
         panel.add(lockAnswerButton, gbc);
         
         return panel;
     }
+    public void disableAnswerButtons() {
+        for (JButton button : optionButtons) {
+            button.setEnabled(false);
+        }
+        lockAnswerButton.setEnabled(false);
+    }
+
 
     public void updateQuestion(int questionNumber, int totalQuestions, int score, 
                               Question question, Category category, Helper helper,
@@ -334,6 +346,9 @@ public class QuestionPanel extends JPanel {
             optionButtons[i].setText(options[i]);
             optionButtons[i].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
             optionButtons[i].setEnabled(!answerLocked);
+            optionButtons[i].setVisible(true);
+            optionButtons[i].setVisible(true);
+            optionButtons[i].setEnabled(true);
             if (answerLocked && i == selectedAnswerIndex) {
                 optionButtons[i].setBackground(new Color(100, 200, 255));
             } else if (!answerLocked) {
@@ -343,6 +358,8 @@ public class QuestionPanel extends JPanel {
         if(options[0]=="True" && options[1]=="False"){
             optionButtons[2].setText("");
             optionButtons[3].setText("");
+            optionButtons[2].setVisible(false);
+            optionButtons[3].setVisible(false);
         }
         
         // Update lifeline buttons

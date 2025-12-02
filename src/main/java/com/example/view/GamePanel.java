@@ -81,15 +81,15 @@ public class GamePanel extends JPanel {
     /**
      * Update HelperPanel with available helpers - called by Controller
      */
-    public void updateHelperPanel(java.util.List<Helper> availableHelpers) {
-        helperPanel.updateHelpers(availableHelpers);
+    public void updateHelperPanel(Helper[] availableHelpers, int[] helperIndices) {
+        helperPanel.updateHelpers(availableHelpers, helperIndices);
     }
 
     /**
      * Update CategoryPanel with available categories - called by Controller
      */
-    public void updateCategoryPanel(java.util.List<Category> availableCategories) {
-        categoryPanel.updateCategories(availableCategories);
+    public void updateCategoryPanel(Category[] availableCategories, int[] categoryIndices) {
+        categoryPanel.updateCategories(availableCategories, categoryIndices);
     }
 
     /**
@@ -102,6 +102,10 @@ public class GamePanel extends JPanel {
         questionPanel.updateQuestion(questionNumber, totalQuestions, score, question,
                                     category, helper, canUseLifelines, peekUsed,
                                     copyUsed, saveUsed, answerLocked);
+    }
+
+    public void disableAnswerButtons() {
+        questionPanel.disableAnswerButtons();
     }
 
     /**

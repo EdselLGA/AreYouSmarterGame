@@ -5,6 +5,8 @@ import com.example.model.Question;
 import com.example.view.GamePanel;
 import com.example.view.GameNavigationListener;
 import com.example.view.GameActionListener;
+import com.example.view.EscapeKeyHandler;
+
 
 /**
  * GameController manages game flow and navigation within GamePanel
@@ -14,6 +16,7 @@ import com.example.view.GameActionListener;
 public class GameController implements GameNavigationListener, GameActionListener {
     private final GamePanel gamePanel;
     private final GameState gameState;
+    private EscapeKeyHandler escapeKeyHandler;
     private NavigationController navigationController;
 
     /**
@@ -26,6 +29,8 @@ public class GameController implements GameNavigationListener, GameActionListene
         // Wire up listeners - Controller subscribes to View events
         gamePanel.setGameActionListener(this);
         gamePanel.setGameNavigationListener(this);
+        escapeKeyHandler = new EscapeKeyHandler(this, true);
+        escapeKeyHandler.register();
     }
     
     /**
@@ -34,6 +39,12 @@ public class GameController implements GameNavigationListener, GameActionListene
     public void setNavigationController(NavigationController navigationController) {
         this.navigationController = navigationController;
     }
+
+    public void dispose() {
+    if (escapeKeyHandler != null) {
+        escapeKeyHandler.unregister();
+    }
+}
 
     // Navigation methods
     @Override
@@ -44,8 +55,8 @@ public class GameController implements GameNavigationListener, GameActionListene
         }
         
         // Always show helper panel and update with available helpers
-        gamePanel.showPanel(GamePanel.CARD_HELPER);
-        gamePanel.updateHelperPanel(gameState.getAvailableHelpers());
+        gamePanel.showPanel(GamePanel.CARD_HELPER); 
+        gamePanel.updateHelperPanel(gameState.getAvailableHelpers(),gameState.getAvailableHelperIndices());
         
         // If helper selection not needed, automatically proceed
         if (!gameState.needsHelperSelection()) {
@@ -63,7 +74,7 @@ public class GameController implements GameNavigationListener, GameActionListene
         // Check if category selection is needed
         if (gameState.needsCategorySelection()) {
             gamePanel.showPanel(GamePanel.CARD_CATEGORY);
-            gamePanel.updateCategoryPanel(gameState.getAvailableCategories());
+            gamePanel.updateCategoryPanel(gameState.getAvailableCategories(),gameState.getAvailableCategoryIndices());
         } else {
             // Skip category selection, go to question
             onNavigateToQuestion();
@@ -220,6 +231,7 @@ public class GameController implements GameNavigationListener, GameActionListene
     @Override
     public void onLockAnswer() {
         if (gameState.lockAnswer()) {
+            gamePanel.disableAnswerButtons();
             com.example.model.AnswerResult result = gameState.checkAnswer();
             gamePanel.showAnswerResult(result.isCorrect(), result.saveWasUsed(), result.saveSavedPlayer());
             
