@@ -1,131 +1,768 @@
 {
   "History": [
-    { "id": 1, "question": "Who introduced the concept of structured programming?", "choices": ["Alan Turing", "John Backus", "Edsger Dijkstra", "Bjarne Stroustrup"], "answer": "Edsger Dijkstra", "difficulty": "medium", "type": "multiple" },
-    { "id": 2, "question": "Which programming paradigm was dominant during the 1950s and 1960s?", "choices": ["Functional", "Procedural", "Object-Oriented", "Logic"], "answer": "Procedural", "difficulty": "easy", "type": "multiple" },
-    { "id": 3, "question": "What was the first high-level programming language?", "choices": ["FORTRAN", "COBOL", "LISP", "Assembly"], "answer": "FORTRAN", "difficulty": "hard", "type": "multiple" },
-    { "id": 4, "question": "Who is known as the father of Object-Oriented Programming?", "choices": ["Alan Kay", "James Gosling", "Guido van Rossum", "Dennis Ritchie"], "answer": "Alan Kay", "difficulty": "medium", "type": "multiple" },
-    { "id": 5, "question": "In which decade did the Agile Manifesto get published?", "choices": ["1980s", "1990s", "2000s", "2010s"], "answer": "2000s", "difficulty": "easy", "type": "multiple" },
-    { "id": 6, "question": "What programming language was created by Guido van Rossum?", "choices": ["Ruby", "Python", "JavaScript", "Perl"], "answer": "Python", "difficulty": "easy", "type": "multiple" },
-    { "id": 7, "question": "Which company developed the C programming language?", "choices": ["Microsoft", "Bell Labs", "IBM", "Apple"], "answer": "Bell Labs", "difficulty": "medium", "type": "multiple" },
-    { "id": 8, "question": "What year was the first version of Java released?", "choices": ["1991", "1995", "2000", "1989"], "answer": "1995", "difficulty": "medium", "type": "multiple" },
-    { "id": 9, "question": "Which programming language is primarily associated with web development?", "choices": ["C++", "JavaScript", "Fortran", "COBOL"], "answer": "JavaScript", "difficulty": "easy", "type": "multiple" },
-    { "id": 10, "question": "Who created the Linux operating system?", "choices": ["Bill Gates", "Steve Jobs", "Linus Torvalds", "Mark Zuckerberg"], "answer": "Linus Torvalds", "difficulty": "medium", "type": "multiple" },
-    { "id": 11, "question": "What does 'HTML' stand for?", "choices": ["HyperText Markup Language", "HighText Machine Language", "Hyperloop Transfer Markup Language", "None of the above"], "answer": "HyperText Markup Language", "difficulty": "easy", "type": "multiple" },
-    { "id": 12, "question": "Which programming language is known for its use in artificial intelligence and symbolic processing?", "choices": ["LISP", "C#", "Java", "Swift"], "answer": "LISP", "difficulty": "hard", "type": "multiple" },
-    { "id": 13, "question": "What was the main purpose of the creation of the COBOL programming language?", "choices": ["Scientific computing", "Business data processing", "Game development", "Web development"], "answer": "Business data processing", "difficulty": "medium", "type": "multiple" },
-    { "id": 14, "question": "Which programming language introduced the concept of 'write once, run anywhere'?", "choices": ["C++", "Java", "Python", "Ruby"], "answer": "Java", "difficulty": "easy", "type": "multiple" },
-    { "id": 15, "question": "Who is credited with inventing the World Wide Web?", "choices": ["Tim Berners-Lee", "Vint Cerf", "Bill Gates", "Steve Jobs"], "answer": "Tim Berners-Lee", "difficulty": "medium", "type": "multiple" },
-    { "id": 16, "question": "What was the first programming language to support object-oriented programming?", "choices": ["Simula", "Smalltalk", "C++", "Java"], "answer": "Simula", "difficulty": "hard", "type": "multiple" },
-    { "id": 17, "question": "Which programming language was developed at Bell Labs in the early 1970s?", "choices": ["C", "Pascal", "Ada", "B"], "answer": "C", "difficulty": "medium", "type": "multiple" },
-    { "id": 18, "question": "What programming language is known for its use in statistical computing and graphics?", "choices": ["R", "MATLAB", "SAS", "SPSS"], "answer": "R", "difficulty": "hard", "type": "multiple" },
-    { "id": 19, "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?", "choices": ["Rust", "Go", "D", "Swift"], "answer": "Rust", "difficulty": "medium", "type": "multiple" },
-    { "id": 20, "question": "What year was the Python programming language first released?", "choices": ["1989", "1991", "1995", "2000"], "answer": "1991", "difficulty": "easy", "type": "multiple" },
-    { "id": 21, "question": "Which programming language was primarily designed for system programming and embedded systems?", "choices": ["C", "Java", "Python", "JavaScript"], "answer": "C", "difficulty": "medium", "type": "multiple" },
-    { "id": 22, "question": "What programming language is known for its use in web development and was created by Brendan Eich?", "choices": ["JavaScript", "TypeScript", "CoffeeScript", "Dart"], "answer": "JavaScript", "difficulty": "easy", "type": "multiple" },
-    { "id": 23, "question": "Which programming language was developed by Microsoft and is primarily used for Windows application development?", "choices": ["C#", "VB.NET", "F#", "ASP.NET"], "answer": "C#", "difficulty": "medium", "type": "multiple" },
-    { "id": 24, "question": "Which programming language is known for its simplicity and readability, often used as a teaching language?", "choices": ["Python", "Ruby", "Java", "C++"], "answer": "Python", "difficulty": "easy", "type": "multiple" },
-    { "id": 25, "question": "What programming language was created by Yukihiro Matsumoto and is known for its elegant syntax?", "choices": ["Perl", "Ruby", "PHP", "Python"], "answer": "Ruby", "difficulty": "medium", "type": "multiple" }
+    { "id": 1, "question": "Who introduced the concept of structured programming?", "choices": ["Alan Turing", "John Backus", "Edsger Dijkstra", "Bjarne Stroustrup"], "answer": "Edsger Dijkstra", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 2, "question": "Which programming paradigm was dominant during the 1950s and 1960s?", "choices": ["Functional", "Procedural", "Object-Oriented", "Logic"], "answer": "Procedural", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 3, "question": "What was the first high-level programming language?", "choices": ["FORTRAN", "COBOL", "LISP", "Assembly"], "answer": "FORTRAN", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 4, "question": "Who is known as the father of Object-Oriented Programming?", "choices": ["Alan Kay", "James Gosling", "Guido van Rossum", "Dennis Ritchie"], "answer": "Alan Kay", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 5, "question": "In which decade did the Agile Manifesto get published?", "choices": ["1980s", "1990s", "2000s", "2010s"], "answer": "2000s", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 6, "question": "What programming language was created by Guido van Rossum?", "choices": ["Ruby", "Python", "JavaScript", "Perl"], "answer": "Python", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 7, "question": "Which company developed the C programming language?", "choices": ["Microsoft", "Bell Labs", "IBM", "Apple"], "answer": "Bell Labs", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 8, "question": "What year was the first version of Java released?", "choices": ["1991", "1995", "2000", "1989"], "answer": "1995", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 9, "question": "Which programming language is primarily associated with web development?", "choices": ["C++", "JavaScript", "Fortran", "COBOL"], "answer": "JavaScript", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 10, "question": "Who created the Linux operating system?", "choices": ["Bill Gates", "Steve Jobs", "Linus Torvalds", "Mark Zuckerberg"], "answer": "Linus Torvalds", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 11, "question": "What does 'HTML' stand for?", "choices": ["HyperText Markup Language", "HighText Machine Language", "Hyperloop Transfer Markup Language", "None of the above"], "answer": "HyperText Markup Language", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 12, "question": "Which programming language is known for its use in artificial intelligence and symbolic processing?", "choices": ["LISP", "C#", "Java", "Swift"], "answer": "LISP", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 13, "question": "What was the main purpose of the creation of the COBOL programming language?", "choices": ["Scientific computing", "Business data processing", "Game development", "Web development"], "answer": "Business data processing", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 14, "question": "Which programming language introduced the concept of 'write once, run anywhere'?", "choices": ["C++", "Java", "Python", "Ruby"], "answer": "Java", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 15, "question": "Who is credited with inventing the World Wide Web?", "choices": ["Tim Berners-Lee", "Vint Cerf", "Bill Gates", "Steve Jobs"], "answer": "Tim Berners-Lee", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 16, "question": "What was the first programming language to support object-oriented programming?", "choices": ["Simula", "Smalltalk", "C++", "Java"], "answer": "Simula", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 17, "question": "Which programming language was developed at Bell Labs in the early 1970s?", "choices": ["C", "Pascal", "Ada", "B"], "answer": "C", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 18, "question": "What programming language is known for its use in statistical computing and graphics?", "choices": ["R", "MATLAB", "SAS", "SPSS"], "answer": "R", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 19, "question": "Which programming language was created as a successor to C and is known for its performance and system-level programming?", "choices": ["Rust", "Go", "D", "Swift"], "answer": "Rust", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 20, "question": "What year was the Python programming language first released?", "choices": ["1989", "1991", "1995", "2000"], "answer": "1991", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 21, "question": "Which programming language was primarily designed for system programming and embedded systems?", "choices": ["C", "Java", "Python", "JavaScript"], "answer": "C", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 22, "question": "What programming language is known for its use in web development and was created by Brendan Eich?", "choices": ["JavaScript", "TypeScript", "CoffeeScript", "Dart"], "answer": "JavaScript", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 23, "question": "Which programming language was developed by Microsoft and is primarily used for Windows application development?", "choices": ["C#", "VB.NET", "F#", "ASP.NET"], "answer": "C#", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 24, "question": "Which programming language is known for its simplicity and readability, often used as a teaching language?", "choices": ["Python", "Ruby", "Java", "C++"], "answer": "Python", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 25, "question": "What programming language was created by Yukihiro Matsumoto and is known for its elegant syntax?", "choices": ["Perl", "Ruby", "PHP", "Python"], "answer": "Ruby", "difficulty": "Medium", "type": "Multiple" }
   ],
-
   "GuessTheParadigm": [
-    { "id": 1, "question": "Which programming paradigm emphasizes the use of functions and avoids changing state and mutable data?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 2, "question": "In which programming paradigm are programs structured around objects that combine data and behavior?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 3, "question": "Which programming paradigm is based on formal logic and uses facts and rules to derive conclusions?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 4, "question": "Which programming paradigm focuses on a sequence of commands or instructions to be executed in order?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 5, "question": "In which programming paradigm do programs respond to events such as user actions or sensor outputs?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 6, "question": "Which programming paradigm is characterized by the use of higher-order functions and first-class functions?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 7, "question": "Which programming paradigm is often used in artificial intelligence and expert systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 8, "question": "Which programming paradigm emphasizes code reusability through inheritance and polymorphism?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 9, "question": "Which programming paradigm is best suited for tasks that involve complex data manipulation and transformations?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 10, "question": "Which programming paradigm is commonly used in web development frameworks like React and Angular?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 11, "question": "Which programming paradigm is characterized by the use of procedures or routines to operate on data structures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 12, "question": "Which programming paradigm allows functions to be treated as first-class citizens, enabling them to be passed as arguments and returned from other functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 13, "question": "Which programming paradigm is often used in database query languages like SQL?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 14, "question": "Which programming paradigm emphasizes the separation of concerns through the use of modules or components?", "choices": ["Modular Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Modular Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 15, "question": "Which programming paradigm is best suited for concurrent and parallel programming?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 16, "question": "Which programming paradigm is often used in game development for handling user input and game state changes?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 17, "question": "Which programming paradigm emphasizes the use of immutable data structures and pure functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 18, "question": "Which programming paradigm is commonly used in mobile app development frameworks like Flutter and React Native?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 19, "question": "Which programming paradigm is characterized by the use of classes and objects to model real-world entities?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 20, "question": "Which programming paradigm is best suited for tasks that involve complex decision-making and rule-based systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 21, "question": "Which programming paradigm emphasizes the use of events and callbacks to handle asynchronous operations?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 22, "question": "Which programming paradigm is often used in scientific computing and numerical analysis?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "hard", "type": "multiple" },
-    { "id": 23, "question": "Which programming paradigm allows for the creation of reusable code through the use of functions and procedures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "easy", "type": "multiple" },
-    { "id": 24, "question": "Which programming paradigm is commonly used in front-end web development for building user interfaces?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "medium", "type": "multiple" },
-    { "id": 25, "question": "Which programming paradigm emphasizes the use of mathematical functions and avoids side effects?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "hard", "type": "multiple" }
+    { "id": 1, "question": "Which programming paradigm emphasizes the use of functions and avoids changing state and mutable data?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 2, "question": "In which programming paradigm are programs structured around objects that combine data and behavior?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Object-Oriented Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 3, "question": "Which programming paradigm is based on formal logic and uses facts and rules to derive conclusions?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 4, "question": "Which programming paradigm focuses on a sequence of commands or instructions to be executed in order?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Event-Driven Programming"], "answer": "Procedural Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 5, "question": "In which programming paradigm do programs respond to events such as user actions or sensor outputs?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 6, "question": "Which programming paradigm is characterized by the use of higher-order functions and first-class functions?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 7, "question": "Which programming paradigm is often used in artificial intelligence and expert systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 8, "question": "Which programming paradigm emphasizes code reusability through inheritance and polymorphism?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 9, "question": "Which programming paradigm is best suited for tasks that involve complex data manipulation and transformations?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 10, "question": "Which programming paradigm is commonly used in web development frameworks like React and Angular?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 11, "question": "Which programming paradigm is characterized by the use of procedures or routines to operate on data structures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 12, "question": "Which programming paradigm allows functions to be treated as first-class citizens, enabling them to be passed as arguments and returned from other functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 13, "question": "Which programming paradigm is often used in database query languages like SQL?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 14, "question": "Which programming paradigm emphasizes the separation of concerns through the use of modules or components?", "choices": ["Modular Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Modular Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 15, "question": "Which programming paradigm is best suited for concurrent and parallel programming?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 16, "question": "Which programming paradigm is often used in game development for handling user input and game state changes?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 17, "question": "Which programming paradigm emphasizes the use of immutable data structures and pure functions?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 18, "question": "Which programming paradigm is commonly used in mobile app development frameworks like Flutter and React Native?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 19, "question": "Which programming paradigm is characterized by the use of classes and objects to model real-world entities?", "choices": ["Object-Oriented Programming", "Functional Programming", "Procedural Programming", "Logic Programming"], "answer": "Object-Oriented Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 20, "question": "Which programming paradigm is best suited for tasks that involve complex decision-making and rule-based systems?", "choices": ["Logic Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Logic Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 21, "question": "Which programming paradigm emphasizes the use of events and callbacks to handle asynchronous operations?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 22, "question": "Which programming paradigm is often used in scientific computing and numerical analysis?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 23, "question": "Which programming paradigm allows for the creation of reusable code through the use of functions and procedures?", "choices": ["Procedural Programming", "Functional Programming", "Object-Oriented Programming", "Logic Programming"], "answer": "Procedural Programming", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 24, "question": "Which programming paradigm is commonly used in front-end web development for building user interfaces?", "choices": ["Event-Driven Programming", "Functional Programming", "Object-Oriented Programming", "Procedural Programming"], "answer": "Event-Driven Programming", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 25, "question": "Which programming paradigm emphasizes the use of mathematical functions and avoids side effects?", "choices": ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], "answer": "Functional Programming", "difficulty": "Hard", "type": "Multiple" }
   ],
-
-  "TrueOrFalse": [
-    { "id": 1, "question": "The C programming language was developed in the 1980s.", "answer": "False", "difficulty": "easy", "type": "true_false" },
-    { "id": 2, "question": "Python is named after the British comedy group Monty Python.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 3, "question": "JavaScript and Java are the same programming language.", "answer": "False", "difficulty": "easy", "type": "true_false" },
-    { "id": 4, "question": "The first version of the Ruby programming language was released in the 1990s.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 5, "question": "The term 'bug' in programming originated from a real insect found in a computer.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 6, "question": "The Go programming language was developed by Google.", "answer": "True", "difficulty": "easy", "type": "true_false" },
-    { "id": 7, "question": "HTML is a programming language.", "answer": "False", "difficulty": "easy", "type": "true_false" },
-    { "id": 8, "question": "The first computer programmer was Ada Lovelace.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 9, "question": "Java was originally called Oak.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 10, "question": "The Python programming language supports multiple programming paradigms, including procedural, object-oriented, and functional programming.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 11, "question": "The first version of the C++ programming language was released in 1985.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 12, "question": "The JavaScript programming language was created in just 10 days.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 13, "question": "The first version of the PHP programming language was released in 1995.", "answer": "True", "difficulty": "easy", "type": "true_false" },
-    { "id": 14, "question": "The Swift programming language was developed by Microsoft.", "answer": "False", "difficulty": "medium", "type": "true_false" },
-    { "id": 15, "question": "The first version of the Perl programming language was released in the 1980s.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 16, "question": "The first version of the Java programming language was released in 1991.", "answer": "False", "difficulty": "easy", "type": "true_false" },
-    { "id": 17, "question": "The first version of the Fortran programming language was released in the 1950s.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 18, "question": "The first version of the COBOL programming language was released in 1960.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 19, "question": "The first version of the LISP programming language was released in the 1970s.", "answer": "False", "difficulty": "medium", "type": "true_false" },
-    { "id": 20, "question": "The first version of the Rust programming language was released in 2010.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 21, "question": "The first version of the TypeScript programming language was released in 2012.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 22, "question": "The first version of the Kotlin programming language was released in 2011.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 23, "question": "The first version of the Scala programming language was released in 2004.", "answer": "True", "difficulty": "medium", "type": "true_false" },
-    { "id": 24, "question": "The first version of the Haskell programming language was released in 1990.", "answer": "True", "difficulty": "hard", "type": "true_false" },
-    { "id": 25, "question": "The first version of the MATLAB programming language was released in 1984.", "answer": "True", "difficulty": "medium", "type": "true_false" }
+  "GeneralConcepts": [
+    { "id": 1, "question": "In which decade was the C programming language developed?", "choices": ["1970s", "1980s", "1990s", "2000s"], "answer": "1970s", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 2, "question": "Who is the Python programming language named after?", "choices": ["Monty Python", "A Snake", "A Mathematician", "The Creator's Pet"], "answer": "Monty Python", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 3, "question": "What is the relationship between JavaScript and Java?", "choices": ["They are completely different languages", "They are the same language", "JavaScript is a subset of Java", "Java is a subset of JavaScript"], "answer": "They are completely different languages", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 4, "question": "In which decade was the first version of Ruby released?", "choices": ["1990s", "1980s", "2000s", "2010s"], "answer": "1990s", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 5, "question": "What is the origin of the term 'bug' in programming?", "choices": ["A real insect found in a computer", "A glitch in the matrix", "A mathematical error", "A missing wire"], "answer": "A real insect found in a computer", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 6, "question": "Which company developed the Go programming language?", "choices": ["Google", "Microsoft", "Apple", "Facebook"], "answer": "Google", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 7, "question": "Which of the following best describes HTML?", "choices": ["Markup Language", "Programming Language", "Scripting Language", "Machine Language"], "answer": "Markup Language", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 8, "question": "Who is considered the first computer programmer?", "choices": ["Ada Lovelace", "Alan Turing", "Charles Babbage", "Grace Hopper"], "answer": "Ada Lovelace", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 9, "question": "What was the original name of the Java programming language?", "choices": ["Oak", "Pine", "Spruce", "Elm"], "answer": "Oak", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 10, "question": "Which programming paradigms does Python support?", "choices": ["Multiple (Procedural, Object-Oriented, Functional)", "Only Object-Oriented", "Only Functional", "Only Procedural"], "answer": "Multiple (Procedural, Object-Oriented, Functional)", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 11, "question": "When was the first version of C++ released?", "choices": ["1985", "1995", "1975", "2005"], "answer": "1985", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 12, "question": "How long did it take to create the first prototype of JavaScript?", "choices": ["10 days", "10 weeks", "10 months", "10 years"], "answer": "10 days", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 13, "question": "When was the first version of PHP released?", "choices": ["1995", "1985", "2005", "2015"], "answer": "1995", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 14, "question": "Which company developed the Swift programming language?", "choices": ["Apple", "Microsoft", "Google", "IBM"], "answer": "Apple", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 15, "question": "In which decade was the first version of Perl released?", "choices": ["1980s", "1990s", "2000s", "1970s"], "answer": "1980s", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 16, "question": "When was the first version of Java publicly released?", "choices": ["1995", "1991", "1989", "2000"], "answer": "1995", "difficulty": "Easy", "type": "Multiple" },
+    { "id": 17, "question": "In which decade was the first version of Fortran released?", "choices": ["1950s", "1960s", "1970s", "1980s"], "answer": "1950s", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 18, "question": "In what year was the first version of COBOL released?", "choices": ["1960", "1950", "1970", "1980"], "answer": "1960", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 19, "question": "When was the LISP programming language first developed?", "choices": ["1950s", "1970s", "1980s", "1990s"], "answer": "1950s", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 20, "question": "When was the first version of Rust released?", "choices": ["2010", "2000", "2020", "1990"], "answer": "2010", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 21, "question": "When was the first version of TypeScript released?", "choices": ["2012", "2002", "2022", "1992"], "answer": "2012", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 22, "question": "When was the first version of Kotlin released?", "choices": ["2011", "2001", "2021", "1991"], "answer": "2011", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 23, "question": "When was the first version of Scala released?", "choices": ["2004", "2014", "1994", "1984"], "answer": "2004", "difficulty": "Medium", "type": "Multiple" },
+    { "id": 24, "question": "When was the first version of Haskell released?", "choices": ["1990", "2000", "1980", "2010"], "answer": "1990", "difficulty": "Hard", "type": "Multiple" },
+    { "id": 25, "question": "When was the first version of MATLAB released?", "choices": ["1984", "1994", "1974", "2004"], "answer": "1984", "difficulty": "Medium", "type": "Multiple" }
   ],
-
   "CodeSnippets": [
-  { "id": 1, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main(){\n\tint a = 5, b = 2;\n\tprintf(\"%d\", a/b);\n\treturn 0;\n}", "choices": ["2.5", "2", "3", "Compilation error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 2, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    printf(\"%c\", 'A' + 5);\n    return 0;\n}", "choices": ["A", "F", "E", "Compilation error"], "answer": "F", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 3, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int x = 5;\n    printf(\"%d\", x++ + ++x);\n    return 0;\n}", "choices": ["10", "11", "Undefined behavior", "12"], "answer": "Undefined behavior", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 4, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int arr[] = {1, 2, 3, 4};\n    printf(\"%d\", *(arr + 2));\n    return 0;\n}", "choices": ["1", "2", "3", "4"], "answer": "3", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 5, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int a = 10, b = 20;\n    int *p1 = &a, *p2 = &b;\n    printf(\"%d\", *p1 + *p2);\n    return 0;\n}", "choices": ["10", "20", "30", "200"], "answer": "30", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 6, "question": "What is the output of the following C program?\n#include <stdio.h>\nint func(int x) {\n    if (x <= 1) return 1;\n    else return x * func(x - 1);\n}\nint main() {\n    printf(\"%d\", func(4));\n    return 0;\n}", "choices": ["10", "16", "24", "4"], "answer": "24", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 7, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    int x = 0;\n    for (int i = 1; i <= 3; i++) x += i;\n    printf(\"%d\", x);\n    return 0;\n}", "choices": ["3", "6", "9", "12"], "answer": "6", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 8, "question": "What is the output of the following C program?\n#include <stdio.h>\nint main() {\n    char *ptr = \"Hello\";\n    printf(\"%c\", *++ptr);\n    return 0;\n}", "choices": ["H", "e", "l", "Compilation error"], "answer": "e", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 9, "question": "Expected Output: 10 20\nWhich of the following C codes produces this output?", "choices": ["int x=10, y=20; printf(\"%d %d\", x, y);", "printf(\"10 20\");", "printf(\"%d %d\", 10, 20);", "All of the above"], "answer": "All of the above", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 10, "question": "Expected Output: 5\nWhich C code produces this output?", "choices": ["printf(\"%f\", 5.0);", "printf(\"%d\", 5);", "printf(\"%s\", \"5\");", "scanf(\"%d\", 5);"], "answer": "printf(\"%d\", 5);", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 11, "question": "Expected Output: HelloWorld\nWhich C code produces this?", "choices": ["printf(\"Hello World\");", "printf(\"HelloWorld\");", "printf(\"%s%s\", \"Hello\", \"World\");", "Both B and C"], "answer": "Both B and C", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 12, "question": "Expected Output: 1 4 9\nWhich loop produces this in C?", "choices": ["for(int i=1;i<=3;i++) printf(\"%d \", i*i);", "for(int i=1;i<=3;i++) printf(\"%d \", i);", "for(int i=1;i<=3;i++) printf(\"%d \", i+i);", "int i=1; printf(\"%d \", i*i);"], "answer": "for(int i=1;i<=3;i++) printf(\"%d \", i*i);", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 13, "question": "Expected Output: 15\nWhich C code produces this?", "choices": ["int sum=0; for(int i=1;i<=5;i++) sum+=i; printf(\"%d\", sum);", "printf(\"%d\", 5/3);", "printf(\"%d\", 5-5+5);", "printf(\"%d\", (5*5)/5);"], "answer": "int sum=0; for(int i=1;i<=5;i++) sum+=i; printf(\"%d\", sum);", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 14, "question": "Expected Output: 120\nWhich C code produces this?", "choices": ["printf(\"%d\", factorial(5));", "int fact=1; for(int i=1;i<=5;i++) fact*=i; printf(\"%d\", fact);", "int fact=5; printf(\"%d\", fact*fact*fact);", "printf(\"%d\", 5*4*3*2*1*0);"], "answer": "int fact=1; for(int i=1;i<=5;i++) fact*=i; printf(\"%d\", fact);", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 15, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        int x = 5, y = 2;\n        System.out.println(x / y);\n    }\n}", "choices": ["2.5", "2", "3", "Compilation error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 16, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println('A' + 1);\n    }\n}", "choices": ["66", "B", "A1", "Compilation error"], "answer": "66", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 17, "question": "What is the output of the following Java code?\npublic class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        System.out.println(++a * a++);\n    }\n}", "choices": ["30", "35", "36", "Undefined behavior"], "answer": "36", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 18, "question": "What is the output of the following Python code?\nx = 5\ny = 2\nprint(x // y)", "choices": ["2.5", "2", "3", "Error"], "answer": "2", "difficulty": "easy", "type": "multiple" },
-  
-  { "id": 19, "question": "What is the output of the following Python code?\ndef func(x):\n    return x * x\nprint(func(4))", "choices": ["8", "12", "16", "Error"], "answer": "16", "difficulty": "medium", "type": "multiple" },
-  
-  { "id": 20, "question": "What is the output of the following Python code?\ndef rec(n):\n    if n <= 1:\n        return 1\n    return n * rec(n - 1)\nprint(rec(4))", "choices": ["4", "10", "24", "16"], "answer": "24", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 21, "question": "What is the output of the following Haskell-style code?\nsquare x = x * x\nmain = print (square 5)", "choices": ["25", "10", "Error", "55"], "answer": "25", "difficulty": "hard", "type": "multiple" },
-  
-  { "id": 22, "question": "What is the output of the following Haskell-style code?\nfact 0 = 1\nfact n = n * fact (n-1)\nmain = print (fact 4)", "choices": ["24", "10", "16", "12"], "answer": "24", "difficulty": "easy", "type": "multiple" }
-]
+    {
+      "id": "A_1",
+      "type":"Multiple",
+      "question": "What does the following print? printf(\"%d\\n\", 2 + 3);",
+      "choices": ["4", "6", "5", "23"],
+      "answer": "C"
+    },
+    {
+      "id": "A_2",
+      "type":"Multiple",
+      "question": "What character is printed? char s[] = \"code\"; printf(\"%c\\n\", s[1]);",
+      "choices": ["c", "o", "d", "e"],
+      "answer": "B"
+    },
+    {
+      "id": "A_3",
+      "type":"Multiple",
+      "question": "int a[] = {4,8,12}; printf(\"%d\\n\", sizeof(a)/sizeof(a[0]));",
+      "choices": ["1", "2", "3", "4"],
+      "answer": "C"
+    },
+    {
+      "id": "A_4",
+      "type":"Multiple",
+      "question": "printf(\"%d\\n\", 9/2);",
+      "choices": ["4.5", "4", "5", "Error"],
+      "answer": "B"
+    },
+    {
+      "id": "A_5",
+      "type":"Multiple",
+      "question": "int x = 7; int *p = &x; printf(\"%d\\n\", *p);",
+      "choices": ["memory address", "7", "x", "Error"],
+      "answer": "B"
+    },
+    {
+      "id": "A_6",
+      "type":"Multiple",
+      "question": "int x = 14; printf(\"%d\\n\", x % 5);",
+      "choices": ["0", "4", "5", "9"],
+      "answer": "B"
+    },
+    {
+      "id": "A_7",
+      "type":"Multiple",
+      "question": "int arr[] = {3,6,9}; printf(\"%d\\n\", arr[0]);",
+      "choices": ["0", "3", "6", "9"],
+      "answer": "B"
+    },
+    {
+      "id": "A_8",
+      "type":"Multiple",
+      "question": "char c = 'Z'; printf(\"%d\\n\", c);",
+      "choices": ["Z", "90", "122", "Error"],
+      "answer": "B"
+    },
+
+    {
+      "id": "B_1",
+      "type":"Multiple",
+      "question": "Expected output: 6",
+      "choices": ["printf(\"%d\", 3*3);", "printf(\"%d\", 2+4);", "printf(\"%d\", 12/3);", "printf(\"%d\", 8-1);"],
+      "answer": "B"
+    },
+    {
+      "id": "B_2",
+      "type":"Multiple",
+      "question": "Expected output: y",
+      "choices": [
+        "char s[]=\"xyz\"; printf(\"%c\", s[1]);",
+        "char s[]=\"xyz\"; printf(\"%c\", s[0]);",
+        "printf(\"%c\", 'x');",
+        "printf(\"%c\", 'z');"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "B_3",
+      "type":"Multiple",
+      "question": "Expected output: 12",
+      "choices": [
+        "printf(\"%d\", 3*4);",
+        "int x=12; printf(\"%d\", x);",
+        "printf(\"%d\", 24/2);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "B_4",
+      "type":"Multiple",
+      "question": "Expected output: 4",
+      "choices": [
+        "printf(\"%d\", 2);",
+        "printf(\"%d\", 8/2);",
+        "int x=4; printf(\"%d\", x);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "B_5",
+      "type":"Multiple",
+      "question": "Expected output: 20",
+      "choices": [
+        "printf(\"%d\", 5*4);",
+        "int x=20; printf(\"%d\", x);",
+        "printf(\"%d\", 30-10);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "B_6",
+      "type":"Multiple",
+      "question": "Expected output: 9",
+      "choices": ["printf(\"%d\", 3*3);", "printf(\"%d\", 10-1);", "int x=9; printf(\"%d\", x);", "All of the above"],
+      "answer": "D"
+    },
+    {
+      "id": "B_7",
+      "type":"Multiple",
+      "question": "Expected output: 1",
+      "choices": ["printf(\"%d\", 1);", "int a=1; printf(\"%d\", a);", "printf(\"%d\", 2-1);", "All of the above"],
+      "answer": "D"
+    },
+    {
+      "id": "B_8",
+      "type":"Multiple",
+      "question": "Expected output: 100",
+      "choices": ["printf(\"%d\", 100);", "int x=100; printf(\"%d\", x);", "printf(\"%d\", 50*2);", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "C_1",
+      "type":"Multiple",
+      "question": "Complete the missing code in swap():",
+      "choices": [
+        "int tmp; tmp = a; a = b; b = tmp;",
+        "int tmp; tmp = *a; *a = *b; *b = tmp;",
+        "*a = *b; *b = *a;",
+        "int tmp; tmp = a; a = b; b = tmp;"
+      ],
+      "answer": "B"
+    },
+
+    {
+      "id": "C_2",
+      "type":"Multiple",
+      "question": "int arr; int n = 5; / MISSING */",
+      "choices": [
+        "arr = malloc(sizeof(arr) * n);",
+        "arr = (int*)malloc(n * sizeof(int));",
+        "arr = malloc(n);",
+        "int arr[n];"
+      ],
+      "answer": "B"
+    },
+
+    {
+      "id": "C_3",
+      "type":"Multiple",
+      "question": "for (i = 0, j = strlen(s)-1; /* MISSING */; i++, j--) {}",
+      "choices": ["i < j", "i <= j", "i < strlen(s)", "j >= 0"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_4",
+      "type":"Multiple",
+      "question": "FILE f = fopen(\"data.txt\",\"r\"); if(/ MISSING /) { / read / / MISSING */ }",
+      "choices": [
+        "f==NULL / fclose(f);",
+        "f!=NULL / fclose(f);",
+        "f==0 / close(f);",
+        "fopen!=NULL / fclose(f);"
+      ],
+      "answer": "B"
+    },
+
+    {
+      "id": "C_5",
+      "type":"Multiple",
+      "question": "char dest[20] = \"C\"; /* MISSING */",
+      "choices": [
+        "strcat(dest, \" Language\");",
+        "dest += \" Language\";",
+        "strcpy(dest, \" Language\");",
+        "dest = dest + \" Language\";"
+      ],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_6",
+      "type":"Multiple",
+      "question": "/* MISSING */ = &myFunction;",
+      "choices": [
+        "int (*funcPtr)(int,int)",
+        "int funcPtr(int,int)",
+        "int funcPtr(int,int)",
+        "int funcPtr(int,int)"
+      ],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_7",
+      "type":"Multiple",
+      "question": "int arr; int n = 20; / MISSING */",
+      "choices": [
+        "arr = malloc(sizeof(arr) * n);",
+        "arr = (int*)malloc(n * sizeof(int));",
+        "arr = malloc(n);",
+        "int arr[n];"
+      ],
+      "answer": "B"
+    },
+
+    {
+      "id": "C_8",
+      "type":"Multiple",
+      "question": "int x = 2; int p; / MISSING */ printf(\"%d\", *p);",
+      "choices": ["p = &x;", "p = x;", "p = *x;", "x = &p;"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_9",
+      "type":"Multiple",
+      "question": "int n; /* MISSING */ printf(\"%d\", n);",
+      "choices": [
+        "scan(\"%d\", &n);",
+        "scanf(\"%d\", n);",
+        "scanf(\"%d\", &n);",
+        "read(n);"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "A_1",
+      "type":"Multiple",
+      "question": "System.out.println(3 + 4);",
+      "choices": ["12", "7", "34", "Error"],
+      "answer": "B"
+    },
+    {
+      "id": "A_2",
+      "type":"Multiple",
+      "question": "String s = \"java\"; System.out.println(s.charAt(2));",
+      "choices": ["j", "a", "v", "Error"],
+      "answer": "C"
+    },
+    {
+      "id": "A_3",
+      "type":"Multiple",
+      "question": "int[] arr = {10, 20, 30}; System.out.println(arr.length);",
+      "choices": ["1", "2", "3", "Error"],
+      "answer": "C"
+    },
+    {
+      "id": "A_4",
+      "type":"Multiple",
+      "question": "System.out.println(10 / 3);",
+      "choices": ["3", "3.33", "4", "Error"],
+      "answer": "A"
+    },
+    {
+      "id": "A_5",
+      "type":"Multiple",
+      "question": "int x = 5; int y = x++; System.out.println(y);",
+      "choices": ["4", "5", "6", "Error"],
+      "answer": "B"
+    },
+    {
+      "id": "A_6",
+      "type":"Multiple",
+      "question": "double d = 7 / 2; System.out.println(d);",
+      "choices": ["3", "3.5", "3.0", "3.00"],
+      "answer": "C"
+    },
+    {
+      "id": "A_7",
+      "type":"Multiple",
+      "question": "String a = \"Hello\"; String b = \"World\"; System.out.println(a + b);",
+      "choices": ["Hello World", "HelloWorld", "Hello + World", "Error"],
+      "answer": "B"
+    },
+    {
+      "id": "A_8",
+      "type":"Multiple",
+      "question": "boolean flag = (5 > 2) && (2 > 3); System.out.println(flag);",
+      "choices": ["true", "false", "0", "1"],
+      "answer": "B"
+    },
+    {
+      "id": "B_1",
+      "type":"Multiple",
+      "question": "Expected output: 15",
+      "choices": [
+        "System.out.println(3 * 3);",
+        "System.out.println(20 - 5);",
+        "System.out.println(30 / 2);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_2",
+      "type":"Multiple",
+      "question": "Expected output: J",
+      "choices": [
+        "System.out.println(\"Java\".charAt(0));",
+        "System.out.println(\"J\");",
+        "System.out.println('J');",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_3",
+      "type":"Multiple",
+      "question": "Expected output: 100",
+      "choices": [
+        "int x = 100; System.out.println(x);",
+        "System.out.println(10 * 10);",
+        "System.out.println(200 / 2);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_4",
+      "type":"Multiple",
+      "question": "Expected output: true",
+      "choices": [
+        "System.out.println(5 > 3);",
+        "System.out.println(true);",
+        "boolean b = true; System.out.println(b);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_5",
+      "type":"Multiple",
+      "question": "Expected output: java",
+      "choices": [
+        "System.out.println(\"Java\");",
+        "String s=\"Java\"; System.out.println(s);",
+        "char[] c = {'J','a','v','a'}; System.out.println(String.valueOf(c));",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_6",
+      "type":"Multiple",
+      "question": "Expected output: 50",
+      "choices": ["System.out.println(100/2);", "System.out.println(25*2);", "int x=50; System.out.println(x);", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_7",
+      "type":"Multiple",
+      "question": "Expected output: abc",
+      "choices": [
+        "System.out.println(\"abc\");",
+        "String s=\"abc\"; System.out.println(s);",
+        "System.out.println(\"a\" + \"b\" + \"c\");",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_8",
+      "type":"Multiple",
+      "question": "Expected output: 9",
+      "choices": [
+        "System.out.println(3*3);",
+        "int a=9; System.out.println(a);",
+        "System.out.println(18/2);",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "C_1",
+      "type":"Multiple",
+      "question": "int[] arr; arr = /* MISSING */;",
+      "choices": ["new int[5]", "int[5]", "arr(5)", "new array(5)"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_2",
+      "type":"Multiple",
+      "question": "String s = \"Hello\"; /* MISSING */ System.out.println(s);",
+      "choices": ["s.toUpperCase();", "s = s.toUpperCase();", "toUpperCase(s);", "upper(s);"],
+      "answer": "B"
+    },
+
+    {
+      "id": "C_3",
+      "type":"Multiple",
+      "question": "int a = 5, b = 3; /* MISSING */ System.out.println(a);",
+      "choices": ["a = b;", "b = a;", "a == b;", "int a = b;"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_4",
+      "type":"Multiple",
+      "question": "ArrayList<Integer> list = new ArrayList<>(); /* MISSING */ System.out.println(list.size());",
+      "choices": ["list.add(10);", "add(list,10);", "push(10);", "list[0] = 10;"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_5",
+      "type":"Multiple",
+      "question": "int x = 10; /* MISSING */ System.out.println(x);",
+      "choices": ["x += 5;", "add(x,5);", "x = x + \"5\";", "System.out.println(5);"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_6",
+      "type":"Multiple",
+      "question": "String s = \"Java\"; /* MISSING */ System.out.println(s.length());",
+      "choices": [
+        "s = s + \" Programming\";",
+        "append(s,\" Programming\");",
+        "s.add(\" Programming\");",
+        "s.push(\" Programming\");"
+      ],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_7",
+      "type":"Multiple",
+      "question": "int[] a = {1,2,3}; /* MISSING */ System.out.println(a[1]);",
+      "choices": ["a[1] = 10;", "a(1) = 10;", "a->1 = 10;", "a.set(1,10);"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_8",
+      "type":"Multiple",
+      "question": "StringBuilder sb = new StringBuilder(); /* MISSING */ System.out.println(sb.toString());",
+      "choices": ["sb.append(\"Hi\");", "append(\"Hi\");", "sb + \"Hi\";", "sb = \"Hi\";"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_9",
+      "type":"Multiple",
+      "question": "int a = 4, b = 2; /* MISSING */ System.out.println(a);",
+      "choices": ["a = a * b;", "a == b;", "a = multiply(a,b);", "mul(a,b);"],
+      "answer": "A"
+    },
+    {
+      "id": "A_1",
+      "type":"Multiple",
+      "question": "print(3 + 4)",
+      "choices": ["7", "\"7\"", "34", "Error"],
+      "answer": "A"
+    },
+
+    {
+      "id": "A_2",
+      "type":"Multiple",
+      "question": "s = \"python\"; print(s[0])",
+      "choices": ["p", "y", "n", "Error"],
+      "answer": "A"
+    },
+
+    {
+      "id": "A_3",
+      "type":"Multiple",
+      "question": "a = [10, 20, 30]; print(len(a))",
+      "choices": ["1", "2", "3", "Error"],
+      "answer": "C"
+    },
+
+    {
+      "id": "B_1",
+      "type":"Multiple",
+      "question": "Expected output: 15",
+      "choices": ["print(10 + 5)", "print(30 // 2)", "x = 15; print(x)", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_2",
+      "type":"Multiple",
+      "question": "Expected output: hello",
+      "choices": [
+        "print(\"hello\")",
+        "s = \"hello\"; print(s)",
+        "print(\"he\" + \"llo\")",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_3",
+      "type":"Multiple",
+      "question": "Expected output: True",
+      "choices": ["print(5 > 3)", "print(True)", "flag = True; print(flag)", "All of the above"],
+      "answer": "D"
+    },
+
+
+    {
+      "id": "C_1",
+      "type":"Multiple",
+      "question": "a = []  # MISSING; print(len(a))",
+      "choices": ["a.append(10)", "add(a, 10)", "a[0] = 10", "push(a, 10)"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_2",
+      "type":"Multiple",
+      "question": "s = \"hello\"; # MISSING; print(s)",
+      "choices": [
+        "s = s.upper()",
+        "s.upper()",
+        "toUpper(s)",
+        "string.upper(s)"
+      ],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_3",
+      "type":"Multiple",
+      "question": "nums = [1, 2, 3]; # MISSING; print(nums[1])",
+      "choices": ["nums[1] = 10", "nums.set(1,10)", "set(nums[1],10)", "nums->1 = 10"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_4",
+      "type":"Multiple",
+      "question": "x = 4; y = 2; # MISSING; print(x)",
+      "choices": ["x = x * y", "multiply(x,y)", "x == y", "mul(x,y)"],
+      "answer": "A"
+    },
+    {
+      "id": "A_1",
+      "type":"Multiple",
+      "question": "X is 3 + 4.",
+      "choices": ["X = 7", "X = 34", "Error", "true/false"],
+      "answer": "A"
+    },
+    {
+      "id": "A_2",
+      "type":"Multiple",
+      "question": "father(john, mary). (No facts defined)",
+      "choices": ["true", "false", "john is father of mary", "Error"],
+      "answer": "D"
+    },
+    {
+      "id": "A_3",
+      "type":"Multiple",
+      "question": "GIVEN: likes(john, pizza). QUERY: likes(john, X).",
+      "choices": ["X = pizza", "X = john", "false", "Error"],
+      "answer": "A"
+    },
+    {
+      "id": "A_4",
+      "type":"Multiple",
+      "question": "X is 10 // 3.",
+      "choices": ["X = 3", "X = 3.33", "X = 4", "Error"],
+      "answer": "A"
+    },
+    {
+      "id": "A_5",
+      "type":"Multiple",
+      "question": "Given max rules, query: max(7,4,R).",
+      "choices": ["R = 7", "R = 4", "Error", "false"],
+      "answer": "A"
+    },
+
+    {
+      "id": "B_1",
+      "type":"Multiple",
+      "question": "Expected output: X = 10",
+      "choices": ["X = 10.", "X is 5+5.", "plus(5,5,X). (if defined)", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_2",
+      "type":"Multiple",
+      "question": "Expected result: True",
+      "choices": ["likes(john,pizza).", "5 > 3.", "X = X.", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_3",
+      "type":"Multiple",
+      "question": "Expected output: X = 25",
+      "choices": ["X is 5*5.", "X = 25.", "square(5,X). (if defined)", "All of the above"],
+      "answer": "D"
+    },
+
+    {
+      "id": "B_5",
+      "type":"Multiple",
+      "question": "Expected result: false",
+      "choices": [
+        "5 = 6.",
+        "likes(john, sushi). (if not defined)",
+        "father(mary,john).",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "C_1",
+      "type":"Multiple",
+      "question": "/* MISSING */ likes(john, Food).",
+      "choices": [
+        "likes(john, pizza).",
+        "food(john,pizza).",
+        "likes(Food,john).",
+        "john(pizza)."
+      ],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_2",
+      "type":"Multiple",
+      "question": "parent(X,Y) :- /* MISSING */.",
+      "choices": ["father(X,Y)", "mother(X,Y)", "father(X,Y); mother(X,Y)", "likes(X,Y)"],
+      "answer": "C"
+    },
+
+    {
+      "id": "C_3",
+      "type":"Multiple",
+      "question": "max(X,Y,R) :- /* MISSING */.",
+      "choices": [
+        "X >= Y, R = X",
+        "X < Y, R = Y",
+        "X = Y, R = X",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+
+    {
+      "id": "C_4",
+      "type":"Multiple",
+      "question": "sum(A,B,R) :- /* MISSING */.",
+      "choices": ["R is A+B", "R = A+B", "A plus B equals R", "R == A+B"],
+      "answer": "A"
+    },
+
+    {
+      "id": "C_5",
+      "type":"Multiple",
+      "question": "[H|T] = [1,2,3], /* MISSING */",
+      "choices": ["H = 1", "T = [2,3]", "H = 1, T = [2,3]", "All of the above"],
+      "answer": "D"
+    }
+  ]
 }

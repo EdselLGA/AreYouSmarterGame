@@ -146,7 +146,17 @@ public class MainFrame extends JFrame {
      * Show a specific panel in the main CardLayout
      */
     public void showPanel(String screenName) {
+        
+        if (!screenName.equals(CARD_GAME) && gameController != null) {
+            gameController.onGamePanelHidden();
+        }
+        
         cardLayout.show(mainPanel, screenName);
+        
+        // Register ESC handler when entering game panel
+        if (screenName.equals(CARD_GAME) && gameController != null) {
+            gameController.onGamePanelShown();
+        }
     }
 
     /**

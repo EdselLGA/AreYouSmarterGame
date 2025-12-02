@@ -105,20 +105,32 @@ public class QuestionBank{
             List<Question> questions = new ArrayList<>();
 
             for (QuestionItem item : entry.getValue()) {
-                boolean isMultipleChoice = "multiple".equals(item.getType());
+                boolean isMultipleChoice = "Multiple".equals(item.getType()) || "CodeSnippet".equals(item.getType());
 
                 String[] options;
-                if (isMultipleChoice) {
-                    options = item.getChoices().toArray(new String[0]);
-                } else {
-                    // True/False questions
-                    options = new String[]{"True", "False"};
-                }
+                options = item.getChoices().toArray(new String[0]);
+                
+                String letterAnswer = item.getAnswer();
+                switch (letterAnswer){
+                    case "A":
+                        letterAnswer = options[0];
+                        break;    
+                    case "B":
+                        letterAnswer = options[1];
+                        break;
+                    case "C":
+                        letterAnswer = options[2];
+                        break;
+                    case "D":
+                        letterAnswer = options[3];
+                        break;
+                    default:
 
+                }
                 questions.add(new Question(
                         item.getQuestion(),
                         options,
-                        item.getAnswer(),
+                        letterAnswer,
                         category,
                         isMultipleChoice
                 ));
@@ -133,8 +145,8 @@ public class QuestionBank{
                 return Category.HISTORY;
             case "GuessTheParadigm":
                 return Category.GUESS_THE_PARADIGM;
-            case "TrueOrFalse":
-                return Category.TRUE_OR_FALSE;
+            case "GeneralConcepts":
+                return Category.GENERAL_CONCEPTS;
             case "CodeSnippets":
                 return Category.CODE_SNIPPETS;
             default:

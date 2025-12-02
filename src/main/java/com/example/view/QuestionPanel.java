@@ -349,18 +349,19 @@ public class QuestionPanel extends JPanel {
             optionButtons[i].setVisible(true);
             optionButtons[i].setVisible(true);
             optionButtons[i].setEnabled(true);
+            optionButtons[i].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
             if (answerLocked && i == selectedAnswerIndex) {
                 optionButtons[i].setBackground(new Color(100, 200, 255));
             } else if (!answerLocked) {
                 optionButtons[i].setBackground(new Color(240, 240, 240));
             }
         }
-        if(options[0]=="True" && options[1]=="False"){
-            optionButtons[2].setText("");
-            optionButtons[3].setText("");
-            optionButtons[2].setVisible(false);
-            optionButtons[3].setVisible(false);
-        }
+        // if(options[0]=="True" && options[1]=="False"){
+        //     optionButtons[2].setText("");
+        //     optionButtons[3].setText("");
+        //     optionButtons[2].setVisible(false);
+        //     optionButtons[3].setVisible(false);
+        // }
         
         // Update lifeline buttons
         boolean lifelinesEnabled = canUseLifelines && !answerLocked;
@@ -458,7 +459,9 @@ public class QuestionPanel extends JPanel {
         if (this.bgImage != null)
             g.drawImage(this.bgImage, 0, 0, getWidth(), getHeight(), this);
 
-        g.drawImage(this.containerImg, 40, 20, 1350, 700, this);
+        int widthAdjusted = (int) (getWidth()*0.9);
+        int heightAdjusted = (int) (getHeight()*0.9);
+        g.drawImage(this.containerImg, 40, 20, widthAdjusted,heightAdjusted, this);
     }
     private void loadImages() {
         this.bgImage = new ImageIcon(getClass().getResource(BG)).getImage();

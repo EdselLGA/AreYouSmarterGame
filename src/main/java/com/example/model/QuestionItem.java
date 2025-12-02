@@ -3,7 +3,7 @@ package com.example.model;
 import java.util.List;
 
 class QuestionItem {
-    private int id;
+    private String id;
     private String question;
     private List<String> choices;  
     private String answer;

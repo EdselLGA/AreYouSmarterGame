@@ -30,7 +30,7 @@ public class GameController implements GameNavigationListener, GameActionListene
         gamePanel.setGameActionListener(this);
         gamePanel.setGameNavigationListener(this);
         escapeKeyHandler = new EscapeKeyHandler(this, true);
-        escapeKeyHandler.register();
+
     }
     
     /**
@@ -41,10 +41,22 @@ public class GameController implements GameNavigationListener, GameActionListene
     }
 
     public void dispose() {
-    if (escapeKeyHandler != null) {
-        escapeKeyHandler.unregister();
+        if (escapeKeyHandler != null) {
+            escapeKeyHandler.unregister();
+        }
     }
-}
+
+    public void onGamePanelShown() {
+        if (escapeKeyHandler != null) {
+            escapeKeyHandler.register();
+        }
+    }
+
+    public void onGamePanelHidden() {
+        if (escapeKeyHandler != null) {
+            escapeKeyHandler.unregister();
+        }
+    }
 
     // Navigation methods
     @Override

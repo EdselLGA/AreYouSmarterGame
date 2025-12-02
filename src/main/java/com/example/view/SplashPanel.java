@@ -32,6 +32,7 @@ public class SplashPanel extends JPanel {
     private NavigationListener navigationListener;
     private Timer throbTimer;
     private Timer titlePulseTimer;
+    private Timer splashTimer;
     private volatile boolean started = false;
 
     private static final String BACKGROUND = "/splash.png";
@@ -124,22 +125,22 @@ public class SplashPanel extends JPanel {
         titlePulseTimer.start();
 
         // PRESS START LABEL
-        ImageIcon pressIc = new ImageIcon(getClass().getResource(PRESS_START));
-        JLabel pressLabel = new JLabel();
+        // ImageIcon pressIc = new ImageIcon(getClass().getResource(PRESS_START));
+        // JLabel pressLabel = new JLabel();
 
-        int w = (int) (screen.width * 0.20);
-        int h = pressIc.getIconHeight() * w / pressIc.getIconWidth();
-        pressLabel.setIcon(new ImageIcon(pressIc.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH)));
-        pressLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // int w = (int) (screen.width * 0.20);
+        // int h = pressIc.getIconHeight() * w / pressIc.getIconWidth();
+        // pressLabel.setIcon(new ImageIcon(pressIc.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH)));
+        // pressLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // THROB EFFECT
-        throbTimer = HelpersUI.createFadeInOut(pressLabel, 35, 0.03f);
+        // throbTimer = HelpersUI.createFadeInOut(pressLabel, 35, 0.03f);
 
         // ADD COMPONENTS
         content.add(Box.createVerticalGlue());
         content.add(titleLabel);
         content.add(Box.createRigidArea(new Dimension(0, 45)));
-        content.add(pressLabel);
+        // content.add(pressLabel);
         content.add(Box.createVerticalGlue());
 
         content.setBounds(0, 0, screen.width, screen.height);
@@ -147,24 +148,7 @@ public class SplashPanel extends JPanel {
 
         
         // INPUT HANDLING
-        addMouseListener(new MouseAdapter() {
-            @Override public void mousePressed(MouseEvent e) {
-                Sound.playSFX("/Clicked.wav");
-                proceed();
-                navigationListener.onNavigateToMainMenu();
-            }
-        });
-
-        setFocusable(true);
-        addKeyListener(new KeyAdapter() {
-            @Override 
-            public void keyPressed(KeyEvent e) {
-                Sound.playSFX("/Clicked.wav");
-                proceed();
-                navigationListener.onNavigateToMainMenu();
-            }
-        });
-
+        
         addComponentListener(new ComponentAdapter() {
             @Override public void componentShown(ComponentEvent e) {
                 requestFocusInWindow();
@@ -172,8 +156,14 @@ public class SplashPanel extends JPanel {
         });
 
         // AUTO CONTINUE AFTER 80 SECONDS
-        new Timer(80000, e -> proceed()).start();
+        Timer splashTimer = new Timer(4000, null);
+        splashTimer.start();
 
+        splashTimer.addActionListener(
+            e ->{
+            proceed();
+            }
+        );
     }
     private void proceed() {
         if (started) return;
@@ -181,7 +171,8 @@ public class SplashPanel extends JPanel {
 
         if (throbTimer != null) throbTimer.stop();
         if (titlePulseTimer != null) titlePulseTimer.stop();
-        
+        if (splashTimer != null) splashTimer.stop();
+        navigationListener.onNavigateToMainMenu();
     }
 
 }
